@@ -9,8 +9,9 @@ gem 'therubyracer', platforms: :ruby
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
-# gem 'sprockets'
-# gem 'sprockets-es6'
+gem 'haml-rails'
+gem 'devise'
+gem 'cancancan'
 
 group :development do
   gem 'listen'
