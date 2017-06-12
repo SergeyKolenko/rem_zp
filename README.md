@@ -1,24 +1,21 @@
-# README
+# Real Estate Market ZP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Tech requirements
+ - Rails 5.1
+ - Ruby 2.4.1
+ - SCSS
+ - ES6
+ - HAML
+ - Bootstrap 3.3.6
+ - PG
 
-Things you may want to cover:
+## To Start project
+To start project run
 
-* Ruby version
+`bundle install`
 
-* System dependencies
+`rails db:create db:migrate db:seed`
 
-* Configuration
+`rails s`
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To run test `rspec spec`
