@@ -12,6 +12,7 @@ gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'devise'
 gem 'cancancan'
+gem 'carrierwave', '~> 1.0'
 
 group :development do
   gem 'listen'
