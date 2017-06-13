@@ -1,5 +1,8 @@
 # encoding : utf-8
 
+require 'money'
+require 'money/bank/google_currency'
+
 MoneyRails.configure do |config|
 
   config.default_currency = :usd
