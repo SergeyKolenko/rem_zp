@@ -65,6 +65,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (1.1.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     childprocess (0.7.0)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.1)
@@ -251,6 +255,7 @@ DEPENDENCIES
   bootstrap-sass
   cancancan
   capybara
+  carrierwave (~> 1.0)
   database_cleaner
   devise
   factory_girl_rails
@@ -272,4 +277,4 @@ DEPENDENCIES
   uglifier
 
 BUNDLED WITH
-   1.14.6
+   1.15.1
