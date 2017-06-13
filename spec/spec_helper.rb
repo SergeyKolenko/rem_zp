@@ -1,4 +1,5 @@
 require 'capybara/rspec'
+require 'money-rails/test_helpers'
 
 Capybara.register_driver :chrome do |app|
   Capybara::Selenium::Driver.new(app, :browser => :chrome)

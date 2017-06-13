@@ -14,6 +14,8 @@ gem 'devise'
 gem 'cancancan'
 gem 'carrierwave', '~> 1.0'
 gem 'config'
+gem 'money-rails'
+gem 'google_currency', '~> 3.3'
 
 group :development do
   gem 'listen'
