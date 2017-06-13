@@ -6,6 +6,8 @@ class User < ApplicationRecord
   belongs_to :role
   belongs_to :agency
 
-  validates :first_name, :last_name, :agency, presence: true
-  validates_associated :agency, if: Proc.new {|u| u.role == 'agent' && u.role == 'agency_director'}
+  validates :first_name, :last_name, :role, presence: true
+  validates :agency, presence: true, if: Proc.new { |u| %w(agent agency_director).include? u.role.name }
+  validates :agency, absence: true, unless: Proc.new { |u| %w(agent agency_director).include? u.role.name }
+
 end
