@@ -2,7 +2,7 @@
 
 MoneyRails.configure do |config|
 
-  config.default_currency = :grn
+  config.default_currency = :usd
   config.default_bank = Money::Bank::GoogleCurrency.new
 
   # Add exchange rates to current money bank object.
