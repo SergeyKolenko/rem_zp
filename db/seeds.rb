@@ -1,7 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+regions = ['АР Крым', 'Винницкая область', 'Волынская область', 'Днепропетровская область',
+           'Донецкая область', 'Житомирская область', 'Закарпатская область',
+           'Запорожская область', 'Ивано-Франковская область', 'Киевская область',
+           'Кировоградская область', 'Луганская область', 'Львовская область',
+           'Николаевская область', 'Одесская область', 'Полтавская область',
+           'Ровненская область', 'Сумская область', 'Тернопольская область',
+           'Харьковская область', 'Херсонская область', 'Хмельницкая область',
+           'Черкасская область', 'Черниговская область', 'Черновицкая область']
+regions.each { |region| Region.find_or_create_by(name: region) }
