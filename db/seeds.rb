@@ -7,3 +7,7 @@ regions = ['АР Крым', 'Винницкая область', 'Волынск
            'Харьковская область', 'Херсонская область', 'Хмельницкая область',
            'Черкасская область', 'Черниговская область', 'Черновицкая область']
 regions.each { |region| Region.find_or_create_by(name: region) }
+
+zp_cities = ['Запорожье']
+zp_region = Region.find_by(name: 'Запорожская область')
+zp_cities.each { |cities| City.find_or_create_by(name: cities, region_id: zp_region.id) }
