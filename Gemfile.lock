@@ -73,8 +73,12 @@ GEM
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.1)
     concurrent-ruby (1.0.5)
+    config (1.4.0)
+      activesupport (>= 3.0)
+      deep_merge (~> 1.1.1)
     database_cleaner (1.6.1)
     debug_inspector (0.0.3)
+    deep_merge (1.1.1)
     devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -256,6 +260,7 @@ DEPENDENCIES
   cancancan
   capybara
   carrierwave (~> 1.0)
+  config
   database_cleaner
   devise
   factory_girl_rails
