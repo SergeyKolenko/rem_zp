@@ -5,7 +5,7 @@ RSpec.describe District, type: :model do
     it { should belong_to(:city) }
   end
 
-  context 'City db column' do
+  context 'District db column' do
     it { should have_db_column(:name).of_type(:string) }
     it { should have_db_column(:city_id).of_type(:integer) }
   end
