@@ -17,3 +17,9 @@ Region.transaction do
   zp_districts = %w(Александровский Заводский Коммунарский Днепровский Вознесеновский Хортицкий Шевченковский)
   zp_districts.each { |district| District.find_or_create_by(name: district, city_id: zp_city) }
 end
+
+Category.transaction do
+  categories = %w(Квартира Дом Гараж Дача Участок Офис Бизнес)
+  categories.each { |category| Category.find_or_create_by(name: category, weight: 1) }
+end
+

@@ -10,9 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170613145538) do
+ActiveRecord::Schema.define(version: 20170613151942) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.integer "weight"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.bigint "region_id"
+    t.index ["region_id"], name: "index_cities_on_region_id"
+  end
+
+  create_table "districts", force: :cascade do |t|
+    t.string "name"
+    t.bigint "city_id"
+    t.index ["city_id"], name: "index_districts_on_city_id"
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string "name"
@@ -41,22 +63,6 @@ ActiveRecord::Schema.define(version: 20170613145538) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["role_id"], name: "index_users_on_role_id"
-  end
-
-  create_table "cities", force: :cascade do |t|
-    t.string "name"
-    t.bigint "region_id"
-    t.index ["region_id"], name: "index_cities_on_region_id"
-  end
-
-  create_table "districts", force: :cascade do |t|
-    t.string "name"
-    t.bigint "city_id"
-    t.index ["city_id"], name: "index_districts_on_city_id"
-  end
-
-  create_table "regions", force: :cascade do |t|
-    t.string "name"
   end
 
   add_foreign_key "cities", "regions"
