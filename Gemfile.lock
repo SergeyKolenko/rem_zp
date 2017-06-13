@@ -99,6 +99,8 @@ GEM
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    google_currency (3.3.0)
+      money (~> 6.7)
     haml (5.0.1)
       temple (>= 0.8.0)
       tilt
@@ -136,6 +138,16 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.2.0)
     minitest (5.10.2)
+    monetize (1.6.0)
+      money (~> 6.8)
+    money (6.8.4)
+      i18n (>= 0.6.4, < 0.9)
+      sixarm_ruby_unaccent (>= 1.1.1, < 2)
+    money-rails (1.8.0)
+      activesupport (>= 3.0)
+      monetize (~> 1.6.0)
+      money (~> 6.8.1)
+      railties (>= 3.0)
     multi_json (1.12.1)
     nio4r (2.1.0)
     nokogiri (1.8.0)
@@ -217,6 +229,7 @@ GEM
     sexp_processor (4.9.0)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
+    sixarm_ruby_unaccent (1.1.2)
     slop (3.6.0)
     spring (2.0.2)
       activesupport (>= 4.2)
@@ -265,10 +278,12 @@ DEPENDENCIES
   devise
   factory_girl_rails
   faker
+  google_currency (~> 3.3)
   haml-rails
   jbuilder
   jquery-rails
   listen
+  money-rails
   pg
   puma
   rails
