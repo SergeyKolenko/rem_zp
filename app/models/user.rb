@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :role
+  belongs_to :agency
 
-  validates :first_name, :last_name, presence: true
-  validates :role, presence: true
+  validates :first_name, :last_name, :agency, presence: true
+  validates_asociated :agency, if: Proc.new {|u| u.role == 'agent' && u.role == 'agency_director'}
 end
