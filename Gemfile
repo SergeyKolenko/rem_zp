@@ -13,6 +13,7 @@ gem 'haml-rails'
 gem 'devise'
 gem 'cancancan'
 gem 'carrierwave', '~> 1.0'
+gem 'config'
 
 group :development do
   gem 'listen'
