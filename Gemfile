@@ -12,6 +12,10 @@ gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'devise'
 gem 'cancancan'
+gem 'carrierwave', '~> 1.0'
+gem 'config'
+gem 'money-rails'
+gem 'google_currency', '~> 3.3'
 
 group :development do
   gem 'listen'
@@ -32,4 +36,5 @@ group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
 end
