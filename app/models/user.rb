@@ -7,5 +7,5 @@ class User < ApplicationRecord
   belongs_to :agency
 
   validates :first_name, :last_name, :agency, presence: true
-  validates_asociated :agency, if: Proc.new {|u| u.role == 'agent' && u.role == 'agency_director'}
+  validates_associated :agency, if: Proc.new {|u| u.role == 'agent' && u.role == 'agency_director'}
 end
