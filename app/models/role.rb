@@ -1,11 +1,5 @@
 class Role < ApplicationRecord
-  has_many :user
+  has_many :users, -> (user){where(role: 'agent')}
 
-  validates :first_name, :status, presence: true
-  validates :last_name, :status, presence: true
-  validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/,
-            message: 'is invalid.' }, if: 'email.present?'
-
-  validates :email, uniqueness: true
-
+  validates :name, format: %w(super_admin agency_director agent realtor simple_user)
 end
