@@ -33,7 +33,7 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
