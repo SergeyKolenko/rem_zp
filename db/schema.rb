@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614094825) do
+ActiveRecord::Schema.define(version: 20170614110947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20170614094825) do
     t.boolean "approved", default: false
     t.bigint "director_id"
     t.index ["director_id"], name: "index_agencies_on_director_id"
+    t.index ["name"], name: "index_agencies_on_name"
   end
 
   create_table "agencies_cities", id: false, force: :cascade do |t|
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(version: 20170614094825) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.integer "weight"
+    t.index ["name"], name: "index_categories_on_name"
   end
 
   create_table "categories_options", id: false, force: :cascade do |t|
@@ -62,6 +64,7 @@ ActiveRecord::Schema.define(version: 20170614094825) do
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.bigint "region_id"
+    t.index ["name"], name: "index_cities_on_name"
     t.index ["region_id"], name: "index_cities_on_region_id"
   end
 
@@ -69,6 +72,7 @@ ActiveRecord::Schema.define(version: 20170614094825) do
     t.string "name"
     t.bigint "city_id"
     t.index ["city_id"], name: "index_districts_on_city_id"
+    t.index ["name"], name: "index_districts_on_name"
   end
 
   create_table "option_values", force: :cascade do |t|
@@ -79,6 +83,7 @@ ActiveRecord::Schema.define(version: 20170614094825) do
     t.datetime "updated_at", null: false
     t.index ["option_id"], name: "index_option_values_on_option_id"
     t.index ["proposal_id"], name: "index_option_values_on_proposal_id"
+    t.index ["value"], name: "index_option_values_on_value"
   end
 
   create_table "options", force: :cascade do |t|
@@ -117,12 +122,14 @@ ActiveRecord::Schema.define(version: 20170614094825) do
 
   create_table "regions", force: :cascade do |t|
     t.string "name"
+    t.index ["name"], name: "index_regions_on_name"
   end
 
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_roles_on_name"
   end
 
   create_table "users", force: :cascade do |t|
