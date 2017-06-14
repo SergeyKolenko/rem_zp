@@ -25,7 +25,7 @@ end
 
 Option.transaction do
   option = Option.create name: 'Общая площадь', unit: 'м<sup>2</sup>'
-  option.categories << Category.find_by_code('Квартира')
+  option.categories << Category.find_by_name('Квартира')
 end
 
 
