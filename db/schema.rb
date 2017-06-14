@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614110947) do
+ActiveRecord::Schema.define(version: 20170614112604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,6 +120,13 @@ ActiveRecord::Schema.define(version: 20170614110947) do
     t.index ["title"], name: "index_proposals_on_title"
   end
 
+  create_table "proposals_types", id: false, force: :cascade do |t|
+    t.bigint "type_id", null: false
+    t.bigint "proposal_id", null: false
+    t.index ["proposal_id", "type_id"], name: "index_proposals_types_on_proposal_id_and_type_id"
+    t.index ["type_id", "proposal_id"], name: "index_proposals_types_on_type_id_and_proposal_id"
+  end
+
   create_table "regions", force: :cascade do |t|
     t.string "name"
     t.index ["name"], name: "index_regions_on_name"
@@ -130,6 +137,10 @@ ActiveRecord::Schema.define(version: 20170614110947) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_roles_on_name"
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
