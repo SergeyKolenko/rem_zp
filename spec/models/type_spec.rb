@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Type, type: :model do
-  context 'model connection' do
+  context 'Type model connection' do
     it { should have_and_belong_to_many(:proposals) }
   end
 

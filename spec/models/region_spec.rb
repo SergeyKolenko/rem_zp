@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Region, type: :model do
-  context 'model connection' do
+  context 'Region model connection' do
     it { should have_many(:cities) }
+    it { should have_many(:proposals) }
     it { should have_and_belong_to_many(:agencies) }
   end
 

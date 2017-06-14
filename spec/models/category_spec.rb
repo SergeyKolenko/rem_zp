@@ -11,6 +11,6 @@ RSpec.describe Category, type: :model do
   end
 
   context 'Category validate column' do
-    should validate_numericality_of(:weight).is_greater_than(0)
+    it { should validate_numericality_of(:weight).is_greater_than(0) }
   end
 end
