@@ -10,11 +10,12 @@ RSpec.describe Agency, type: :model do
   end
 
   context 'Agency db column' do
-    it { should have_db_column(:name).of_type(:string) }
-    it { should have_db_column(:postal_address).of_type(:string) }
-    it { should have_db_column(:phisical_address).of_type(:string) }
+    it { should have_db_column(:approved).of_type(:boolean) }
     it { should have_db_column(:description).of_type(:text) }
     it { should have_db_column(:director_id).of_type(:integer) }
-    it { should have_db_column(:approved).of_type(:boolean) }
+    it { should have_db_column(:name).of_type(:string) }
+    it { should have_db_column(:phone).of_type(:string) }
+    it { should have_db_column(:postal_address).of_type(:string) }
+    it { should have_db_column(:phisical_address).of_type(:string) }
   end
 end
