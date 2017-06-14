@@ -15,6 +15,38 @@ ActiveRecord::Schema.define(version: 20170614094825) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "agencies", force: :cascade do |t|
+    t.string "name"
+    t.string "logo"
+    t.string "postal_address"
+    t.string "phisical_address"
+    t.text "description"
+    t.boolean "approved", default: false
+    t.bigint "director_id"
+    t.index ["director_id"], name: "index_agencies_on_director_id"
+  end
+
+  create_table "agencies_cities", id: false, force: :cascade do |t|
+    t.bigint "agency_id", null: false
+    t.bigint "city_id", null: false
+    t.index ["agency_id", "city_id"], name: "index_agencies_cities_on_agency_id_and_city_id"
+    t.index ["city_id", "agency_id"], name: "index_agencies_cities_on_city_id_and_agency_id"
+  end
+
+  create_table "agencies_districts", id: false, force: :cascade do |t|
+    t.bigint "agency_id", null: false
+    t.bigint "district_id", null: false
+    t.index ["agency_id", "district_id"], name: "index_agencies_districts_on_agency_id_and_district_id"
+    t.index ["district_id", "agency_id"], name: "index_agencies_districts_on_district_id_and_agency_id"
+  end
+
+  create_table "agencies_regions", id: false, force: :cascade do |t|
+    t.bigint "agency_id", null: false
+    t.bigint "region_id", null: false
+    t.index ["agency_id", "region_id"], name: "index_agencies_regions_on_agency_id_and_region_id"
+    t.index ["region_id", "agency_id"], name: "index_agencies_regions_on_region_id_and_agency_id"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.integer "weight"
