@@ -23,6 +23,11 @@ Category.transaction do
   categories.each { |category| Category.find_or_create_by(name: category, weight: 1) }
 end
 
+Option.transaction do
+  option = Option.create name: 'Общая площадь', unit: 'м<sup>2</sup>'
+  option.categories << Category.find_by_code('Квартира')
+end
+
 
 Role.transaction do
   Role::NAMES.each { |rn| Role.find_or_create_by name: rn }
@@ -39,3 +44,5 @@ User.transaction do
     super_admin.save!
   end
 end
+
+

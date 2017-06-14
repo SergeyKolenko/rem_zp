@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614065212) do
+ActiveRecord::Schema.define(version: 20170614082542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,13 @@ ActiveRecord::Schema.define(version: 20170614065212) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.integer "weight"
+  end
+
+  create_table "categories_options", id: false, force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.bigint "option_id", null: false
+    t.index ["category_id", "option_id"], name: "index_categories_options_on_category_id_and_option_id"
+    t.index ["option_id", "category_id"], name: "index_categories_options_on_option_id_and_category_id"
   end
 
   create_table "cities", force: :cascade do |t|
@@ -30,6 +37,14 @@ ActiveRecord::Schema.define(version: 20170614065212) do
     t.string "name"
     t.bigint "city_id"
     t.index ["city_id"], name: "index_districts_on_city_id"
+  end
+
+  create_table "options", force: :cascade do |t|
+    t.string "name"
+    t.string "unit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_options_on_name"
   end
 
   create_table "regions", force: :cascade do |t|
