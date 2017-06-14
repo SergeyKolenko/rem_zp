@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe OptionValue, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'OptionValue model connection' do
+    it { should belong_to(:proposal) }
+    it { should belong_to(:option) }
+  end
 end
