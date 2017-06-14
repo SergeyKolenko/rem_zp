@@ -45,4 +45,9 @@ User.transaction do
   end
 end
 
+Type.transaction do
+  types = ['Продажа', 'Покупка', 'Аренда', 'Обмен', 'Пожизненное содержание', 'Даром', 'Залог']
+  types.each { |type| Type.find_or_create_by(name: type) }
+end
+
 
