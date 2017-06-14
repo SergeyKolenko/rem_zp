@@ -29,6 +29,13 @@ Role.transaction do
 end
 
 User.transaction do
-  super_admin = User.find_or_create_by email: 'admin@user.com', password: '123456789', password_confirmation: '123456789', role: Role.super_admin
-  super_admin.update confirmated_at: Date.today
+  super_admin = User.find_or_initialize_by email: 'admin@user.com', role: Role.super_admin
+  if super_admin.new_record?
+    super_admin.confirmed_at = Date.today
+    super_admin.password = '12345689'
+    super_admin.password_confirmation = '12345689'
+    super_admin.first_name = 'Super'
+    super_admin.last_name = 'Admin'
+    super_admin.save!
+  end
 end
