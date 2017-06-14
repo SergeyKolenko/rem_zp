@@ -25,7 +25,7 @@ end
 
 Option.transaction do
   option = Option.create name: 'Общая площадь', unit: 'м<sup>2</sup>'
-  option.categories << Category.find_by_code('Квартира')
+  option.categories << Category.find_by_name('Квартира')
 end
 
 
@@ -43,6 +43,11 @@ User.transaction do
     super_admin.last_name = 'Admin'
     super_admin.save!
   end
+end
+
+Type.transaction do
+  types = ['Продажа', 'Покупка', 'Аренда', 'Обмен', 'Пожизненное содержание', 'Даром', 'Залог']
+  types.each { |type| Type.find_or_create_by(name: type) }
 end
 
 

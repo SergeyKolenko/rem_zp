@@ -3,7 +3,9 @@ class Proposal < ApplicationRecord
   belongs_to :category
   belongs_to :region
   belongs_to :city
-  belongs_to :district
+  belongs_to :district, optional: true
+  has_many :option_values
+  has_and_belongs_to_many :types
 
   mount_uploaders :images, ItemUploader
 
