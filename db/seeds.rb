@@ -23,3 +23,12 @@ Category.transaction do
   categories.each { |category| Category.find_or_create_by(name: category, weight: 1) }
 end
 
+
+Role.transaction do
+  Role::NAMES.each { |rn| Role.find_or_create_by name: rn }
+end
+
+User.transaction do
+  super_admin = User.find_or_create_by email: 'admin@user.com', password: '123456789', password_confirmation: '123456789', role: Role.super_admin
+  super_admin.update confirmated_at: Date.today
+end
