@@ -9,7 +9,7 @@ class Proposal < ApplicationRecord
 
   mount_uploaders :images, ItemUploader
 
-  validates :title, presence: true, length: { maximum: 50 }
+  validates :title, presence: true, length: { maximum: 50 }, uniqueness: { scope: :description }
   validates :description, presence: true, length: { minimum: 100, maximum: 5000 }
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :promo_price, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
