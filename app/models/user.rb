@@ -6,9 +6,9 @@ class User < ApplicationRecord
   belongs_to :role
   belongs_to :agency, optional: true
   has_many :proposals, foreign_key: :author_id
+  has_many :agencies, foreign_key: 'director_id'
 
   validates :first_name, :last_name, :role, presence: true
   validates :agency, presence: true, if: Proc.new { |u| %w(agent agency_director).include? u.role.name }
   validates :agency, absence: true, unless: Proc.new { |u| %w(agent agency_director).include? u.role.name }
-
 end
