@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614092659) do
+ActiveRecord::Schema.define(version: 20170614094825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 20170614092659) do
     t.string "name"
     t.bigint "city_id"
     t.index ["city_id"], name: "index_districts_on_city_id"
+  end
+
+  create_table "option_values", force: :cascade do |t|
+    t.string "value"
+    t.bigint "proposal_id"
+    t.bigint "option_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["option_id"], name: "index_option_values_on_option_id"
+    t.index ["proposal_id"], name: "index_option_values_on_proposal_id"
   end
 
   create_table "options", force: :cascade do |t|
@@ -112,4 +122,6 @@ ActiveRecord::Schema.define(version: 20170614092659) do
 
   add_foreign_key "cities", "regions"
   add_foreign_key "districts", "cities"
+  add_foreign_key "option_values", "options"
+  add_foreign_key "option_values", "proposals"
 end
