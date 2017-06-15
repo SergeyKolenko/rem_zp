@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :option do
     name "MyString"
-    unit "MyString"
+    category_id
+    option_value_id
   end
 end

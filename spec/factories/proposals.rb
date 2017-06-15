@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :proposal do
     title "MyString"
-    description "MyText"
+    description
     price 1.5
     promo_price 1.5
     currency "MyString"
