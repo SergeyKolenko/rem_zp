@@ -9,5 +9,8 @@ FactoryGirl.define do
     house_number "MyString"
     approved false
     author nil
+    district nil
+    city
+    region_id 1
   end
 end

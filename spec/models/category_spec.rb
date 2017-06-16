@@ -1,25 +1,28 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  context 'model connection' do
-    it { should have_many(:proposals) }
+  let(:category1) { FactoryGirl.build(:category, weight: 1) }
+  let(:category2) { FactoryGirl.build(:category, weight: 0) }
+
+  it 'is valid category with valid attributes' do
+    expect(category1).to be_valid
+  end
+
+  it 'is invalid category with blank attributes' do
+    expect(category2).not_to be_valid
+  end
+
+  context 'model association' do
+    it { expect have_many(:proposals) }
   end
 
   context 'Category db column' do
-    it { should have_db_column(:name).of_type(:string)}
-    it { should have_db_column(:weight).of_type(:integer)}
+    it { expect have_db_column(:name).of_type(:string)}
+    it { expect have_db_column(:weight).of_type(:integer)}
   end
 
   context 'Category validate column' do
-    it { should validate_numericality_of(:weight).is_greater_than(0) }
+    it { expect validate_numericality_of(:weight).is_greater_than(0) }
   end
 
-  discribe 'Category validation with FactoryGirl' do
-    let(:user1) { FactoryGirl.create(:user) }
-    let(:proposal1) { FactoryGirl.create(:proposal) }
-    context 'User db column' do
-
-    end
-
-  end
 end

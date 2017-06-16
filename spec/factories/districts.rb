@@ -1,6 +1,8 @@
 FactoryGirl.define do
-  factory :role do
+  factory :district do
     name "MyString"
-    user
+    city_id 1
   end
 end
+
+
