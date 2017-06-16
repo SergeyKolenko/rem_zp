@@ -17,6 +17,7 @@ gem 'mini_magick'
 gem 'config'
 gem 'money-rails'
 gem 'google_currency', '~> 3.3'
+gem 'redis'
 
 group :development do
   gem 'listen'
