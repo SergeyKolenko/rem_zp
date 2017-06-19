@@ -1,15 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  let(:category1) { FactoryGirl.build(:category, weight: 1) }
-  let(:category2) { FactoryGirl.build(:category, weight: 0) }
+  let(:category_valid) { FactoryGirl.build(:category, weight: 1) }
+  let(:category_invalid) { FactoryGirl.build(:category, weight: 0) }
 
   it 'is valid category with valid attributes' do
-    expect(category1).to be_valid
+    expect(category_valid).to be_valid
   end
 
   it 'is invalid category with blank attributes' do
-    expect(category2).not_to be_valid
+    expect(category_invalid).not_to be_valid
   end
 
   context 'model association' do

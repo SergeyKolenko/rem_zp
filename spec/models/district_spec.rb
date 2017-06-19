@@ -4,13 +4,11 @@ RSpec.describe District, type: :model do
   let(:district1) { FactoryGirl.build(:district) }
   let(:district2) { FactoryGirl.build(:district, city_id: '') }
 
-  it 'is valid category with valid attributes' do
-    p district1
+  it 'is valid District with valid attributes' do
     expect(district1).to be_valid
   end
 
-  it 'is invalid category with blank attributes' do
-    p district2
+  it 'is invalid District with blank attributes' do
     expect(district2).not_to be_valid
   end
 

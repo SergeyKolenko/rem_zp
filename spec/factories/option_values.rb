@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :option_value do
-    value "MyString"
-    proposal
-    option
+    value {Faker::Name.name}
+    unir {Faker::Name.name}
   end
 end
