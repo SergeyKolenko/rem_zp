@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :proposal do
     title "MyString"
-    description
+    description Faker::Lorem.characters(101)
     price 1.5
     promo_price 1.5
     currency "MyString"
@@ -10,6 +10,6 @@ FactoryGirl.define do
     approved false
     author nil
     district nil
-    region_id 1
+    # region_id 1
   end
 end

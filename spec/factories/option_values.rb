@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :option_value do
-    value 'ddhb'
+    value Faker::StarWars.planet
   end
 end

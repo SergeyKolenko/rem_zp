@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :city do
-    name "MyString"
-
+    name Faker::StarWars.planet
   end
 end
 

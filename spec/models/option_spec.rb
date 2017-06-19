@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Option, type: :model do
-
   context 'Option model associations' do
     it { expect have_many(:option_values) }
     it { expect have_and_belong_to_many(:categories) }
@@ -55,7 +54,6 @@ RSpec.describe Option, type: :model do
       it 'be invalid with exist unit' do
         expect(option_invalid_dup).not_to be_valid
       end
-
     end
 
   end

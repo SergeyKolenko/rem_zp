@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :district do
-    name "MyString"
-    city_id 1
+    name Faker::StarWars.planet
   end
 end
 
