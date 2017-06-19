@@ -12,6 +12,10 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :role, presence: true
   validates :agency, presence: true, if: Proc.new { |u| %w(agent agency_director).include? u.role_name }
   validates :agency, absence: true, unless: Proc.new { |u| %w(agent agency_director).include? u.role_name }
-  validates :phone, format: { with: /[0]\d[(39|50|63|66|67|68|91|92|93|94|95|96|97|98|99)]-\d{3}-\d{2}-\d{2}/,
+  validates :phone, format: { with: /[0]\d[(39|50|63|66|67|68|73|91|92|93|94|95|96|97|98|99)]-\d{3}-\d{2}-\d{2}/,
                               message: 'Неверный формат номера' }
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

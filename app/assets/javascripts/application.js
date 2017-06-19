@@ -12,5 +12,6 @@
 //
 //= require jquery2
 //= require rails-ujs
+//= require bootstrap
 //= require_tree ./app
 //= require cable
