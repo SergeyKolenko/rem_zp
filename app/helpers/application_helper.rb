@@ -13,9 +13,15 @@ module ApplicationHelper
   end
 
   def all_categories
+    #TODO: Add Cache
     # Rails.cache.fetch("head_all_categories_#{I18n.locale}", expired_at: 24.hours) do
       Category.all
     # end
+  end
+
+  def all_types
+    #TODO: Add Cache
+    Type.all
   end
 
 end
