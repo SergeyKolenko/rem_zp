@@ -10,7 +10,6 @@ FactoryGirl.define do
     approved false
     author nil
     district nil
-    city
     region_id 1
   end
 end

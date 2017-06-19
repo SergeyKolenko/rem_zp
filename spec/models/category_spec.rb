@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  let(:category_valid) { FactoryGirl.build(:category, weight: 1) }
+  let(:category_valid) { FactoryGirl.build(:category, name: 'Дом', weight: 1) }
   let(:category_invalid) { FactoryGirl.build(:category, weight: 0) }
 
   it 'is valid category with valid attributes' do
@@ -22,7 +22,10 @@ RSpec.describe Category, type: :model do
   end
 
   context 'Category validate column' do
+    it { expect validate_presence_of(:name) }
+    it { expect validate_presence_of(:weight) }
     it { expect validate_numericality_of(:weight).is_greater_than(0) }
+    it { expect allow_value(5).for(:weight) }
+    it { expect(category_valid).to_not allow_value(0).for(:weight) }
   end
-
 end
