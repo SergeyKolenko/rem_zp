@@ -6,7 +6,7 @@ class User < ApplicationRecord
   belongs_to :role
   belongs_to :agency, optional: true
   has_many :proposals, foreign_key: :author_id
-  has_one :owned_agency, class_name: Agency, optional: true
+  has_one :owned_agency, -> () { where role: Role.agency_director }, class_name: Agency, foreign_key: :director_id
   accepts_nested_attributes_for :owned_agency
 
   delegate :name, to: :role, prefix: true
@@ -20,6 +20,7 @@ class User < ApplicationRecord
   before_create :set_role
 
   def set_role
+    # FIXME: ЭТОТ ИФ ВСЕГДА БУДЕТ РАБОТАТЬ!!!! ПЕРЕДЕЛАТЬ!!!!
     if role.name == 'admin' || 'super_admin' || 'agent' || 'moderator'
       self.role = Role.simple_user
     end
