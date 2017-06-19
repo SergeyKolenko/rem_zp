@@ -6,8 +6,9 @@ class User < ApplicationRecord
   belongs_to :role
   belongs_to :agency, optional: true
   has_many :proposals, foreign_key: :author_id
-  has_one :agency
-  accepts_nested_attributes_for :agency
+  has_one :owned_agency, class_name: Agency, optional: true
+  accepts_nested_attributes_for :owned_agency
+
   delegate :name, to: :role, prefix: true
 
   validates :first_name, :last_name, :role, presence: true
