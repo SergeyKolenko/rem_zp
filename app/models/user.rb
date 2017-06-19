@@ -6,7 +6,6 @@ class User < ApplicationRecord
   belongs_to :role
   belongs_to :agency, optional: true
   has_many :proposals, foreign_key: :author_id
-  has_many :agencies, foreign_key: 'director_id'
 
   delegate :name, to: :role, prefix: true
 
