@@ -1,9 +1,10 @@
 .row
-  .col-xs-3.col-sm-3.col.md-4
-  .col-xs-6.col-sm-6.col-md-8
-    %h2.text-center= params[:role] == 'realtor' ? 'Регистрация нового риэлтора' : 'Регистрация нового пользователя'
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      = devise_error_messages!
+  %h2.text-center= params[:role] == 'realtor' ? 'Регистрация нового риэлтора' : 'Регистрация нового пользователя'
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    .col-xs-3.col-sm-3.col.md-4
+    %div{ class: params[:role] == 'agency_director' ? 'col-xs-3 col-sm-3 col-md-4' : 'col-xs-6 col-sm-6 col-md-8' }
+      %h3 Основная информация:
       = f.hidden_field :role_id, value: new_user_role(params[:role])
       .form-group
         .col-sm-8
@@ -30,33 +31,42 @@
           = f.label :phone, 'Контактный номер телефона' ,class: 'control-label'
           = f.telephone_field :phone, autofocus: true, class: 'form-control telephone-field',
                                       required: true, placeholder: '099-999-99-99'
-      - if params[:role] == 'agency_director'
-        .form-group
-          .col-sm-8
-            %h3 Заполните поля регистрации агенства:
-            = f.fields_for :agency, resource.agency do |a|
-              = a.hidden_field :approved, value: false
-              .form-group
-                .col-sm-8
-                  = a.label :name, 'Название', class: 'control-label'
-                  = a.text_field :name, class: 'form-control'
-              .form-group
-                .col-sm-8
-                  = a.label :postal_address, 'Почтовый адрес', class: 'control-label'
-                  = a.text_field :postal_address, class: 'form-control'
-              .form-group
-                .col-sm-8
-                  = a.label :phisical_address, 'Физический адрес', class: 'control-label'
-                  = a.text_field :phisical_address, class: 'form-control'
-              .form-group
-                .col-sm-8
-                  = a.label :description, 'Описание', class: 'control-label'
-                  = a.text_field :description, class: 'form-control'
-                .form-group
-                  .col-sm-8
-                    = a.label :phone, 'Контактный номер телефона' ,class: 'control-label'
-                    = a.telephone_field :phone, autofocus: true, class: 'form-control telephone-field',
-                                                required: true, placeholder: '099-999-99-99'
-      .form-group
-        .col-sm-8.mart-5
-          = f.submit 'Зарегестрироваться', class: 'btn btn-success'
+    - if params[:role] == 'agency_director'
+      .col-xs-3.col-sm-3.col-md-4
+        %h3 Информация об агенстве:
+        = f.fields_for :owned_agency do |a|
+          = a.hidden_field :approved, value: false
+          .form-group
+            .col-sm-8
+              = a.label :name, 'Название', class: 'control-label'
+              = a.text_field :name, class: 'form-control'
+          .form-group
+            .col-sm-8
+              = a.label :postal_address, 'Почтовый адрес', class: 'control-label'
+              = a.text_field :postal_address, class: 'form-control'
+          .form-group
+            .col-sm-8
+              = a.label :phisical_address, 'Физический адрес', class: 'control-label'
+              = a.text_field :phisical_address, class: 'form-control'
+          .form-group
+            .col-sm-8
+              = a.label :description, 'Описание', class: 'control-label'
+              = a.text_field :description, class: 'form-control'
+            .form-group
+              .col-sm-8
+                = a.label :phone, 'Контактный номер телефона', class: 'control-label'
+                = a.telephone_field :phone, autofocus: true, class: 'form-control telephone-field',
+                                            required: true, placeholder: '099-999-99-99'
+            .form-group
+              .col-sm-8
+                = a.label :region_ids, 'Область', class: 'control-label'
+                = a.collection_select :region_ids, Region.all, :id, :name, {include_blank: 'Выберете область'},
+                                                                            {multiple: false, class: 'select2 region_select'}
+            .form-group
+              .col-sm-8
+                = a.label :city_ids, 'Город', class: 'control-label'
+                = a.collection_select :city_ids, City.all, :id, :name, {include_blank: 'Выберете город'},
+                                                                        {multiple: false, class: 'select2'}
+    .form-group
+      .col-sm-12.text-center.mart-5
+        = f.submit 'Зарегестрироваться', class: 'btn btn-success'

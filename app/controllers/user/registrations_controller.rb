@@ -2,7 +2,7 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   def new
     build_resource({})
-    resource.agency.new if params[:role] == 'agency_director'
+    resource.build_owned_agency({}) if params[:role] == 'agency_director'
     yield resource if block_given?
     respond_with resource
   end
