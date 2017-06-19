@@ -2,9 +2,15 @@
 %html
   %head
     %meta{content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type'}/
-    %title RemZp
+    %title
+      = meta_title
+    %meta{name: 'description', content: meta_description}
+    %meta{name: 'keywords', content: meta_keywords}
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
-    = yield
+    = render 'layouts/application/header'
+    .container
+      = yield
+    = render 'layouts/application/header'

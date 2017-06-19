@@ -2,9 +2,11 @@
 %html
   %head
     %meta{content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type'}/
-    %title RemZp
+    %title Контрольная панель
     = csrf_meta_tags
     = stylesheet_link_tag    'admin', media: 'all'
     = javascript_include_tag 'admin'
   %body
+    = render 'layouts/admin/header'
+    = render 'layouts/admin/aside'
     = yield
