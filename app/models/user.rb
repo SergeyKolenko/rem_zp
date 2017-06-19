@@ -17,12 +17,9 @@ class User < ApplicationRecord
   validates :phone, format: { with: /[0]\d[(39|50|63|66|67|68|91|92|93|94|95|96|97|98|99)]-\d{3}-\d{2}-\d{2}/,
                               message: 'Неверный формат номера' }
 
-  before_create :set_role
+  before_create :set_default_role, if: Proc{|u| %w(super_admin agent moderator).include? u.role_name }
 
-  def set_role
-    # FIXME: ЭТОТ ИФ ВСЕГДА БУДЕТ РАБОТАТЬ!!!! ПЕРЕДЕЛАТЬ!!!!
-    if role.name == 'admin' || 'super_admin' || 'agent' || 'moderator'
-      self.role = Role.simple_user
-    end
+  def set_default_role
+    self.role = Role.simple_user
   end
 end
