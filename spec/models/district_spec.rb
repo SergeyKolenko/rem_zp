@@ -12,8 +12,13 @@ RSpec.describe District, type: :model do
     it { expect have_db_column(:city_id).of_type(:integer) }
   end
 
+  context 'City validate column' do
+    it { expect validate_presence_of(:name) }
+    it { expect validate_presence_of(:city) }
+  end
+
   describe 'Option validation' do
-    let(:city1) { FactoryGirl.build(:city, name: 'String') }
+    let(:city1) { FactoryGirl.build(:city) }
     let(:district_valid) { FactoryGirl.build(:district, city: city1) }
     let(:district_invalid) { FactoryGirl.build(:district, city_id: '') }
 

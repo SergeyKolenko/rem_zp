@@ -40,7 +40,7 @@ RSpec.describe Proposal, type: :model do
   # end
 
   describe 'Proposal validation' do
-    let(:user1) { FactoryGirl.create(:user) }
+    let(:user1) { FactoryGirl.create(:user, role: :agent) }
     let(:region1) { FactoryGirl.build(:region) }
     let(:city_1) { FactoryGirl.build(:city, region: region1) }
     let(:proposal_valid) { FactoryGirl.build(:proposal, region: region1, city: city_1, user: user1) }

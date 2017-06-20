@@ -14,7 +14,7 @@ RSpec.describe OptionValue, type: :model do
 
   describe 'OptionValue validation' do
     let(:category1) { FactoryGirl.build(:category, name: 'Дом', weight: 1) }
-    let(:proposal1) { FactoryGirl.create(:proposal, catetegory: catetegory1) }
+    let(:proposal1) { FactoryGirl.create(:proposal, category: category1) }
     let(:option1) { FactoryGirl.create(:square) }
 
     # let(:option_value_valid) { FactoryGirl.build(:option_value, proposal_id: 1, option: option1) }

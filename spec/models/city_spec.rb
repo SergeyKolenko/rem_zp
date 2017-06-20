@@ -20,7 +20,7 @@ RSpec.describe City, type: :model do
   end
 
   describe 'City validation' do
-    let(:region1) { FactoryGirl.build(:region, name: 'String') }
+    let(:region1) { FactoryGirl.build(:region, name: Faker::StarWars.planet) }
     let(:city_valid) { FactoryGirl.build(:city, region: region1) }
     let(:city_invalid) { FactoryGirl.build(:city, region_id: '') }
 
@@ -33,9 +33,9 @@ RSpec.describe City, type: :model do
     end
 
     context 'City with region' do
-      let(:region2) { FactoryGirl.build(:region, name: 'String2') }
+      let(:region2) { FactoryGirl.build(:region, name: Faker::StarWars.planet) }
       let(:city_valid_dup) { FactoryGirl.build(:city, region: region2) }
-      let(:city_invalid_dup) { FactoryGirl.build(:region, name: 'String2') }
+      let(:city_invalid_dup) { FactoryGirl.build(:region, name: Faker::StarWars.planet) }
       before {city_valid_dup.save}
       before {city_invalid_dup.save}
 
