@@ -3,10 +3,8 @@ FactoryGirl.define do
     sequence(:email) { |i| "user#{i}@example.org" }
     password 'password1'
     password_confirmation { |user| user.password }
-    first_name 'James'
-    last_name 'Bond'
-    agency :agency_1
-    author_id 1
-    role :simple_user
+    first_name value Faker::StarWars.planet
+    last_name value Faker::StarWars.planet
+    role 'agent'
   end
 end

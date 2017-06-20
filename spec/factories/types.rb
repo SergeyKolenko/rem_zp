@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :type do
-    name "MyString"
-    proposal
+    name Faker::StarWars.planet
+    # proposal
   end
 end

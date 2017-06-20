@@ -13,10 +13,12 @@ RSpec.describe OptionValue, type: :model do
   # end
 
   describe 'OptionValue validation' do
-    let(:option1) { FactoryGirl.build(:option) }
-    # let(:proposal1) { FactoryGirl.build(:proposal) }
+    let(:category1) { FactoryGirl.build(:category, name: 'Дом', weight: 1) }
+    let(:proposal1) { FactoryGirl.create(:proposal, catetegory: catetegory1) }
+    let(:option1) { FactoryGirl.create(:square) }
+
     # let(:option_value_valid) { FactoryGirl.build(:option_value, proposal_id: 1, option: option1) }
-    let(:option_value_valid) { FactoryGirl.build(:option_value, proposal_id: 1, option_id: 1) }
+    let(:option_value_valid) { FactoryGirl.create(:option_value, proposal: proposal1, option: option1) }
 
     let(:option_value_invalid) { FactoryGirl.build(:option_value, value: '') }
 
