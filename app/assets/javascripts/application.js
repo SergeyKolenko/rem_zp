@@ -13,6 +13,8 @@
 //= require jquery2
 //= require rails-ujs
 //= require bootstrap
+//= require jquery.maskedinput.min
+//= require select2
 //= require_tree ./app
 //= require cable
 
