@@ -1,5 +1,5 @@
 class Agency < ApplicationRecord
-  belongs_to :director, class_name: 'User'
+  belongs_to :director, class_name: 'User', inverse_of: 'owned_agency'
   has_many :users
   has_and_belongs_to_many :cities
   has_and_belongs_to_many :regions
@@ -7,7 +7,7 @@ class Agency < ApplicationRecord
 
   mount_uploader :logo, AgencyLogoUploader
 
-  validates :name, :postal_address, :phisical_address, :regions, presence: true
+  validates :name, :postal_address, :phisical_address, presence: true
   validates :director, presence: true, if: Proc.new { |agency| %w(agency_director).include? agency.director.role.name }
   # FIXME: Нужно обжумать целесообразность этих валидаций.
   # validates :users, presence: true, if: Proc.new { |agency| %w(agent).include? agency.user.role.name }

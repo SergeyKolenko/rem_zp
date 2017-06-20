@@ -1,0 +1,30 @@
+.row
+  %h1.text-center Добро пожаловать!
+  = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }) do |f|
+    = devise_error_messages!
+    .col-xs-2.col-sm-2.col-md-2
+    .col-xs-3.col-sm-3.col-md-4
+      %ul.list-unstyled
+        %li.marb-5= link_to 'Зерегистрироваться на сайте!', new_user_registration_path, class: 'btn btn-success'
+        %li.marb-5= link_to 'Вы риэлтор? Регистрируйтесь тут!', new_user_registration_path( role: 'realtor' ), class: 'btn btn-default'
+        %li.marb-5= link_to 'Зарегистрировать риэлторское агенство!', new_user_registration_path( role: 'agency_director' ), class: 'btn btn-primary'
+    .col-xs-3.col-sm-3.col-md-4
+      .form-group
+        .col-sm-8
+          = f.label :email, 'Адрес электронной почты' ,class: 'control-label'
+          = f.email_field :email, autofocus: true, class: 'form-control', required: true
+      .form-group
+        .col-sm-8
+          = f.label :password, 'Пароль', class: 'control-label'
+          = f.password_field :password, autocomplete: 'off', class: 'form-control', required: true
+      - if devise_mapping.rememberable?
+        .form-group
+          .col-sm-8
+            .checkbox-inline
+              = f.check_box :remember_me
+              = f.label :remember_me
+      .form-group
+        .col-sm-8
+          = f.submit 'Log in', class: 'btn btn-success'
+          %br
+            = render 'devise/shared/links'

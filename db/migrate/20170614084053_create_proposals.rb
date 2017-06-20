@@ -9,7 +9,7 @@ class CreateProposals < ActiveRecord::Migration[5.1]
       t.string :street
       t.string :house_number
       t.boolean :approved
-      t.references :author, references: :users
+      t.references :author, references: :user
 
       t.timestamps
     end
