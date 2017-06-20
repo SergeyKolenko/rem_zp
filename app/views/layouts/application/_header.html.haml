@@ -33,7 +33,7 @@
                 %span.glyphicon.glyphicon-user
                 = current_user.full_name
             %li
-              = link_to destroy_user_session_path do
+              = link_to destroy_user_session_path, method: :delete do
                 %span.glyphicon.glyphicon-log-out
                 Выйти
           - else

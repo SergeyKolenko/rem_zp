@@ -1,6 +1,11 @@
 module RegistrationFormHelper
 
-  def new_user_role(role)
-    Role.find_by(name: role || 'simple_user').try(:id)
+  def roles_ids_for_sign_up
+    # TODO: ADD CACHE!
+    {
+        simple_user: Role.simple_user.id,
+        agency_director: Role.agency_director.id,
+        realtor: Role.realtor.id
+    }
   end
 end
