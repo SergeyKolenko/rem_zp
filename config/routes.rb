@@ -4,4 +4,13 @@ Rails.application.routes.draw do
   root 'proposals#index'
 
   post '/users/sign_up',  to: 'user/registrations#create'
+
+  # ADMIN PANEL
+  namespace :admin do
+
+    controller :dashboards do
+      get '/', action: :dashboard, as: :dashboard
+    end
+
+  end
 end
