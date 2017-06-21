@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
     it { should belong_to(:role) }
     it { should belong_to(:agency) }
     it { should have_many(:proposals) }
-    it { should have_many(:agencies) }
+    it { should have_one(:owned_agency) }
   end
 
   context 'User db column' do

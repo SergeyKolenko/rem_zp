@@ -1,53 +1,52 @@
 .row
-  %h2.text-center= params[:role] == 'realtor' ? 'Регистрация нового риэлтора' : 'Регистрация нового пользователя'
+  - role_ids = roles_ids_for_sign_up
+  %h2.text-center= session[:role_id] == role_ids[:realtor] ? 'Регистрация нового риэлтора' : 'Регистрация нового пользователя'
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = devise_error_messages!
-    .col-xs-3.col-sm-3.col.md-4
-    %div{ class: params[:role] == 'agency_director' ? 'col-xs-3 col-sm-3 col-md-4' : 'col-xs-6 col-sm-6 col-md-8' }
-      %h3 Основная информация:
-      = f.hidden_field :role_id, value: new_user_role(params[:role])
+    .text-center= devise_error_messages!
+    %div{ class: session[:role_id] == role_ids[:agency_director] ? 'col-xs-6 col-sm-6 col-md-6' : 'col-xs-8 col-sm-8 col-md-10' }
+      %h3.col-sm-offset-3 Основная информация:
+      = f.hidden_field :role_id, value: session[:role_id]
       .form-group
-        .col-sm-8
+        .col-sm-8.col-sm-offset-3
           = f.label :first_name, 'Имя', class: 'control-label'
-          = f.text_field :first_name, class: 'form-control'
+          = f.text_field :first_name, class: 'form-control', required: true
       .form-group
-        .col-sm-8
+        .col-sm-8.col-sm-offset-3
           = f.label :last_name, 'Фамилия', class: 'control-label'
-          = f.text_field :last_name, class: 'form-control'
+          = f.text_field :last_name, class: 'form-control', required: true
       .form-group
-        .col-sm-8
+        .col-sm-8.col-sm-offset-3
           = f.label :email, 'Адрес электронной почты' ,class: 'control-label'
           = f.email_field :email, autofocus: true, class: 'form-control', required: true
       .form-group
-        .col-sm-8
+        .col-sm-8.col-sm-offset-3
           = f.label :password, 'Пароль', class: 'control-label'
           = f.password_field :password, autocomplete: 'off', class: 'form-control', required: true
       .form-group
-        .col-sm-8
+        .col-sm-8.col-sm-offset-3
           = f.label :password, 'Введите пароль повторно', class: 'control-label'
           = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control', required: true
       .form-group
-        .col-sm-8
+        .col-sm-8.col-sm-offset-3
           = f.label :phone, 'Контактный номер телефона' ,class: 'control-label'
           = f.telephone_field :phone, autofocus: true, class: 'form-control telephone-field',
                                       required: true, placeholder: '099-999-99-99'
-    - if params[:role] == 'agency_director'
-      .col-xs-3.col-sm-3.col-md-4
+    - if session[:role_id] == role_ids[:agency_director]
+      .col-xs-6.col-sm-6.col-md-6
         %h3 Информация об агенстве:
         = f.fields_for :owned_agency do |a|
-          = a.hidden_field :approved, value: false
           .form-group
             .col-sm-8
               = a.label :name, 'Название', class: 'control-label'
-              = a.text_field :name, class: 'form-control'
+              = a.text_field :name, class: 'form-control', required: true
           .form-group
             .col-sm-8
               = a.label :postal_address, 'Почтовый адрес', class: 'control-label'
-              = a.text_field :postal_address, class: 'form-control'
+              = a.text_field :postal_address, class: 'form-control', required: true
           .form-group
             .col-sm-8
               = a.label :phisical_address, 'Физический адрес', class: 'control-label'
-              = a.text_field :phisical_address, class: 'form-control'
+              = a.text_field :phisical_address, class: 'form-control', required: true
           .form-group
             .col-sm-8
               = a.label :description, 'Описание', class: 'control-label'

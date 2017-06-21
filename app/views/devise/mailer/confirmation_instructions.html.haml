@@ -1,0 +1,4 @@
+%p "Здравствуйте #{@resource.full_name}!"
+%p "Вы зарегистрировались на нашем ресурсе как #{@resource.role.name}!"
+%p Чтобы подтвердить ваш аккаунт, пожалуйста, воспользуйтесь ссылкой ниже:
+%p = link_to 'Подтвердить аккаунт', confirmation_url(@resource, confirmation_token: @token)

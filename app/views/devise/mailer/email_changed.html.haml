@@ -1,0 +1,6 @@
+%p "Здравствуйте #{@resource.full_name}!"
+- if @resource.try(:unconfirmed_email?)
+  %p "Мы хотим сообщить вам, что ваш электронный почтовый адресс был изменен на #{@resource.unconfirmed_email}"
+- else
+  %p "Мы хотим сообщить вам, что ваш электронный почтовый адресс был изменен на #{@resource.email}"
+
