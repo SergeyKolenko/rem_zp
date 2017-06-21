@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Agency, type: :model do
   context 'model connection' do
     it { should belong_to(:director) }
-    it { should have_many(:user) }
+    it { should have_many(:users) }
     it { should have_and_belong_to_many(:cities) }
     it { should have_and_belong_to_many(:regions) }
     it { should have_and_belong_to_many(:districts) }
