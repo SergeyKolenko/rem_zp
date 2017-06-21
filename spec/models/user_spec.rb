@@ -1,11 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  context 'User model associations' do
-    it { expect belong_to(:role) }
-    it { expect belong_to(:agency) }
-    it { expect have_many(:proposals) }
-    it { expect have_many(:agencies) }
+  context 'User model connection' do
+    it { should belong_to(:role) }
+    it { should belong_to(:agency) }
+    it { should have_many(:proposals) }
+    it { should have_one(:owned_agency) }
+
   end
 
   context 'User db column' do
