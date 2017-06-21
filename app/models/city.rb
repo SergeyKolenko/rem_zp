@@ -5,5 +5,4 @@ class City < ApplicationRecord
   has_many :proposals
 
   validates :name, :region, presence: true
-  validates :region, uniqueness: true
 end
