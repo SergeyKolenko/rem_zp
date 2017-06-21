@@ -1,0 +1,17 @@
+%header.navbar.navbar-default.navbar-fixed-top
+  .container
+    %nav
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to root_path, class: 'btn' do
+            %span.glyphicon.glyphicon-wrench
+            Перейти на сайт
+      - if current_user
+        %li
+          = link_to '#' do
+            %span.glyphicon.glyphicon-user
+            = current_user.full_name
+        %li
+          = link_to destroy_user_session_path do
+            %span.glyphicon.glyphicon-log-out
+            Выйти
