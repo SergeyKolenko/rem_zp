@@ -16,5 +16,9 @@ class ApplicationController < ActionController::Base
                                                                                  :city_ids, :region_ids, :district_ids]
     ])
   end
+
+  def current_ability
+    current_user.ability
+  end
 end
 
