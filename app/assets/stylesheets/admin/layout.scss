@@ -1,6 +1,6 @@
 body {
   margin-top: 100px;
-  background-color: #222;
+  #background-color: #222;
   @media(min-width:768px) {
     margin-top: 50px;
   }
@@ -30,6 +30,7 @@ body {
 /* Top Navigation */
 
 .top-nav {
+  background-color: #222;
   padding: 0 15px;
   li {
     display: inline-block;
@@ -111,15 +112,57 @@ ul {
     overflow-x: hidden;
     padding-bottom: 40px;
 
-    li{
-      a{
+    li {
+      a {
         width: 225px;
-        &:hover, &:focus{
+        display: block;
+        padding: 10px 15px 10px 38px;
+        text-decoration: none;
+        color: #999;
+        &:hover, &:focus {
           outline: none;
           background-color: #000 !important;
+          color: #fff;
+          left: -15px;
         }
       }
     }
+  }
+
+  @media(max-width:767px) {
+    position: absolute;
+    top: 73px;
+    left: 15px;
+    width: 100%;
+    max-height: 300px;
+    border: none;
+    border-radius: 0;
+    overflow-y: auto;
+    background-color: #222;
+    bottom: 0;
+    overflow-x: hidden;
+
+    li {
+      a {
+        display: block;
+        padding: 10px 15px 10px 38px;
+        text-decoration: none;
+        color: #999;
+        &:hover, &:focus {
+          outline: none;
+          background-color: #000 !important;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #fff;
   }
 
   li{
@@ -138,6 +181,15 @@ ul {
       }
     }
   }
+}
+
+.icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #999;
+  margin-top: 4px;
 }
 
 /* Custom Colored Panels */
