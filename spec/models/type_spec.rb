@@ -9,11 +9,6 @@ RSpec.describe Type, type: :model do
     it { expect have_db_column(:name).of_type(:string) }
   end
 
-  context 'Option validate column' do
-    it { expect validate_presence_of(:name) }
-    it { expect validate_uniqueness_of(:name) }
-  end
-
   describe 'Type validation' do
     let(:type_valid) { FactoryGirl.build(:type) }
     let(:type_invalid) { FactoryGirl.build(:type, name: '') }
@@ -27,5 +22,9 @@ RSpec.describe Type, type: :model do
       expect(type_invalid).not_to be_valid
     end
 
+    context 'Type validate column' do
+      it { expect validate_presence_of(:name) }
+      it { expect validate_uniqueness_of(:name) }
+    end
   end
 end

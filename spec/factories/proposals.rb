@@ -1,19 +1,7 @@
 FactoryGirl.define do
   factory :proposal do
-    trait :title_valid do
-      title Faker::Lorem.characters(6)
-    end
-    trait :title_invalid do
-      title Faker::Lorem.characters(51)
-    end
-
-    trait :description_valid do
-      description Faker::Lorem.characters(101)
-    end
-    trait :description_invalid do
-      description Faker::Lorem.characters(10)
-    end
-
+    title Faker::Lorem.characters(6)
+    description Faker::Lorem.characters(101)
     price Faker::Number.decimal(2)
     promo_price Faker::Number.decimal(2)
     currency Faker::Lorem.characters
@@ -29,17 +17,7 @@ FactoryGirl.define do
     end
 
     house_number Faker::Number.number(2)
-
-    trait :approved_false do
-      approved false
-    end
-
-    trait :approved_true do
-      approved true
-    end
-
-    trait :district_nil do
-      district nil
-    end
+    approved false
+    district nil
   end
 end

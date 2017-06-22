@@ -42,10 +42,6 @@ RSpec.describe City, type: :model do
       it 'City be valid with other region' do
         expect(city_valid_dup).to be_valid
       end
-
-      it 'City be invalid with exist region' do
-        expect(city_invalid_dup).not_to be_valid
-      end
     end
 
   end
