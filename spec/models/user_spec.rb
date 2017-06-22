@@ -21,7 +21,7 @@ RSpec.describe User, type: :model do
     let(:role1) { FactoryGirl.build(:simple_user) }
     let(:user_valid) { FactoryGirl.build(:user, role: role1) }
     let(:user_invalid) { FactoryGirl.build(:user, phone: '', role: role1) }
-    let(:user_invalid_phone) { FactoryGirl.build(:user, phone:'0875567778', role: role1, ) }
+    let(:user_invalid_phone) { FactoryGirl.build(:user, phone:'0875567778', role: role1) }
 
     it 'User is valid with valid attributes' do
       expect(user_valid).to be_valid
