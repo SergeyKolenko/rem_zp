@@ -1,14 +1,3 @@
 #wrapper
-  %ul.nav.navbar-nav.side-nav.collapse-side-bar.collapse.navbar-collapse
-    %li
-      %a{ href: '#' } Пользователи
-    %li
-      %a{ href: '#' } Регионы
-    %li
-      %a{ href: '#' } Города
-    %li
-      %a{ href: '#' } Районы
-    %li
-      %a{ href: '#' } Категории
-    %li
-      %a{ href: '#' } Типы
+  .collapse-side-bar.collapse.navbar-collapse
+    = render "layouts/admin/aside/#{current_user.role_name}"
