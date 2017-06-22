@@ -13,4 +13,8 @@ class Role < ApplicationRecord
     end
   end
 
+  def available_for_sign_up?
+    %w(realtor simple_user agency_director).include? name
+  end
+
 end
