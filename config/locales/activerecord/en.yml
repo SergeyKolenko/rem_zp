@@ -1,0 +1,91 @@
+en:
+  activerecord:
+    models:
+      agency:
+        one: Agency
+        other: Agencies
+      category:
+        one: Category
+        other: Categories
+      city:
+        one: City
+        other: Cities
+      district:
+        one: District
+        other: Districts
+      option_value:
+        one: Option Value
+        other: Option Values
+      option:
+        one: Option
+        other: Options
+      proposal:
+        one: Proposal
+        other: Proposals
+      region:
+        one: Region
+        other: Regions
+      role:
+        one: Role
+        other: Roles
+      type:
+        one: Type
+        other: Types
+      user:
+        one: User
+        other: Users
+
+    attributes:
+      agency:
+        name: Name
+        logo: Logo
+        postal_address: Postal address
+        phisical_address: Phisical address
+        description: Description
+        approved: Approved
+        director: Director
+        pnone: Phone
+      category:
+        name: Name
+        weight: Weight
+      city:
+        name: Name
+        region: Region
+      district:
+        name: Name
+        city: City
+      option_value:
+        value: Value
+        proposal: Proposal
+        option: Option
+      option:
+        name: Name
+        unit: Unit
+      proposal:
+        title: Title
+        description: Description
+        price: Price
+        promo_price: Promo price
+        currency: Currency
+        street: Street
+        house_number: House number
+        approved: Approved
+        author: Author
+        category: Category
+        city: City
+        region: Region
+        district: District
+        images: Images
+      region:
+        name: Name
+      role:
+        name: Name
+      type:
+        name: Name
+      user:
+        email: Email
+        password: Password
+        first_name: First name
+        last_name: Last name
+        role: Role
+        phone: Phone

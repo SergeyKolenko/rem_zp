@@ -1,0 +1,101 @@
+uk:
+  activerecord:
+    models:
+      agency:
+        one: Агентство
+        few: Агентств
+        other: Агентств
+      category:
+        one: Категорія
+        few: Категорій
+        other: Категорії
+      city:
+        one: Місто
+        few: Міст
+        other: Міста
+      district:
+        one: Район
+        few: Районів
+        other: Райони
+      option_value:
+        one: Значення опції
+        few: Значення опцій
+        other: Значення опції
+      option:
+        one: Опція
+        other: Опцій
+      proposal:
+        one: Пропозиція
+        few: Пропозицій
+        other: Пропозиції
+      region:
+        one: Область
+        few: Областей
+        other: Області
+      role:
+        one: Роль
+        few: Ролей
+        other: Ролі
+      type:
+        one: Тип пропозиції
+        few: Типів пропозиції
+        other: Типи пропозиції
+      user:
+        one: Користувач
+        few: Користувачів
+        other: Користувачі
+
+    attributes:
+      agency:
+        name: Назва
+        logo: Логотип
+        postal_address: Поштова адреса
+        phisical_address: Фактична адреса
+        description: Опис
+        approved: Підтверджено
+        director: Директор
+        pnone: Телефон
+      category:
+        name: Найменування
+        weight: Вага
+      city:
+        name: Назва
+        region: Область
+      district:
+        name: Назва
+        city: Місто
+      option_value:
+        value: Значення
+        proposal: Пропозиція
+        option: Опція
+      option:
+        name: Найменування
+        unit: Одиниця виміру
+      proposal:
+        title: Заголовок
+        description: Опис
+        price: Ціна
+        promo_price: Акційна ціна
+        currency: Валюта
+        street: Вулиця
+        house_number: Номер будинку
+        approved: Підтверджено
+        author: Автор
+        category: Категорія
+        city: Місто
+        region: Облаcть
+        district: Район
+        images: Зображення
+      region:
+        name: Назва
+      role:
+        name: Назва
+      type:
+        name: Назва
+      user:
+        email: Email
+        password: Пароль
+        first_name: Iм'я
+        last_name: Прізвище
+        role: Роль
+        phone: Телефон

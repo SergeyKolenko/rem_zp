@@ -1,0 +1,101 @@
+ru:
+  activerecord:
+    models:
+      agency:
+        one: Агентство
+        few: Агентств
+        other: Агентства
+      category:
+        one: Категория
+        few: Категорий
+        other: Категории
+      city:
+        one: Город
+        few: Городов
+        other: Города
+      district:
+        one: Район
+        few: Районов
+        other: Районы
+      option_value:
+        one: Значение опции
+        few: Значений опций
+        other: Значения опции
+      option:
+        one: Опция
+        other: Опций
+      proposal:
+        one: Предложение
+        few: Предложений
+        other: Предложения
+      region:
+        one: Область
+        few: Областей
+        other: Области
+      role:
+        one: Роль
+        few: Ролей
+        other: Роли
+      type:
+        one: Тип предложения
+        few: Типов предложения
+        other: Типы предложения
+      user:
+        one: Пользователь
+        few: Пользователей
+        other: Пользователи
+
+    attributes:
+      agency:
+        name: Название
+        logo: Логотип
+        postal_address: Почтовый адрес
+        phisical_address: Фактический адрес
+        description: Описание
+        approved: Подтверждено
+        director: Директор
+        pnone: Телефон
+      category:
+        name: Наименование
+        weight: Вес
+      city:
+        name: Название
+        region: Область
+      district:
+        name: Название
+        city: Город
+      option_value:
+        value: Значение
+        proposal: Предложение
+        option: Опция
+      option:
+        name: Наименование
+        unit: Еденица измерения
+      proposal:
+        title: Заголовок
+        description: Описание
+        price: Цена
+        promo_price: Акционная цена
+        currency: Валюта
+        street: Улица
+        house_number: Номер дома
+        approved: Подтверждено
+        author: Автор
+        category: Категория
+        city: Город
+        region: Область
+        district: Район
+        images: Изображения
+      region:
+        name: Название
+      role:
+        name: Название
+      type:
+        name: Название
+      user:
+        email: Email
+        password: Пароль
+        first_name: Имя
+        last_name: Фамилия
+        role: Роль
+        phone: Телефон
