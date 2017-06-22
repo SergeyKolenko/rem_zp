@@ -40,21 +40,37 @@ RSpec.describe Proposal, type: :model do
   end
 
   describe 'validation' do
-    let(:category1) { FactoryGirl.build(:category, name: 'Дом', weight: 1) }
-    let(:role1) { FactoryGirl.build(:agent) }
-    let(:user1) { FactoryGirl.build(:user, role: role1) }
-    let(:region1) { FactoryGirl.build(:region, name: Faker::StarWars.planet) }
-    let(:city1) { FactoryGirl.build(:city, region: region1) }
-    let(:proposal_valid) { FactoryGirl.build(:proposal, author: user1, region: region1, city: city1, category: category1) }
-    let(:proposal_invalid) { FactoryGirl.build(:proposal, region: region1, city: city1) }
+    let!(:category) { FactoryGirl.create(:category, name: 'Дом', weight: 1) }
+    let!(:user) { FactoryGirl.create(:user_moderator) }
+    let!(:region) { FactoryGirl.create(:region) }
+    let(:other_region) { FactoryGirl.create(:region, name: 'REGION') }
+    let!(:city) { FactoryGirl.create(:city, region: region) }
+    let!(:other_city) { FactoryGirl.create(:city, region: other_region) }
+    let!(:district) {FactoryGirl.create(:district, city: city)}
+    let(:proposal) { FactoryGirl.build(:proposal, author: user, region: region, city: city, category: category, district: district) }
 
     it 'is valid with valid attributes' do
-      p proposal_valid
-      expect(proposal_valid).to be_valid
+      expect(proposal).to be_valid
     end
 
-    it 'is invalid with blank attributes' do
-      expect(proposal_invalid).not_to be_valid
+    it 'is invalid with other wrong city' do
+      proposal.region = other_region
+      expect(proposal).not_to be_valid
+    end
+
+    it 'is invalid with other wrong district' do
+      proposal.city = other_city
+      expect(proposal).not_to be_valid
+    end
+
+    it 'is valid with blank district' do
+      proposal.district = nil
+      expect(proposal).to be_valid
+    end
+
+    it 'is invalid with other wrong currency' do
+      proposal.currency = 'RUB'
+      expect(proposal).not_to be_valid
     end
   end
 end

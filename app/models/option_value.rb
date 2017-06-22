@@ -5,6 +5,11 @@ class OptionValue < ApplicationRecord
   delegate :name, :unit, :categories, to: :option, prefix: true
 
   validates :value, :proposal, :option, presence: true
-  validates :proposal, inclusion: { in: Proc.new { |ov| ov.option_categories.include? ov.proposal.category } }
+  validates :proposal_id, inclusion: { in: :valid_proposals }
+
+  private
+  def valid_proposals
+    Proposal.where(category: option.categories).pluck(:id)
+  end
 
 end

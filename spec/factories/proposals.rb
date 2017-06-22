@@ -4,7 +4,7 @@ FactoryGirl.define do
     description Faker::Lorem.characters(101)
     price Faker::Number.decimal(2)
     promo_price Faker::Number.decimal(2)
-    currency Faker::Lorem.characters
+    currency 'USD'
 
     trait :street_nil do
       street nil
