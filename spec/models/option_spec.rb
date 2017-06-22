@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Option, type: :model do
-  context 'Option model associations' do
+  context 'model associations' do
     it { expect have_many(:option_values) }
     it { expect have_and_belong_to_many(:categories) }
   end
 
-  context 'Option db column' do
+  context 'db column' do
     it { expect have_db_column(:name).of_type(:string)}
   end
 
@@ -18,7 +18,7 @@ RSpec.describe Option, type: :model do
     it { expect allow_value("Square").for(:name) }
   end
 
-  describe 'Option validation' do
+  describe 'validation' do
     let(:option_valid) { FactoryGirl.create(:square) }
     let(:option_invalid) { FactoryGirl.build(:option, name: '') }
 
@@ -48,10 +48,6 @@ RSpec.describe Option, type: :model do
 
       it 'be valid with other unit' do
         expect(option_valid_dup).to be_valid
-      end
-
-      it 'be invalid with exist unit' do
-        expect(option_invalid_dup).not_to be_valid
       end
     end
 

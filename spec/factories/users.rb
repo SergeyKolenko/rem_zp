@@ -6,7 +6,7 @@ FactoryGirl.define do
     first_name Faker::StarWars.planet
     last_name Faker::StarWars.planet
     phone '066-965-26-17'
-    
+
     factory :user_super_admin do
       email 'super_admin@rem.zp.ua'
       role { Role.super_admin || FactoryGirl.create(:super_admin) }

@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Role, type: :model do
-  context 'model connection' do
+  context 'model associations' do
     it { expect have_many(:users) }
   end
 
-  context 'Role db column' do
+  context 'db column' do
     it { expect have_db_column(:name).of_type(:string) }
   end
 
@@ -22,7 +22,7 @@ RSpec.describe Role, type: :model do
       expect(role_invalid).not_to be_valid
     end
 
-    context 'Role validate_presence_of name' do
+    context 'validate_presence_of name' do
       it { expect validate_presence_of(:name) }
 
     it 'is invalid with wrong name' do

@@ -5,12 +5,12 @@ RSpec.describe Category, type: :model do
     it { expect have_many(:proposals) }
   end
 
-  context 'Category db column' do
+  context 'db column' do
     it { expect have_db_column(:name).of_type(:string)}
     it { expect have_db_column(:weight).of_type(:integer)}
   end
 
-  describe 'Option validation' do
+  describe 'validation' do
     let(:category_valid) { FactoryGirl.build(:category, name: 'Дом', weight: 1) }
     let(:category_invalid) { FactoryGirl.build(:category, weight: 0) }
 
@@ -22,7 +22,7 @@ RSpec.describe Category, type: :model do
       expect(category_invalid).not_to be_valid
     end
 
-    context 'Category validate column' do
+    context 'validate column' do
       it { expect validate_presence_of(:name) }
       it { expect validate_presence_of(:weight) }
       it { expect validate_numericality_of(:weight).is_greater_than(0) }

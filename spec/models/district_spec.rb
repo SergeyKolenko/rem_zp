@@ -1,23 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe District, type: :model do
-  context 'District model associations' do
+  context 'model associations' do
     it { expect belong_to(:city) }
     it { expect have_and_belong_to_many(:agencies) }
     it { expect have_many(:proposals) }
   end
 
-  context 'District db column' do
+  context 'db column' do
     it { expect have_db_column(:name).of_type(:string) }
     it { expect have_db_column(:city_id).of_type(:integer) }
   end
 
-  context 'City validate column' do
+  context 'validate column' do
     it { expect validate_presence_of(:name) }
     it { expect validate_presence_of(:city) }
   end
 
-  describe 'Option validation' do
+  describe 'validation' do
     let(:city1) { FactoryGirl.build(:city) }
     let(:district_valid) { FactoryGirl.build(:district, city: city1) }
     let(:district_invalid) { FactoryGirl.build(:district, city_id: '') }

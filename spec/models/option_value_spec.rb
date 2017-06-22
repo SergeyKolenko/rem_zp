@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe OptionValue, type: :model do
-  context 'OptionValue model connection' do
+  context 'model associations' do
     it { expect belong_to(:proposal) }
     it { expect belong_to(:option) }
   end
 
-  context 'OptionValue db column' do
+  context 'db column' do
     it { expect have_db_column(:value).of_type(:string) }
     it { expect have_db_column(:proposal_id).of_type(:integer) }
     it { expect have_db_column(:option_id).of_type(:integer) }
@@ -20,10 +20,6 @@ RSpec.describe OptionValue, type: :model do
     # let(:option_value_invalid) { FactoryGirl.build(:option_value, value: '') }
 
   describe 'validation' do
-    let(:category1) { FactoryGirl.build(:category, name: 'Дом', weight: 1) }
-    let(:proposal1) { FactoryGirl.create(:proposal, category: category1) }
-    let(:option1) { FactoryGirl.create(:square) }
-
     let(:category1) { FactoryGirl.build(:category, name: 'Дом', weight: 1) }
     let(:role1) { FactoryGirl.build(:agent) }
     let(:user1) { FactoryGirl.build(:user, role: role1) }
