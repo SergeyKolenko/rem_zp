@@ -12,7 +12,7 @@ RSpec.describe OptionValue, type: :model do
   #   it { expect have_db_column(:option_id).of_type(:integer) }
   # end
 
-  describe 'OptionValue validation' do
+  describe 'validation' do
     let(:category1) { FactoryGirl.build(:category, name: 'Дом', weight: 1) }
     let(:proposal1) { FactoryGirl.create(:proposal, category: category1) }
     let(:option1) { FactoryGirl.create(:square) }
@@ -22,13 +22,11 @@ RSpec.describe OptionValue, type: :model do
 
     let(:option_value_invalid) { FactoryGirl.build(:option_value, value: '') }
 
-    it 'is valid OptionValue with valid attributes' do
-      p option_value_valid
+    it 'is valid with valid attributes' do
       expect(option_value_valid).to be_valid
     end
 
-    it 'is invalid OptionValue with blank attributes' do
-      p option_value_invalid
+    it 'is invalid with blank attributes' do
       expect(option_value_invalid).not_to be_valid
     end
 
