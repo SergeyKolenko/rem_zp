@@ -6,5 +6,29 @@ FactoryGirl.define do
     first_name Faker::StarWars.planet
     last_name Faker::StarWars.planet
     phone '066-965-26-17'
+<<<<<<< HEAD
+=======
+
+    factory :user_super_admin do
+      email 'super_admin@rem.zp.ua'
+      role { Role.super_admin || FactoryGirl.create(:super_admin) }
+    end
+
+    factory :user_agent do
+      email 'agent@rem.zp.ua'
+      role { Role.agent || FactoryGirl.create(:agent) }
+    end
+
+    factory :user_agency_director do
+      email 'agency_director@rem.zp.ua'
+      role { Role.agency_director || FactoryGirl.create(:agency_director) }
+    end
+
+    factory :user_moderator do
+      email 'moderator@rem.zp.ua'
+      role { Role.moderator || FactoryGirl.create(:moderator) }
+    end
+
+>>>>>>> 018085c273841cdf29645517e3125d40d12c3dc4
   end
 end

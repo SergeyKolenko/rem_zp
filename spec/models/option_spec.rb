@@ -19,7 +19,7 @@ RSpec.describe Option, type: :model do
   end
 
   describe 'Option validation' do
-    let(:option_valid) { FactoryGirl.build(:square) }
+    let(:option_valid) { FactoryGirl.create(:square) }
     let(:option_invalid) { FactoryGirl.build(:option, name: '') }
 
     it 'is valid option with valid attributes' do
@@ -45,7 +45,6 @@ RSpec.describe Option, type: :model do
     context 'with unit' do
       let(:option_valid_dup) { FactoryGirl.build(:square, unit: 'sm<sup>2</sup>') }
       let(:option_invalid_dup) { FactoryGirl.build(:square) }
-      before {option_valid.save}
 
       it 'be valid with other unit' do
         expect(option_valid_dup).to be_valid
