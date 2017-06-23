@@ -1,13 +1,23 @@
 FactoryGirl.define do
   factory :proposal do
-    title "MyString"
-    description "MyText"
-    price 1.5
-    promo_price 1.5
-    currency "MyString"
-    street "MyString"
-    house_number "MyString"
+    title Faker::Lorem.characters(6)
+    description Faker::Lorem.characters(101)
+    price Faker::Number.decimal(2)
+    promo_price Faker::Number.decimal(2)
+    currency 'USD'
+
+    trait :street_nil do
+      street nil
+    end
+    trait :street_valid do
+      street Faker::Lorem.characters
+    end
+    trait :street_invalid do
+      street Faker::Lorem.characters(2)
+    end
+
+    house_number Faker::Number.number(2)
     approved false
-    author nil
+    district nil
   end
 end

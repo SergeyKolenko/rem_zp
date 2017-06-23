@@ -1,15 +1,48 @@
 require 'rails_helper'
 
 RSpec.describe City, type: :model do
-  context 'model connection' do
-    it { should belong_to(:region) }
-    it { should have_many(:districts) }
-    it { should have_and_belong_to_many(:agencies) }
-    it { should have_many(:proposals) }
+  context 'model associations' do
+    it { expect belong_to(:region) }
+    it { expect have_many(:districts) }
+    it { expect have_and_belong_to_many(:agencies) }
+    it { expect have_many(:proposals) }
   end
 
-  context 'City db column' do
-    it { should have_db_column(:name).of_type(:string) }
-    it { should have_db_column(:region_id).of_type(:integer) }
+  context 'db column' do
+    it { expect have_db_column(:name).of_type(:string) }
+    it { expect have_db_column(:region_id).of_type(:integer) }
+    it { expect validate_uniqueness_of(:region) }
+  end
+
+  context 'validate column' do
+    it { expect validate_presence_of(:name) }
+    it { expect validate_presence_of(:region) }
+  end
+
+  describe 'validation' do
+    let(:region1) { FactoryGirl.build(:region, name: Faker::StarWars.planet) }
+    let(:city_valid) { FactoryGirl.build(:city, region: region1) }
+    let(:city_invalid) { FactoryGirl.build(:city, region_id: '') }
+
+    it 'is valid with valid attributes' do
+      expect(city_valid).to be_valid
+    end
+
+    it 'is invalid with blank attributes' do
+      expect(city_invalid).not_to be_valid
+    end
+
+    context 'with region' do
+      let(:region2) { FactoryGirl.build(:region, name: Faker::StarWars.planet) }
+      let(:city_valid_dup) { FactoryGirl.build(:city, region: region2) }
+      let(:city_invalid_dup) { FactoryGirl.build(:region, name: Faker::StarWars.planet) }
+      before {city_valid_dup.save}
+      before {city_invalid_dup.save}
+
+      it 'be valid with other region' do
+        expect(city_valid_dup).to be_valid
+      end
+    end
+
   end
 end
