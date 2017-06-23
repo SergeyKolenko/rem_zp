@@ -35,7 +35,7 @@ RSpec.describe Proposal, type: :model do
     it { expect validate_numericality_of(:promo_price).is_greater_than_or_equal_to(0) }
     it { expect validate_numericality_of(:promo_price).allow_nil }
     it { expect validate_length_of(:street).is_at_least(3).is_at_most(30) }
-    it { expect validate_length_of(:street).allow_nil }
+    it { expect allow_value(nil).for(:street) }
     it { expect validate_uniqueness_of(:title) }
   end
 

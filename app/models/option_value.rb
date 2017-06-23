@@ -9,7 +9,7 @@ class OptionValue < ApplicationRecord
 
   private
   def valid_proposals
-    Proposal.where(category: option.categories).pluck(:id)
+    Proposal.where(category: option.try(:categories)).pluck(:id)
   end
 
 end
