@@ -13,7 +13,6 @@ RSpec.describe User, type: :model do
     it { expect have_db_column(:first_name).of_type(:string) }
     it { expect have_db_column(:last_name).of_type(:string) }
     it { expect have_db_column(:role_id).of_type(:integer) }
-    it { expect have_db_column(:agency_id).of_type(:integer) }
     it { expect have_db_column(:phone).of_type(:string) }
   end
 
