@@ -12,4 +12,6 @@
 //
 //= require jquery2
 //= require rails-ujs
+//= require bootstrap
+//= require select2
 //= require_tree ./admin

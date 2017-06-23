@@ -26,4 +26,8 @@ class User < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def ability
+    @ability ||= Ability.new(self)
+  end
 end

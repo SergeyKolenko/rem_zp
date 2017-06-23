@@ -19,6 +19,7 @@ gem 'config'
 gem 'money-rails'
 gem 'google_currency', '~> 3.3'
 gem 'redis'
+gem 'rails-i18n', '~> 5.0.0'
 
 group :development do
   gem 'listen'

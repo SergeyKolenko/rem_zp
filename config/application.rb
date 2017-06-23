@@ -28,6 +28,8 @@ module RemZp
     # Don't generate system test files.
     config.generators.system_tests = nil
     I18n.available_locales = Settings.languages
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     config.i18n.default_locale = :ru
+    # config.i18n.fallback_locale = :en
   end
 end
