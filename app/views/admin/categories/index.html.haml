@@ -1,22 +1,26 @@
 .page-header
-  %h1 Listing categori
-%table.table
+  %h1 Категории:
+  %button.btn.btn-primary.btn-lg{type: "button"} Create
+%table.table.table-bordered
   %thead
     %tr
-      %th #
+      %th Id
       %th Название
       %th Вес
+      %th Действия
   %tbody
     - @categories.each do |category|
       %tr
-        %th{:scope => "row"}
+        %th
+          #{category.id}
         %td
           #{category.name}
         %td
           #{category.weight}
         %td
-          = link_to 'Edit', edit_admin_category_path(:id)
-          -#= link_to 'Destroy', admin_category, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to 'Edit', edit_admin_category_path(:id), class: 'btn btn-warning btn-xs'
+          |
+          = link_to 'Destroy', admin_category_destroy_path(:id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'
+= will_paginate @categories, renderer: BootstrapPagination::Rails, class: 'pagination-lg'
 
 
- 

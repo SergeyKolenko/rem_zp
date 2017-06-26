@@ -20,6 +20,7 @@ gem 'money-rails'
 gem 'google_currency', '~> 3.3'
 gem 'redis'
 gem 'rails-i18n', '~> 5.0.0'
+gem 'will_paginate-bootstrap'
 
 group :development do
   gem 'listen'
