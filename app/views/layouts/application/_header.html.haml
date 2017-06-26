@@ -8,25 +8,25 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        = link_to 'Главная', root_path, class: 'navbar-brand'
+        = link_to t('application.header.main'), root_path, class: 'navbar-brand'
       #main-menu.collapse.navbar-collapse
         %ul.nav.navbar-nav
           %li.dropdown
             = link_to '#', class: 'dropdown-toggle', role: 'button', aria: {haspopup: true, expanded: false}, data: {toggle: 'dropdown'} do
-              Категории
+              = t('shared.categories')
               %span.caret
             %ul.dropdown-menu
               - all_categories.each do |category|
                 %li
                   = link_to category.name, '#'
           %li
-            = link_to 'Агенции', '#'
+            = link_to t('shared.agencies'), '#'
         %ul.nav.navbar-nav.navbar-right
           - if current_user && current_user.role_name != 'simple_user'
             %li
               = link_to '#', class: 'btn btn-primary' do
                 %span.glyphicon.glyphicon-wrench
-                Контрольная панель
+                = t('application.header.control_panel')
           - if current_user
             %li
               = link_to '#' do
@@ -35,9 +35,9 @@
             %li
               = link_to destroy_user_session_path, method: :delete do
                 %span.glyphicon.glyphicon-log-out
-                Выйти
+                = t('application.header.sign_out')
           - else
             %li
               = link_to new_user_session_path do
                 %span.glyphicon.glyphicon-log-in
-                Вход / Регистрация
+                = t('application.header.sign_up_in')

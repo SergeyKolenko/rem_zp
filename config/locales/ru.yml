@@ -1,0 +1,23 @@
+ru:
+  shared:
+    categories: Категории
+    agencies: Агенции
+    proposals: Предложения
+
+  application:
+    header:
+      main: Главная
+      control_panel: Контрольная панель
+      sign_out: Выйти
+      sign_up_in: 'Вход / Регистрация'
+    footer:
+      hot_links: Быстрые ссылки
+      spec_actions: Специальные предложения!
+      urgent: Срочные
+      extra: Дополнительно
+      sitemap: Карта сайта
+      public_offer: Публичная офферта
+      cookie_policy: Политика куки
+      complaint: Подать жалобу
+      fault_report: Сообщить о неисправности
+      copyright: Все права пренадлежат FaceIT

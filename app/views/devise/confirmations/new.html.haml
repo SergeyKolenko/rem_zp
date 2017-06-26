@@ -5,7 +5,7 @@
       .text-center= devise_error_messages!
       .form-group
         .col-sm-8.col-sm-offset-3
-          = f.label :email, 'E-mail адрес', class: 'control-label'
+          = f.label :email, 'Email', class: 'control-label'
           = f.email_field :email, class: 'form-control', autofocus: true, required: true,
               value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
       .form-group

@@ -1,0 +1,23 @@
+uk:
+  shared:
+    categories: Категорії
+    agencies: Агенції
+    proposals: Пропозиції
+
+  application:
+    header:
+      main: Головна
+      control_panel: Контрольна панель
+      sign_out: Вийти
+      sign_up_in: 'Вхід / Реєстрація'
+    footer:
+      hot_links: Швидкі посилання
+      spec_actions: Спеціальні пропозиції!
+      urgent: Термінові
+      extra: Додатково
+      sitemap: Карта сайту
+      public_offer: Публічна оферта
+      cookie_policy: Політика куки
+      complaint: Подати скаргу
+      fault_report: Повідомити про несправності
+      copyright: Всі права належать FaceIT

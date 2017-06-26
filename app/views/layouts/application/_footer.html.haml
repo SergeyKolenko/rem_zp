@@ -5,45 +5,58 @@
     .col-md-3.col-sm-6.col-xs-12
       %ul.list-unstyled
         %li.list-head
-          %h4 Категоии
+          %h4
+            =t('shared.categories')
         - all_categories.each do |category|
           %li
             = link_to category.name, '#'
     .col-md-3.col-sm-6.col-xs-12
       %ul.list-unstyled
         %li.list-head
-          %h4 Быстрые ссылки
+          %h4
+            =t('application.footer.hot_links')
         %li
-          %a{href: '#'} Агенции
+          %a{href: '#'}
+            =t('shared.agencies')
         %li
-          %a{href: '#'} Специальные предложения!
+          %a{href: '#'}
+            =t('application.footer.spec_actions')
         %li
-          %a{href: '#'} Срочные
+          %a{href: '#'}
+            =t('application.footer.urgent')
         %li
-          %a{href: '#'} Контольная панель
+          %a{href: '#'}
+            =t('application.header.control_panel')
     .col-md-3.col-sm-6.col-xs-12
       %ul.list-unstyled
         %li.list-head
-          %h4 Предложения
+          %h4
+            =t('shared.proposals')
         - all_types.each do |type|
           %li
             = link_to type.name, '#'
     .col-md-3.col-sm-6.col-xs-12
       %ul.list-unstyled
         %li.list-head
-          %h4 Дополнительно
+          %h4
+            =t('application.footer.extra')
         %li
-          %a{href: '#'} Карта сайта
+          %a{href: '#'}
+            =t('application.footer.sitemap')
         %li
-          %a{href: '#'} Публичная офферта
+          %a{href: '#'}
+            =t('application.footer.public_offer')
         %li
-          %a{href: '#'} Политика куки
+          %a{href: '#'}
+            =t('application.footer.cookie_policy')
         %li
-          %a{href: '#'} Подать жалобу
+          %a{href: '#'}
+            =t('application.footer.complaint')
         %li
-          %a{href: '#'} Сообщить о неисправности
+          %a{href: '#'}
+            =t('application.footer.fault_report')
   .bg-success.copy
     .text-center
-      Все права пренадлежат FaceIT
+      =t('application.footer.copyright')
       %sup &copy;
       = Date.today.year
