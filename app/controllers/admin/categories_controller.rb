@@ -1,4 +1,5 @@
 class Admin::CategoriesController < Admin::AdminController
+  before_action :set_category, only: [:update, :destroy]
 
   def index
     @categories = Category.all
@@ -13,9 +14,12 @@ class Admin::CategoriesController < Admin::AdminController
   end
 
   def create
+    if @category.present?
+      redirect_to 'update'
+    end
     @category = Category.new(category_params)
     if @category.save
-      redirect_to @category, notice: 'Категория создана!'
+      redirect_to admin_categories_path, notice: 'Категория создана!'
     else
       render :new
     end
@@ -23,7 +27,7 @@ class Admin::CategoriesController < Admin::AdminController
 
   def update
     if @category.update(category_params)
-      redirect_to @category, notice: 'Категория изменена.'
+      redirect_to admin_categories_path, notice: 'Категория изменена.'
     else
       render :edit
     end
@@ -31,7 +35,7 @@ class Admin::CategoriesController < Admin::AdminController
 
   def destroy
     @category.destroy
-    redirect_to admin_users_url, notice: 'category was successfully destroyed.'
+    redirect_to admin_categories_path, notice: 'category was successfully destroyed.'
   end
 
   private
@@ -40,7 +44,7 @@ class Admin::CategoriesController < Admin::AdminController
   end
 
   def category_params
-    params.fetch(:category, {})
+    params.require(:category).permit(:name, :weight)
   end
 
 end

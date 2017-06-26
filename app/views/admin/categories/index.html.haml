@@ -1,6 +1,6 @@
 .page-header
   %h1 Категории:
-  %button.btn.btn-primary.btn-lg{type: "button"} Create
+  %button.btn.btn-primary.btn-lg{"data-target": "#exampleModal", "data-toggle": "modal", "data-whatever": "@mdo", type: "button"} Создать
 %table.table.table-bordered
   %thead
     %tr
@@ -18,9 +18,15 @@
         %td
           #{category.weight}
         %td
-          = link_to 'Edit', edit_admin_category_path(:id), class: 'btn btn-warning btn-xs'
+          = link_to 'Править', admin_category_path(category.id), method: :patch, class: 'btn btn-warning btn-xs'
           |
-          = link_to 'Destroy', admin_category_destroy_path(:id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'
+          = link_to 'Удалить', admin_category_path(category.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'
 = will_paginate @categories, renderer: BootstrapPagination::Rails, class: 'pagination-lg'
+= render 'modal_category_form'
+
+
+
+
+
 
 

@@ -14,9 +14,7 @@ Rails.application.routes.draw do
     controller :dashboards do
       get '/', action: :dashboard, as: :dashboard
     end
-    resources :categories
-    delete '/admin/categories/:id', to: 'admin/categories#destroy', as: :category_destroy
-    put '/admin/categories/:id', to: 'admin/categories#update', as: :category_update
+    resources :categories, only: [:index, :create, :update, :destroy]
   end
 end
 
