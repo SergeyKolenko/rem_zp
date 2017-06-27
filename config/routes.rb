@@ -15,5 +15,9 @@ Rails.application.routes.draw do
     controller :dashboards do
       get '/', action: :dashboard, as: :dashboard
     end
+    resources :categories, only: [:index, :create, :update, :destroy]
   end
 end
+
+
+

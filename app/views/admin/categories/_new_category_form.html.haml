@@ -1,0 +1,24 @@
+%footer#category_createModal.modal.fade{"aria-labelledby": "category_createModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog{role: "document"}
+    .modal-content
+      .modal-header
+        %button.close{"aria-label": "Close", "data-dismiss": "modal", type: "button"}
+          %span{"aria-hidden": "true"} ×
+        %h4#category_createModalLabel.modal-title
+          Новая категория
+      = form_with scope: :category, url: admin_categories_path, method: :post, class: 'form-horizontal', local: true do |c|
+        .modal-body
+          .form-group
+            .col-sm-2.control-label
+              = c.label :name, 'Имя:'
+            .col-sm-10
+              = c.text_field :name, class: 'form-control', required: true
+          .form-group
+            .col-sm-2.control-label
+              = c.label :weight, 'Вес:'
+            .col-sm-10
+              = c.number_field :weight, class: 'form-control', required: true
+        .modal-footer
+          = c.submit 'Сохранить', class: 'btn btn-success'
+          %button.btn.btn-default{"data-dismiss": "modal", type: "button"}
+            Отмена
