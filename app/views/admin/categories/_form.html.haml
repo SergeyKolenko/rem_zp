@@ -1,12 +1,4 @@
 = form_for @category, admin_category_create_path do |f|
-  -#- if @category.errors.any?
-  -#  #error_explanation
-  -#    %h2
-  -#      = "#{pluralize(@category.errors.count, "error")} prohibited this admin_user from being saved:"
-  -#    %ul
-  -#      - @category.errors.full_messages.each do |message|
-  -#        %li
-  -#          = message
   .form-group
     .col-sm-3.control-label
       = f.label :name, 'Имя:'

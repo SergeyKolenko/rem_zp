@@ -11,12 +11,14 @@ class Admin::CategoriesController < Admin::AdminController
   end
 
   def edit
+    # if set_category
+    #   redirect_to 'update'
+    # else
+    #   render :update
+    # end
   end
 
   def create
-    if @category.present?
-      redirect_to 'update'
-    end
     @category = Category.new(category_params)
     if @category.save
       redirect_to admin_categories_path, notice: 'Категория создана!'
@@ -29,7 +31,7 @@ class Admin::CategoriesController < Admin::AdminController
     if @category.update(category_params)
       redirect_to admin_categories_path, notice: 'Категория изменена.'
     else
-      render :edit
+      render :update
     end
   end
 

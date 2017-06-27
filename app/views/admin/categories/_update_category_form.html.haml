@@ -1,0 +1,24 @@
+%footer#category_updateModal.modal.fade{"aria-labelledby": "category_updateModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog{role: "document"}
+    .modal-content
+      .modal-header
+        %button.close{"aria-label": "Close", "data-dismiss": "modal", type: "button"}
+          %span{"aria-hidden": "true"} ×
+        %h4#category_updateModalLabel.modal-title
+          Изменить категорию
+      .modal-body
+        = form_with scope: :category, url: admin_category_path(:id), method: 'patch', id: 'update_category_form', local: true do |c|
+          .form-group
+            .col-sm-3.control-label
+              = c.label :name, 'Имя:'
+            .col-sm-9
+              = c.text_field :name, class: 'form-control', required: true
+          .form-group
+            .col-sm-3.control-label
+              = c.label :weight, 'Вес:', required: true
+            .col-sm-9
+              = c.number_field :weight, class: 'form-control'
+          = c.submit 'Редактировать', class: 'btn default'
+          %button.btn.btn-default{"data-dismiss": "modal", type: "button"} Отмена
+
+
