@@ -3,19 +3,11 @@ class Admin::CategoriesController < Admin::AdminController
 
   def index
     @categories = Category.all
-    @categories = Category.paginate(page: params[:page], per_page: 3)
+    @categories = Category.paginate(page: params[:page], per_page: 10)
   end
 
   def new
     @category = Category.new
-  end
-
-  def edit
-    # if set_category
-    #   redirect_to 'update'
-    # else
-    #   render :update
-    # end
   end
 
   def create
@@ -37,7 +29,7 @@ class Admin::CategoriesController < Admin::AdminController
 
   def destroy
     @category.destroy
-    redirect_to admin_categories_path, notice: 'category was successfully destroyed.'
+    redirect_to admin_categories_path, notice: 'Категория удалена.'
   end
 
   private

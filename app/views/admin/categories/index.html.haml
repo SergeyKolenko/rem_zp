@@ -1,6 +1,8 @@
 .page-header
   %h1 Категории:
-  %button.btn.btn-primary.btn-lg{ data:{target: "#category_createModal", toggle: "modal", whatever: "@mdo", type: "button"} } Создать
+  %button.btn.btn-primary.btn-lg{ data:{target: "#category_createModal", toggle: "modal", whatever: "@mdo", type: "button"} }
+    %span.glyphicon.glyphicon-plus
+    Создать
 %table.table.table-bordered
   %thead
     %tr
@@ -18,11 +20,15 @@
         %td
           #{category.weight}
         %td
-          -#= link_to 'Править', admin_category_path(category.id), method: :patch, class: 'btn btn-warning btn-xs'
-          %button.btn.btn-warning.btn-xs.edit_btn{ data:{target: "#category_updateModal", toggle: "modal", whatever: "@mdo", type: "button", id:"#{category.id}", url:admin_category_path(category.id)}} Править
+          %button.btn.btn-warning.btn-xs.edit_btn{ data:{target: "#category_updateModal", toggle: "modal", whatever: "@mdo", type: "button", id:"#{category.id}", url:admin_category_path(category.id)}}
+            %span.glyphicon.glyphicon-pencil
+            Править
           |
-          = link_to 'Удалить', admin_category_path(category.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'
-= will_paginate @categories, renderer: BootstrapPagination::Rails, class: 'pagination-xs'
+          = link_to admin_category_path(category.id), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger btn-xs' do
+            %span.glyphicon.glyphicon-trash
+            Удалить
+.text-center
+  = will_paginate @categories, renderer: BootstrapPagination::Rails, class: 'pagination-xs'
 = render 'new_category_form'
 = render 'update_category_form'
 

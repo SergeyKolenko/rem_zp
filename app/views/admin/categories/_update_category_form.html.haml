@@ -6,19 +6,21 @@
           %span{"aria-hidden": "true"} ×
         %h4#category_updateModalLabel.modal-title
           Изменить категорию
-      .modal-body
-        = form_with scope: :category, url: admin_category_path(:id), method: 'patch', id: 'update_category_form', local: true do |c|
+      = form_with scope: :category, url: admin_category_path(:id), method: 'patch', id: 'update_category_form', class: 'form-horizontal', local: true do |c|
+        .modal-body
           .form-group
-            .col-sm-3.control-label
+            .col-sm-2.control-label
               = c.label :name, 'Имя:'
-            .col-sm-9
+            .col-sm-10
               = c.text_field :name, class: 'form-control', required: true
           .form-group
-            .col-sm-3.control-label
+            .col-sm-2.control-label
               = c.label :weight, 'Вес:', required: true
-            .col-sm-9
+            .col-sm-10
               = c.number_field :weight, class: 'form-control'
-          = c.submit 'Редактировать', class: 'btn default'
-          %button.btn.btn-default{"data-dismiss": "modal", type: "button"} Отмена
+        .modal-footer
+          = c.submit 'Редактировать', class: 'btn btn-success'
+          %button.btn.btn-default{"data-dismiss": "modal", type: "button"}
+            Отмена
 
 
