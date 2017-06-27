@@ -11,11 +11,11 @@
     .col-xs-6.col-sm-6.col-md-6
       .form-group
         .col-sm-8
-          = f.label :email, 'Адрес электронной почты' ,class: 'control-label'
+          = f.label :email, class: 'control-label'
           = f.email_field :email, autofocus: true, class: 'form-control', required: true
       .form-group
         .col-sm-8
-          = f.label :password, 'Пароль', class: 'control-label'
+          = f.label :password, class: 'control-label'
           = f.password_field :password, autocomplete: 'off', class: 'form-control', required: true
       - if devise_mapping.rememberable?
         .form-group

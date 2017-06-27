@@ -99,3 +99,5 @@ ru:
         last_name: Фамилия
         role: Роль
         phone: Телефон
+        remember_me: Запомнить меня
+        password_confirmation: Подвердите пароль

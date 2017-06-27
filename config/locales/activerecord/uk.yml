@@ -99,3 +99,5 @@ uk:
         last_name: Прізвище
         role: Роль
         phone: Телефон
+        remember_me: "Запам'ятати мене"
+        password_confirmation: Підтвердіть пароль

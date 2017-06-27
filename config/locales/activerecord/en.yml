@@ -89,3 +89,5 @@ en:
         last_name: Last name
         role: Role
         phone: Phone
+        remember_me: Remember me
+        password_confirmation: Password confirmation
