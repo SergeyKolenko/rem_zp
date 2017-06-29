@@ -24,19 +24,19 @@
       %table.table.table-bordered.mart-5
         %thead
           %tr
-            %th Id
+            %th.col-sm-1 Id
             %th
               = t('activerecord.attributes.region.name')
-            %th
+            %th.col-sm-2
               = t('actions')
         %tbody
           - @regions.each do |region|
             %tr
-              %th
+              %th.col-sm-1
                 #{region.id}
               %td
                 #{region.name}
-              %td
+              %td.col-sm-2
                 %a.btn.btn-warning.btn-xs.update-btn.glyphicon.glyphicon-pencil{ data: { url: "/admin/regions/#{region.id}",
                                                   name: region.name, toggle: 'modal', target: '#region_modal'} }
                   = t('edit')
