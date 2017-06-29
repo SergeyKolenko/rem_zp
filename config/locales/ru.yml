@@ -54,9 +54,7 @@ ru:
       types: Типы предложений
       actions: Действия
     wrong_rules: У вас нет прав.
-    create:
-      notice: Категория создана!
-    update:
-      notice: Категория обновлена!
-    destroy:
-      notice: Категория удалена!
+    categories:
+      create_notice: Категория создана!
+      update_notice: Категория обновлена!
+      destroy_notice: Категория удалена!

@@ -3,7 +3,7 @@
     = t('shared.categories')
   %button.btn.btn-primary.btn-lg{ data:{target: "#category_createModal", toggle: "modal", whatever: "@mdo", type: "button"} }
     %span.glyphicon.glyphicon-plus
-      = t('create')
+    = t('create')
 %table.table.table-bordered
   %thead
     %tr
@@ -11,7 +11,7 @@
       %th.text-center
         = Category.human_attribute_name(:name)
       %th.text-center.col-sm-2
-        = t('weight')
+        = Category.human_attribute_name(:weight)
       %th.text-center.col-sm-3.col-xs-1
         = t('admin.actions')
   %tbody
@@ -30,12 +30,9 @@
           = link_to admin_category_path(category.id), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger btn-xs' do
             %span.glyphicon.glyphicon-trash
             = t('Удалить')
-- if (@categories.length > 0 && @categories.total_pages > 1)
+- if (@categories.count > 0 && @categories.total_pages > 1)
   .text-center
     = will_paginate @categories, previous_label:'<', next_label:'>', page_links: true , renderer: BootstrapPagination::Rails, class: 'pagination-xs'
-- else
-  .text-center
-    = will_paginate @categories, previous_label:'<', next_label:'>', page_links: false , renderer: BootstrapPagination::Rails, class: 'pagination-xs'
 = render 'new_category_form'
 = render 'update_category_form'
 

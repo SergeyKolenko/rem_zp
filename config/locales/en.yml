@@ -53,10 +53,8 @@ en:
       categories: Categories
       types: "Proposal's types"
     actions: Actions
-    create:
-      notice: Category created!
-    update:
-      notice: Category updated!
-    destroy:
-      notice: Category deleted!
+    categories:
+      create_notice: Category created!
+      update_notice: Category updated!
+      destroy_notice: Category deleted!
 

@@ -53,9 +53,7 @@ uk:
       categories: Категорії
       types: Типи пропозицій
     actions: Дії
-    create:
-      notice: Категорія створена!
-    update:
-      notice: Категория оновлена!
-    destroy:
-      notice: Категория видалена!
+    categories:
+      create_notice: Категорія створена!
+      update_notice: Категория оновлена!
+      destroy_notice: Категория видалена!
