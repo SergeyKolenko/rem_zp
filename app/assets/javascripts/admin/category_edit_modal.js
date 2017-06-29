@@ -3,8 +3,12 @@ $(document).ready( function ()  {
 		e.preventDefault();
 		var form = $('#update_category_form'),
 			url = $(this).data('url');
+			var name = $(this).data('name');
+			var weight = $(this).data('weight');
 		$('#category_updateModal').on('shown.bs.modal', function () {
 			$(form).attr('action', url);
+			$('#category_name').val(name);
+			$('#category_weight').val(weight);
 		});
 	});
 });

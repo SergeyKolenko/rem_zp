@@ -10,14 +10,14 @@
         .modal-body
           .form-group
             .col-sm-2.control-label
-              = c.label :name, 'Имя:'
+              = c.label :name
             .col-sm-10
-              = c.text_field :name, class: 'form-control', required: true
+              = c.text_field :name, class: 'form-control', required: true, id: 'category_name'
           .form-group
             .col-sm-2.control-label
-              = c.label :weight, 'Вес:', required: true
+              = c.label :weight
             .col-sm-10
-              = c.number_field :weight, class: 'form-control'
+              = c.number_field :weight, class: 'form-control',  required: true, id: 'category_weight'
         .modal-footer
           = c.submit 'Редактировать', class: 'btn btn-success'
           %button.btn.btn-default{"data-dismiss": "modal", type: "button"}
