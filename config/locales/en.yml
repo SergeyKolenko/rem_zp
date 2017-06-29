@@ -1,4 +1,17 @@
 en:
+  are_you_sure: Are you sure?
+  update_info: Update info
+  update: Update
+  delete: Delete
+  edit: Edit
+  change: Change
+  create: Create
+  save: Save
+  new: New
+  add: Add
+  return_back: Retun back
+  back: Back
+
   shared:
     categories: Categories
     agencies: Agencies

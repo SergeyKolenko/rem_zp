@@ -1,5 +1,6 @@
 .row
-  %h2.text-center Прислать инструкцию по разблокировке аккаунта
+  %h2.text-center
+    = t('devise.unlocks.instructions')
   .col-xs-8.col-sm-8.col-md-10
     = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
       .text-center= devise_error_messages!
@@ -9,6 +10,6 @@
           = f.email_field :email, class: 'form-control', autofocus: true, required: true
       .form-group
         .col-sm-8.col-sm-offset-3.mart-5
-          = f.submit 'Отправить инструкцию по разблокировке аккаунта на e-mail', class: 'btn btn-success'
+          = f.submit t('devise.unlocks.send_isntr'), class: 'btn btn-success'
           .mart-5
             = render 'devise/shared/links'

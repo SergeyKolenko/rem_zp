@@ -1,4 +1,17 @@
 ru:
+  are_you_sure: Вы уверены?
+  update_info: Обновить информацию
+  update: Обновить
+  delete: Удалить
+  edit: Редактировать
+  change: Изменить
+  create: Создать
+  save: Сохранить
+  new: Новый
+  add: Добавить
+  return_back: Вернуться назад
+  back: Назад
+
   shared:
     categories: Категории
     agencies: Агенции
@@ -21,3 +34,13 @@ ru:
       complaint: Подать жалобу
       fault_report: Сообщить о неисправности
       copyright: Все права пренадлежат FaceIT
+
+  admin:
+    got_to_site: Перейти на сайт
+    aside:
+      users: Пользователи
+      regions: Регионы
+      cities: Города
+      districts: Районы
+      categories: Категории
+      types: Типы предложений

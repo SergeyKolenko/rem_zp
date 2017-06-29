@@ -5,7 +5,7 @@
         %li
           = link_to root_path, class: 'btn' do
             %span.glyphicon.glyphicon-wrench
-            Перейти на сайт
+            = t('admin.go_to_site')
         - if current_user
           %li
             = link_to '#' do
@@ -14,7 +14,7 @@
           %li
             = link_to destroy_user_session_path do
               %span.glyphicon.glyphicon-log-out
-              Выйти
+              = t('application.header.sign_out')
         %li.pull-right.hidden-lg.hidden-md.hidden-sm
           = link_to '#', class: 'ham-menu-btn navbar-toggle', data: { toggle: 'collapse', target: '.collapse-side-bar' } do
             %span.sr-only Toggle navigation

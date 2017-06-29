@@ -1,6 +1,4 @@
-%p "Здравствуйте #{@resource.full_name}!"
-- if @resource.try(:unconfirmed_email?)
-  %p "Мы хотим сообщить вам, что ваш электронный почтовый адресс был изменен на #{@resource.unconfirmed_email}"
-- else
-  %p "Мы хотим сообщить вам, что ваш электронный почтовый адресс был изменен на #{@resource.email}"
-
+%p
+  = t('devise.mailer.confirmation_instructions.welcome', name: @resource.full_name)
+%p
+  = t('devise.mailer.email_changed.alert', email: @resource.try(:unconfirmed_email?) ? @resource.unconfirmed_email : @resource.email)

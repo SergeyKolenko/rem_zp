@@ -1,4 +1,17 @@
 uk:
+  are_you_sure: Ви впевнені?
+  update_info: 'Оновити інформацію'
+  update: Оновити
+  delete: Видалити
+  edit: Редагувати
+  change: Змінити
+  create: Створити
+  save: Зберегти
+  new: Новий
+  add: Додати
+  return_back: Повернутися назад
+  back: Назад
+
   shared:
     categories: Категорії
     agencies: Агенції

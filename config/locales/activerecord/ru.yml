@@ -4,46 +4,46 @@ ru:
       agency:
         one: Агентство
         few: Агентств
-        other: Агентства
+        many: Агентства
       category:
         one: Категория
         few: Категорий
-        other: Категории
+        many: Категории
       city:
         one: Город
         few: Городов
-        other: Города
+        many: Города
       district:
         one: Район
         few: Районов
-        other: Районы
+        many: Районы
       option_value:
         one: Значение опции
         few: Значений опций
-        other: Значения опции
+        many: Значения опции
       option:
         one: Опция
-        other: Опций
+        many: Опций
       proposal:
         one: Предложение
         few: Предложений
-        other: Предложения
+        many: Предложения
       region:
         one: Область
         few: Областей
-        other: Области
+        many: Области
       role:
         one: Роль
         few: Ролей
-        other: Роли
+        many: Роли
       type:
         one: Тип предложения
         few: Типов предложения
-        other: Типы предложения
+        many: Типы предложения
       user:
         one: Пользователь
         few: Пользователей
-        other: Пользователи
+        many: Пользователи
 
     attributes:
       agency:
@@ -101,3 +101,4 @@ ru:
         phone: Телефон
         remember_me: Запомнить меня
         password_confirmation: Подвердите пароль
+        current_password: Текущий пароль
