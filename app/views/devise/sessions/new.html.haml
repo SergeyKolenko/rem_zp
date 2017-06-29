@@ -1,21 +1,25 @@
 .row
-  %h1.text-center Добро пожаловать!
+  %h1.text-center
+    = t('devise.sessions.welcome')
   = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }) do |f|
     .text-center= devise_error_messages!
     .col-xs-6.col-sm-6.col-md-6
       %ul.list-unstyled.pull-right
         - role_ids = roles_ids_for_sign_up
-        %li.mart-20= link_to 'Зарегистрироваться на сайте!', users_sign_up_with_role_path(id: role_ids[:simple_user]), class: 'btn btn-success'
-        %li.mart-5= link_to 'Вы риэлтор? Регистрируйтесь тут!', users_sign_up_with_role_path(id: role_ids[:realtor]), class: 'btn btn-default'
-        %li.mart-5= link_to 'Зарегистрировать риэлторское агенство!', users_sign_up_with_role_path(id: role_ids[:agency_director]), class: 'btn btn-primary'
+        %li.mart-20
+          = link_to t('devise.sessions.sign_up_site'), users_sign_up_with_role_path(id: role_ids[:simple_user]), class: 'btn btn-success'
+        %li.mart-5
+          = link_to t('devise.sessions.sign_up_realtor'), users_sign_up_with_role_path(id: role_ids[:realtor]), class: 'btn btn-default'
+        %li.mart-5
+          = link_to t('devise.sessions.sign_up_agency'), users_sign_up_with_role_path(id: role_ids[:agency_director]), class: 'btn btn-primary'
     .col-xs-6.col-sm-6.col-md-6
       .form-group
         .col-sm-8
-          = f.label :email, 'Адрес электронной почты' ,class: 'control-label'
+          = f.label :email, class: 'control-label'
           = f.email_field :email, autofocus: true, class: 'form-control', required: true
       .form-group
         .col-sm-8
-          = f.label :password, 'Пароль', class: 'control-label'
+          = f.label :password, class: 'control-label'
           = f.password_field :password, autocomplete: 'off', class: 'form-control', required: true
       - if devise_mapping.rememberable?
         .form-group
@@ -25,6 +29,6 @@
               = f.label :remember_me
       .form-group
         .col-sm-8
-          = f.submit 'Log in', class: 'btn btn-success'
+          = f.submit t('devise.sessions.login'), class: 'btn btn-success'
           %br
             = render 'devise/shared/links'

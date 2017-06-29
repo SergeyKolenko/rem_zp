@@ -1,13 +1,18 @@
 %ul.nav.navbar-nav.side-nav
   %li
-    %a{ href: '#' } Пользователи
+    %a{ href: '#' }
+      = t('admin.aside.users')
   %li
-    %a{ href: '#' } Регионы
+    %a{ href: '#' }
+      = t('admin.aside.regions')
   %li
-    %a{ href: '#' } Города
+    %a{ href: '#' }
+      = t('admin.aside.cities')
   %li
-    %a{ href: '#' } Районы
+    %a{ href: '#' }
+      = t('admin.aside.districts')
   %li
     = link_to 'Категории', admin_categories_path
   %li
-    %a{ href: '#' } Типы
+    %a{ href: '#' }
+      = t('admin.aside.types')

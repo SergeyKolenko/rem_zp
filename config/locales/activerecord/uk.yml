@@ -3,47 +3,48 @@ uk:
     models:
       agency:
         one: Агентство
-        few: Агентств
-        other: Агентств
+        few: Агентства
+        many: Агентств
       category:
         one: Категорія
-        few: Категорій
-        other: Категорії
+        few: Категорії
+        many: Категорій
       city:
         one: Місто
-        few: Міст
-        other: Міста
+        few: Міста
+        many: Міст
       district:
         one: Район
-        few: Районів
-        other: Райони
+        few: Райони
+        many: Районів
       option_value:
         one: Значення опції
         few: Значення опцій
-        other: Значення опції
+        many: Значеннь опції
       option:
         one: Опція
-        other: Опцій
+        few: Опції
+        many: Опцій
       proposal:
         one: Пропозиція
-        few: Пропозицій
-        other: Пропозиції
+        few: Пропозиції
+        many: Пропозицій
       region:
         one: Область
-        few: Областей
-        other: Області
+        few: Області
+        many: Областей
       role:
         one: Роль
-        few: Ролей
-        other: Ролі
+        few: Ролі
+        many: Ролей
       type:
         one: Тип пропозиції
-        few: Типів пропозиції
-        other: Типи пропозиції
+        few: Типи пропозиції
+        many: Типів пропозиції
       user:
         one: Користувач
-        few: Користувачів
-        other: Користувачі
+        few: Користувача
+        many: Користувачів
 
     attributes:
       agency:
@@ -99,3 +100,6 @@ uk:
         last_name: Прізвище
         role: Роль
         phone: Телефон
+        remember_me: "Запам'ятати мене"
+        password_confirmation: Підтвердіть пароль
+        current_password: Поточний пароль

@@ -1,0 +1,36 @@
+en:
+  are_you_sure: Are you sure?
+  update_info: Update info
+  update: Update
+  delete: Delete
+  edit: Edit
+  change: Change
+  create: Create
+  save: Save
+  new: New
+  add: Add
+  return_back: Retun back
+  back: Back
+
+  shared:
+    categories: Categories
+    agencies: Agencies
+    proposals: Proposals
+
+  application:
+    header:
+      main: Main page
+      control_panel: Control panel
+      sign_out: Sign out
+      sign_up_in: 'Login / Sign up'
+    footer:
+      hot_links: Hot links
+      spec_actions: Special offers!
+      urgent: Urgent
+      extra: Extras
+      sitemap: Site map
+      public_offer: Public offer
+      cookie_policy: Cookie policy
+      complaint: Make a complaint
+      fault_report: Report a fault
+      copyright: All rights belong to FaceIT

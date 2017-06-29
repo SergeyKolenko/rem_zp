@@ -1,15 +1,16 @@
 .row
-  %h2.text-center Прислать инструкцию по активации аккаунта
+  %h2.text-center
+    = t('devise.confirmations.title')
   .col-xs-8.col-sm-8.col-md-10
     = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
       .text-center= devise_error_messages!
       .form-group
         .col-sm-8.col-sm-offset-3
-          = f.label :email, 'E-mail адрес', class: 'control-label'
+          = f.label :email, class: 'control-label'
           = f.email_field :email, class: 'form-control', autofocus: true, required: true,
               value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
       .form-group
         .col-sm-8.col-sm-offset-3.mart-5
-          = f.submit 'Отправить инструкцию по активации аккаунта на e-mail', class: 'btn btn-success'
+          = f.submit t('devise.confirmations.submit'), class: 'btn btn-success'
           .mart-5
             = render 'devise/shared/links'
