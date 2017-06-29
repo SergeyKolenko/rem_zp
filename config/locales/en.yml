@@ -34,3 +34,7 @@ en:
       complaint: Make a complaint
       fault_report: Report a fault
       copyright: All rights belong to FaceIT
+
+  admin:
+    actions: Actions
+    weight: Weight
