@@ -1,2 +1,47 @@
 .row
   .col-xs-8.col-sm-8.col-md-10
+    %h1.text-center
+      = t('admin.helpers.upload_instructions.title')
+    %div
+      %h3 JSon:
+      %p
+        = t('admin.helpers.upload_instructions.json')
+      %pre
+        [
+        %code= "&#09;{'name' : '#{t('admin.helpers.upload_instructions.example_value')} 1'},"
+        %code= "&#09;{'name' : '#{t('admin.helpers.upload_instructions.example_value')} 2'}"
+        ]
+    %div
+      %h3 Csv:
+      %p
+        = t('admin.helpers.upload_instructions.csv')
+      %pre
+        %code
+          name
+        %code
+          = "#{t('admin.helpers.upload_instructions.example_value')} 1"
+        %code
+          = "#{t('admin.helpers.upload_instructions.example_value')} 2"
+    %div
+      %h3 Xml, xls, xlsl:
+      %p
+        = t('admin.helpers.upload_instructions.exel')
+      %pre
+        %table.table.table-bordered
+          %thead
+            %tr
+              %th name
+          %tbody
+            %tr
+              %th
+                = "#{t('admin.helpers.upload_instructions.example_value')} 1"
+            %tr
+              %th
+                = "#{t('admin.helpers.upload_instructions.example_value')} 2"
+    %div
+      %h3
+        = "#{t('admin.helpers.upload_instructions.keys')}:"
+      %ul.list-unstyled
+        %li
+          = "#{t('admin.regions.title')}:"
+          name
