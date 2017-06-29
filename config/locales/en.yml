@@ -34,3 +34,13 @@ en:
       complaint: Make a complaint
       fault_report: Report a fault
       copyright: All rights belong to FaceIT
+
+  admin:
+    got_to_site: Go to site
+    aside:
+      users: Members
+      regions: Regions
+      cities: Cities
+      districts: Districts
+      categories: Categories
+      types: "Proposal's types"

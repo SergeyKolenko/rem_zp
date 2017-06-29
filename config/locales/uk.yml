@@ -34,3 +34,13 @@ uk:
       complaint: Подати скаргу
       fault_report: Повідомити про несправності
       copyright: Всі права належать FaceIT
+
+  admin:
+    got_to_site: Перейти на сайт
+    aside:
+      users: Користувачі
+      regions: Регіони
+      cities: Міста
+      districts: Райони
+      categories: Категорії
+      types: Типи пропозицій
