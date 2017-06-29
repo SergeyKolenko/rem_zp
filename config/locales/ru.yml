@@ -17,8 +17,11 @@ ru:
     categories: Категории
     agencies: Агенции
     proposals: Предложения
+    errors:
+      wrong_phone: Неверный формат номера
 
   application:
+    wrong_role: 'Недоступная роль пользователя'
     header:
       main: Главная
       control_panel: Контрольная панель
@@ -35,6 +38,10 @@ ru:
       complaint: Подать жалобу
       fault_report: Сообщить о неисправности
       copyright: Все права пренадлежат FaceIT
+    meta_info:
+      stub_title: Недвижимость в Украине
+      stub_keywords: Покупка, продажа, аренда, жилье, склад, квартира, комната, дача, гараж
+      stub_description: Покупка, продажа, аренда жилья в Украине
 
   admin:
     file:
@@ -67,3 +74,4 @@ ru:
               указывали ключи.
         keys: Ключи
         example_value: Значение пример
+    wrong_rules: У вас нет прав.

@@ -1,6 +1,8 @@
 en:
   devise:
     confirmations:
+      title: Send instructions to activate your account
+      submit: Send instructions on activating your account by e-mail
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
@@ -17,14 +19,27 @@ en:
     mailer:
       confirmation_instructions:
         subject: "Confirmation instructions"
+        welcome: "Hello %{name}!"
+        role_descr: "You have registered on our site as %{role}!"
+        accept_acc: 'To verify your account, please use the link below:'
+        accept: 'Verify account'
       reset_password_instructions:
         subject: "Reset password instructions"
       unlock_instructions:
         subject: "Unlock instructions"
+        acc_locked: Your account has been blocked because the login attempt has been reached.
+        instruction: Please use this link to unlock it.
+        unlock: Unlock my account
       email_changed:
         subject: "Email Changed"
+        alert: "We want to let you know that your email address has been changed to %{email}"
       password_change:
         subject: "Password Changed"
+        alert: 'We want to inform you that the password for your account has been successfully changed.'
+        some_change: 'Someone has requested a link to change your password. It can be changed using this link:'
+        change: Change my password
+        ignore: If you did not, please ignore this email.
+        new_pass: Your password will not be changed until you go through the specified link and you will not enter a new one.
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
@@ -34,6 +49,10 @@ en:
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
+      change_your_pass: Change your password
+      change_pass: Change password
+      forgot_pass: Forgot password?
+      forgot_send: Send instructions on password recovery by e-mail
     registrations:
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
@@ -42,11 +61,29 @@ en:
       signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
       updated: "Your account has been updated successfully."
+      edit: Edit information
+      not_accepted: "Your email address %{email} is NOT verified."
+      free_pass: Leave blank if you do not want to change your password.
+      need_pass: To confirm your changes, we need your current password.
+      del_acc: Delete account
+      main_info: 'Basic information:'
+      agency_info: 'Information about the agency:'
+      registrate: Sign up
+      reg_new_realtor: Sign up as realtor
+      reg_new_user: New user registration
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
+      welcome: Welcome!
+      sign_up_site: Sign up on the site!
+      sign_up_realtor: Are you a realtor? Sign up here!
+      sign_up_agency: Register a real estate agency!
+      login: Login
+      login_with: "Login with %{provider}"
     unlocks:
+      send_instr: Send an instruction to unblock the account by e-mail
+      instructions: 'Forward instructions for unlocking your account'
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
