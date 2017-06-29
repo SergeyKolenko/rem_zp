@@ -11,13 +11,17 @@ uk:
   add: Додати
   return_back: Повернутися назад
   back: Назад
+  weight: Вага
 
   shared:
     categories: Категорії
     agencies: Агенції
     proposals: Пропозиції
+    errors:
+      wrong_phone: Невірний формат номеру
 
   application:
+    wrong_role: 'Недоступна роль користувача'
     header:
       main: Головна
       control_panel: Контрольна панель
@@ -34,3 +38,24 @@ uk:
       complaint: Подати скаргу
       fault_report: Повідомити про несправності
       copyright: Всі права належать FaceIT
+    meta_info:
+      stub_title: Нерухомість в Україні
+      stub_keywords: Купівля, продаж, оренда, житло, склад, квартира, кімната, дача, гараж
+      stub_description: Купівля, продаж, оренда житла в Україні
+
+  admin:
+    got_to_site: Перейти на сайт
+    aside:
+      users: Користувачі
+      regions: Регіони
+      cities: Міста
+      districts: Райони
+      categories: Категорії
+      types: Типи пропозицій
+    actions: Дії
+    create:
+      notice: Категорія створена!
+    update:
+      notice: Категория оновлена!
+    destroy:
+      notice: Категория видалена!

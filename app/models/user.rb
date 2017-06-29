@@ -15,7 +15,7 @@ class User < ApplicationRecord
   validates :agency, presence: true, if: Proc.new { |u| %w(agent).include? u.role_name }
   validates :agency, absence: true, unless: Proc.new { |u| %w(agent).include? u.role_name }
   validates :phone, format: { with: /[0]\d[(39|50|63|66|67|68|91|92|93|94|95|96|97|98|99)]-\d{3}-\d{2}-\d{2}/,
-                              message: 'Неверный формат номера' }
+                              message: I18n.t('shared.wrong_phone') }
 
   before_create :set_default_role, if: Proc.new { |u| %w(super_admin agent moderator).include? u.role_name }
 

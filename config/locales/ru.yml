@@ -11,13 +11,17 @@ ru:
   add: Добавить
   return_back: Вернуться назад
   back: Назад
+  weight: Вес
 
   shared:
     categories: Категории
     agencies: Агенции
     proposals: Предложения
+    errors:
+      wrong_phone: Неверный формат номера
 
   application:
+    wrong_role: 'Недоступная роль пользователя'
     header:
       main: Главная
       control_panel: Контрольная панель
@@ -34,6 +38,10 @@ ru:
       complaint: Подать жалобу
       fault_report: Сообщить о неисправности
       copyright: Все права пренадлежат FaceIT
+    meta_info:
+      stub_title: Недвижимость в Украине
+      stub_keywords: Покупка, продажа, аренда, жилье, склад, квартира, комната, дача, гараж
+      stub_description: Покупка, продажа, аренда жилья в Украине
 
   admin:
     got_to_site: Перейти на сайт
@@ -45,4 +53,10 @@ ru:
       categories: Категории
       types: Типы предложений
       actions: Действия
-      weight: Вес
+    wrong_rules: У вас нет прав.
+    create:
+      notice: Категория создана!
+    update:
+      notice: Категория обновлена!
+    destroy:
+      notice: Категория удалена!

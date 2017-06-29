@@ -11,13 +11,17 @@ en:
   add: Add
   return_back: Retun back
   back: Back
+  weight: Weight
 
   shared:
     categories: Categories
     agencies: Agencies
     proposals: Proposals
+    errors:
+      wrong_phone: Invalid number format
 
   application:
+    wrong_role: 'Unavailable user role'
     header:
       main: Main page
       control_panel: Control panel
@@ -34,7 +38,25 @@ en:
       complaint: Make a complaint
       fault_report: Report a fault
       copyright: All rights belong to FaceIT
+    meta_info:
+      stub_title: Real estate in Ukraine
+      stub_keywords: Buying, selling, renting, housing, warehouse, apartment, room, cottage, garage
+      stub_description: Buying, selling, renting a home in Ukraine
 
   admin:
+    got_to_site: Go to site
+    aside:
+      users: Members
+      regions: Regions
+      cities: Cities
+      districts: Districts
+      categories: Categories
+      types: "Proposal's types"
     actions: Actions
-    weight: Weight
+    create:
+      notice: Category created!
+    update:
+      notice: Category updated!
+    destroy:
+      notice: Category deleted!
+
