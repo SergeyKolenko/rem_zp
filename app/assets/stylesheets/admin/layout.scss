@@ -27,6 +27,10 @@ body {
   line-height: normal;
 }
 
+.file-upload-block {
+  display: flex;
+}
+
 /* Top Navigation */
 
 .top-nav {
@@ -197,3 +201,4 @@ ul {
     }
   }
 }
+

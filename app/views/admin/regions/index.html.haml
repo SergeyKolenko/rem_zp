@@ -1,0 +1,40 @@
+.row
+  .col-xs-8.col-sm-8.col-md-10
+    %h1 Регионы:
+    = form_with scope: :region, url: admin_regions_path, local: true do |f|
+      .form-group
+        .col-sm-8
+          = f.label :name, 'Чтобы добавить новый регион, введите название', class: 'control-label'
+          = f.text_field :name, id: 'region[name]', class: 'form-control', required: true
+      .form-group
+        .col-sm-8
+          = f.submit 'Создать', class: 'mart-5 btn btn-success'
+    = form_with url: import_admin_regions_path, multipart: true, local: true do |f|
+      .form-group
+        .col-sm-8
+          = f.label :file, 'Импортировать из файла', class: 'control-label'
+          %span.file-upload-block
+            = f.file_field :file
+            = link_to '?', admin_upload_instructions_path, data: { toggle: 'tooltip' }, title: 'Доступные разрешения: csv, json, xls, xlsx, xml'
+          = f.submit 'Импортировать'
+    .col-sm-8
+      %table.table.table-bordered.mart-5
+        %thead
+          %tr
+            %th Id
+            %th Название
+            %th Действия
+        %tbody
+          - @regions.each do |region|
+            %tr
+              %th
+                #{region.id}
+              %td
+                #{region.name}
+              %td
+                %a.btn.btn-warning.btn-xs.update-btn.glyphicon.glyphicon-pencil{ data: { url: "/admin/regions/#{region.id}",
+                                                  name: region.name, toggle: 'modal', target: '#region_modal'} } Править
+                = link_to 'Удалить', admin_region_path(region.id), method: :delete, data: { confirm: 'Уверены?' },
+                                                        class: 'btn btn-danger btn-xs glyphicon glyphicon-trash'
+      = will_paginate @regions
+    = render 'update_region_form'

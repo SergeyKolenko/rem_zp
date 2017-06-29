@@ -14,5 +14,13 @@ Rails.application.routes.draw do
     controller :dashboards do
       get '/', action: :dashboard, as: :dashboard
     end
+
+    resources :regions, only: [:index, :create, :update, :destroy] do
+      collection { post :import }
+    end
+
+    controller :helpers do
+      get '/upload_instructions', action: :upload_instructions
+    end
   end
 end
