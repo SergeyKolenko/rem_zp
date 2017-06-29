@@ -13,7 +13,7 @@ module Admin
     private
     def verify_role!
       if current_user.role_name == 'simple_user'
-        redirect_to root_path, flash: { error: 'У вас нет прав.' } and return
+        redirect_to root_path, flash: { error: t('admin.wrong_rules') } and return
       end
     end
   end

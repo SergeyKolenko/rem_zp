@@ -1,15 +1,15 @@
 module ApplicationHelper
 
   def meta_title
-    @meta_title || 'Недвижимость в Украине'
+    @meta_title || t('application.meta_info.stub_title')
   end
 
   def meta_keywords
-    @meta_keywords || 'Покупка, продажа, аренда, жилье, склад, квартира, комната, дача, гараж'
+    @meta_keywords || t('application.meta_info.stub_keywords')
   end
 
   def meta_description
-    @meta_description || 'Покупка, продажа, аренда жилья в Украине'
+    @meta_description || t('application.meta_info.stub_description')
   end
 
   def all_categories

@@ -9,7 +9,7 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   def new_with_role
     role = Role.find(params[:id])
-    redirect_to new_user_session_path, flash: {error: 'Недоступная роль пользователя'} and return unless role.available_for_sign_up?
+    redirect_to new_user_session_path, flash: {error: t('application.wrong_role')} and return unless role.available_for_sign_up?
     session[:role_id] = role.id
     redirect_to new_user_registration_path
   end
