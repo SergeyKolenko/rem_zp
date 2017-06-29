@@ -20,6 +20,10 @@ gem 'money-rails'
 gem 'google_currency', '~> 3.3'
 gem 'redis'
 gem 'rails-i18n', '~> 5.0.0'
+gem 'will_paginate', '~> 3.1.0'
+gem 'oj'
+gem 'roo', '~> 2.7.0'
+gem 'roo-xls'
 
 group :development do
   gem 'listen'
