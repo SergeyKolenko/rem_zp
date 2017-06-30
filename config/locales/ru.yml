@@ -18,6 +18,7 @@ ru:
     proposals: Предложения
     errors:
       wrong_phone: Неверный формат номера
+      wrong_format: Неверный формат
 
   application:
     wrong_role: 'Недоступная роль пользователя'

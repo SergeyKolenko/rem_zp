@@ -20,6 +20,8 @@ gem 'money-rails'
 gem 'google_currency', '~> 3.3'
 gem 'redis'
 gem 'rails-i18n', '~> 5.0.0'
+gem 'globalize', git: 'https://github.com/globalize/globalize'
+gem 'activemodel-serializers-xml'
 
 group :development do
   gem 'listen'

@@ -18,6 +18,7 @@ uk:
     proposals: Пропозиції
     errors:
       wrong_phone: Невірний формат номеру
+      wrong_format: Невірний формат
 
   application:
     wrong_role: 'Недоступна роль користувача'

@@ -18,6 +18,7 @@ en:
     proposals: Proposals
     errors:
       wrong_phone: Invalid number format
+      wrong_format: Invalid format
 
   application:
     wrong_role: 'Unavailable user role'
