@@ -23,7 +23,7 @@ gem 'rails-i18n', '~> 5.0.0'
 gem 'oj'
 gem 'roo', '~> 2.7.0'
 gem 'roo-xls'
-
+gem 'kaminari'
 
 group :development do
   gem 'listen'
