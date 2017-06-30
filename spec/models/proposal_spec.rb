@@ -40,12 +40,12 @@ RSpec.describe Proposal, type: :model do
   end
 
   describe 'validation' do
-    let!(:category) { FactoryGirl.create(:category, name: 'Дом', weight: 1) }
+    let!(:category) { FactoryGirl.create(:flat) }
     let!(:user) { FactoryGirl.create(:user_moderator) }
     let!(:region) { FactoryGirl.create(:region) }
-    let(:other_region) { FactoryGirl.create(:region, name: 'REGION') }
+    let(:other_region) { FactoryGirl.create(:region, name: 'REGION', code: 'region_2') }
     let!(:city) { FactoryGirl.create(:city, region: region) }
-    let!(:other_city) { FactoryGirl.create(:city, region: other_region) }
+    let!(:other_city) { FactoryGirl.create(:city, region: other_region, code: 'other_city') }
     let!(:district) {FactoryGirl.create(:district, city: city)}
     let(:proposal) { FactoryGirl.build(:proposal, author: user, region: region, city: city, category: category, district: district) }
 

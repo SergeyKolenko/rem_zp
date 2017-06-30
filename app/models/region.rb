@@ -1,9 +1,13 @@
 class Region < ApplicationRecord
   include FilesImport
+  include CodeValidations
 
   has_many :cities
   has_many :proposals
   has_and_belongs_to_many :agencies
+
+  translates :name
+  attribute :name
 
   validates :name, presence: true, uniqueness: true
 

@@ -24,6 +24,8 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'oj'
 gem 'roo', '~> 2.7.0'
 gem 'roo-xls'
+gem 'globalize', git: 'https://github.com/globalize/globalize'
+gem 'activemodel-serializers-xml'
 
 group :development do
   gem 'listen'

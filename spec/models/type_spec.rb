@@ -7,17 +7,18 @@ RSpec.describe Type, type: :model do
 
   context 'db column' do
     it { expect have_db_column(:name).of_type(:string) }
+    it { expect have_db_column(:code).of_type(:string) }
   end
 
   context 'Type validate column' do
     it { expect validate_presence_of(:name) }
-    it { expect validate_uniqueness_of(:name) }
+    it { expect validate_presence_of(:code) }
+    it { expect validate_uniqueness_of(:code) }
   end
 
   describe 'validation' do
-    let(:type_valid) { FactoryGirl.build(:type) }
-    let(:type_invalid) { FactoryGirl.build(:type, name: '') }
-    let(:type_invalid_not_uniq_name) { FactoryGirl.create(:type, name:'String') }
+    let(:type_valid) { FactoryGirl.create(:type, code: 'type_code') }
+    let(:type_invalid) { FactoryGirl.build(:type, name: '', code: '') }
 
     it 'is valid with valid attributes' do
       expect(type_valid).to be_valid
