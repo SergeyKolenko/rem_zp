@@ -47,12 +47,15 @@ en:
         pnone: Phone
       category:
         name: Name
+        code: Code
         weight: Weight
       city:
         name: Name
+        code: Code
         region: Region
       district:
         name: Name
+        code: Code
         city: City
       option_value:
         value: Value
@@ -60,6 +63,7 @@ en:
         option: Option
       option:
         name: Name
+        code: Code
         unit: Unit
       proposal:
         title: Title
@@ -78,10 +82,12 @@ en:
         images: Images
       region:
         name: Name
+        code: Code
       role:
         name: Name
       type:
         name: Name
+        code: Code
       user:
         email: Email
         password: Password
