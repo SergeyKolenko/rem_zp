@@ -8,17 +8,16 @@
           = t('admin.categories.change')
       = form_with scope: Category.new, url: admin_category_path(:id), method: 'patch', id: 'update_category_form', class: 'form-horizontal', local: true do |c|
         .modal-body
-          .row
-            .form-group
-              .col-sm-3.control-label
-                = c.label :name
-              .col-sm-9
-                = c.text_field :name, class: 'form-control', required: true, id: 'category_name'
-            .form-group
-              .col-sm-3.control-label
-                = c.label :weight
-              .col-sm-9
-                = c.number_field :weight, class: 'form-control',  required: true, id: 'category_weight'
+          .form-group
+            .col-sm-3.control-label
+              = c.label :name
+            .col-sm-9
+              = c.text_field :name, class: 'form-control', required: true, id: 'category_name'
+          .form-group
+            .col-sm-3.control-label
+              = c.label :weight
+            .col-sm-9
+              = c.number_field :weight, class: 'form-control',  required: true, id: 'category_weight'
         .modal-footer
           = c.submit t('edit'), class: 'btn btn-success'
           %button.btn.btn-default{"data-dismiss": "modal", type: "button"}
