@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
                                                                                  :description, :approved,
                                                                                  :city_ids, :region_ids, :district_ids]
     ])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :phone, :locale, :avatar,
+                                                              :remove_avatar, :avatar_cache])
   end
 
   def current_ability
