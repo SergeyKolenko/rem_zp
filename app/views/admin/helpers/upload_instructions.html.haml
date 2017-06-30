@@ -8,8 +8,10 @@
         = t('admin.helpers.upload_instructions.json')
       %pre
         [
-        %code= "&#09;{'name' : '#{t('admin.helpers.upload_instructions.example_value')} 1'},"
-        %code= "&#09;{'name' : '#{t('admin.helpers.upload_instructions.example_value')} 2'}"
+        %code= "{'code' : '#{t('admin.helpers.upload_instructions.example_code')} 1',
+                'name' : '#{t('admin.helpers.upload_instructions.example_value')} 1'},"
+        %code= "{'code' : '#{t('admin.helpers.upload_instructions.example_code')} 2',
+                'name' : '#{t('admin.helpers.upload_instructions.example_value')} 2'}"
         ]
     %div
       %h3 Csv:
@@ -17,11 +19,11 @@
         = t('admin.helpers.upload_instructions.csv')
       %pre
         %code
-          name
+          code,name
         %code
-          = "#{t('admin.helpers.upload_instructions.example_value')} 1"
+          = "#{t('admin.helpers.upload_instructions.example_code')} 1,#{t('admin.helpers.upload_instructions.example_value')} 1"
         %code
-          = "#{t('admin.helpers.upload_instructions.example_value')} 2"
+          = "#{t('admin.helpers.upload_instructions.example_code')} 2,#{t('admin.helpers.upload_instructions.example_value')} 2"
     %div
       %h3 Xml, xls, xlsl:
       %p
@@ -30,12 +32,17 @@
         %table.table.table-bordered
           %thead
             %tr
+              %th code
               %th name
           %tbody
             %tr
               %th
+                = "#{t('admin.helpers.upload_instructions.example_code')} 1"
+              %th
                 = "#{t('admin.helpers.upload_instructions.example_value')} 1"
             %tr
+              %th
+                = "#{t('admin.helpers.upload_instructions.example_code')} 2"
               %th
                 = "#{t('admin.helpers.upload_instructions.example_value')} 2"
     %div
@@ -44,4 +51,4 @@
       %ul.list-unstyled
         %li
           = "#{t('admin.regions.title')}:"
-          name
+          code, name

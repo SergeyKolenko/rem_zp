@@ -1,18 +1,18 @@
 module FilesImport
   extend ActiveSupport::Concern
-  require 'csv'
-  require 'oj'
   require 'roo'
 
   module ClassMethods
 
     def csv_import(file, model)
+      require 'csv'
       CSV.foreach(file.path, headers: true) do |row|
         model.create! row.to_hash
       end
     end
 
     def json_import(file, model)
+      require 'oj'
       json = Oj.load(File.read(file.path))
       json.each { |row| model.create! row.to_hash }
     end

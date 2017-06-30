@@ -14,6 +14,8 @@ RSpec.describe User, type: :model do
     it { expect have_db_column(:last_name).of_type(:string) }
     it { expect have_db_column(:role_id).of_type(:integer) }
     it { expect have_db_column(:phone).of_type(:string) }
+    it { expect have_db_column(:avatar).of_type(:string) }
+    it { expect have_db_column(:locale).of_type(:string) }
   end
 
   context 'basic validation presense_of' do

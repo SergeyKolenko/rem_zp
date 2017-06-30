@@ -71,6 +71,9 @@ en:
       registrate: Sign up
       reg_new_realtor: Sign up as realtor
       reg_new_user: New user registration
+      select_locale_blank: Select interface language
+      select_agency_region_blank: Select region
+      select_agency_city_blank: Select city
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."

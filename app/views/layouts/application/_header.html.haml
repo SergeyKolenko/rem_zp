@@ -29,8 +29,11 @@
                 = t('application.header.control_panel')
           - if current_user
             %li
-              = link_to '#' do
-                %span.glyphicon.glyphicon-user
+              = link_to edit_user_registration_path do
+                - if current_user.avatar.present?
+                  = image_tag current_user.avatar, class: 'header_avatar'
+                - else
+                  %span.glyphicon.glyphicon-user
                 = current_user.full_name
             %li
               = link_to destroy_user_session_path, method: :delete do
