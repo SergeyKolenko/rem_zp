@@ -12,13 +12,14 @@ ru:
   return_back: Вернуться назад
   back: Назад
   actions: Действия
-
+  cancel: Отмена
   shared:
     categories: Категории
     agencies: Агенции
     proposals: Предложения
     errors:
       wrong_phone: Неверный формат номера
+      wrong_format: Неверный формат
 
   application:
     wrong_role: 'Недоступная роль пользователя'
@@ -55,7 +56,16 @@ ru:
       districts: Районы
       categories: Категории
       types: Типы предложений
+      actions: Действия
+    wrong_rules: У вас нет прав.
+    categories:
+      change: Изменить категорию
+      new: Новая категория
+      create_notice: Категория создана!
+      update_notice: Категория обновлена!
+      destroy_notice: Категория удалена!
     regions:
+      new: Новый регион
       title: Регионы
       create_title: 'Чтобы добавить новый регион, введите название:'
       import_title: 'Импортировать из файла:'
@@ -75,3 +85,11 @@ ru:
         keys: Ключи
         example_value: Значение пример
     wrong_rules: У вас нет прав.
+
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+

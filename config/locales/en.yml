@@ -12,13 +12,14 @@ en:
   return_back: Retun back
   back: Back
   actions: Actions
-
+  cancel: cancel
   shared:
     categories: Categories
     agencies: Agencies
     proposals: Proposals
     errors:
       wrong_phone: Invalid number format
+      wrong_format: Invalid format
 
   application:
     wrong_role: 'Unavailable user role'
@@ -47,7 +48,7 @@ en:
     file:
       title: file
       import_button: Import
-    got_to_site: Go to site
+    go_to_site: Go to site
     aside:
       users: Members
       regions: Regions
@@ -55,7 +56,15 @@ en:
       districts: Districts
       categories: Categories
       types: "Proposal's types"
+    actions: Actions
+    categories:
+      change: Change category
+      new: New category
+      create_notice: Category created!
+      update_notice: Category updated!
+      destroy_notice: Category deleted!
     regions:
+      new: New region
       title: Regions
       create_title: 'In order to create a new region, enter the name:'
       import_title: 'Import from the file:'
@@ -72,3 +81,11 @@ en:
               of the second line, enter the object attrobutes using the same order as you have used for keys.
         keys: Keys
         example_value: Example value
+
+  views:
+      pagination:
+        first: "&laquo;"
+        last: "&raquo;"
+        previous: "&lsaquo;"
+        next: "&rsaquo;"
+

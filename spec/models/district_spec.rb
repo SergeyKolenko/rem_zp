@@ -9,11 +9,14 @@ RSpec.describe District, type: :model do
 
   context 'db column' do
     it { expect have_db_column(:name).of_type(:string) }
+    it { expect have_db_column(:code).of_type(:string)}
     it { expect have_db_column(:city_id).of_type(:integer) }
   end
 
   context 'validate column' do
     it { expect validate_presence_of(:name) }
+    it { expect validate_presence_of(:code) }
+    it { expect validate_uniqueness_of(:code) }
     it { expect validate_presence_of(:city) }
   end
 

@@ -12,13 +12,14 @@ uk:
   return_back: Повернутися назад
   back: Назад
   actions: Дії
-
+  cancel: Скасувати
   shared:
     categories: Категорії
     agencies: Агенції
     proposals: Пропозиції
     errors:
       wrong_phone: Невірний формат номеру
+      wrong_format: Невірний формат
 
   application:
     wrong_role: 'Недоступна роль користувача'
@@ -55,7 +56,15 @@ uk:
       districts: Райони
       categories: Категорії
       types: Типи пропозицій
+    actions: Дії
+    categories:
+      change: Змінити категорію
+      new: Нова категорія
+      create_notice: Категорія створена!
+      update_notice: Категория оновлена!
+      destroy_notice: Категория видалена!
     regions:
+      new: Новий регіон
       title: Регіони
       create_title: 'Щоб додати новий регіон, введіть назву:'
       import_title: 'Імпортувати з файлу:'
@@ -74,3 +83,11 @@ uk:
               вказували ключі.
         keys: Ключі
         example_value: Значення приклад
+
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+

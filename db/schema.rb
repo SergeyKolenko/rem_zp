@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170629152120) do
+=======
+ActiveRecord::Schema.define(version: 20170630101632) do
+>>>>>>> develop
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +56,7 @@ ActiveRecord::Schema.define(version: 20170629152120) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.integer "weight"
+    t.string "code"
     t.index ["name"], name: "index_categories_on_name"
   end
 
@@ -62,18 +67,61 @@ ActiveRecord::Schema.define(version: 20170629152120) do
     t.index ["option_id", "category_id"], name: "index_categories_options_on_option_id_and_category_id"
   end
 
+  create_table "category_translations", force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.index ["category_id"], name: "index_category_translations_on_category_id"
+    t.index ["locale"], name: "index_category_translations_on_locale"
+  end
+
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.bigint "region_id"
+    t.string "code"
     t.index ["name"], name: "index_cities_on_name"
     t.index ["region_id"], name: "index_cities_on_region_id"
+  end
+
+  create_table "city_translations", force: :cascade do |t|
+    t.integer "city_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.index ["city_id"], name: "index_city_translations_on_city_id"
+    t.index ["locale"], name: "index_city_translations_on_locale"
+  end
+
+  create_table "district_translations", force: :cascade do |t|
+    t.integer "district_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.index ["district_id"], name: "index_district_translations_on_district_id"
+    t.index ["locale"], name: "index_district_translations_on_locale"
   end
 
   create_table "districts", force: :cascade do |t|
     t.string "name"
     t.bigint "city_id"
+    t.string "code"
     t.index ["city_id"], name: "index_districts_on_city_id"
     t.index ["name"], name: "index_districts_on_name"
+  end
+
+  create_table "option_translations", force: :cascade do |t|
+    t.integer "option_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "unit"
+    t.index ["locale"], name: "index_option_translations_on_locale"
+    t.index ["option_id"], name: "index_option_translations_on_option_id"
   end
 
   create_table "option_values", force: :cascade do |t|
@@ -92,6 +140,7 @@ ActiveRecord::Schema.define(version: 20170629152120) do
     t.string "unit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "code"
     t.index ["name"], name: "index_options_on_name"
   end
 
@@ -128,8 +177,19 @@ ActiveRecord::Schema.define(version: 20170629152120) do
     t.index ["type_id", "proposal_id"], name: "index_proposals_types_on_type_id_and_proposal_id"
   end
 
+  create_table "region_translations", force: :cascade do |t|
+    t.integer "region_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.index ["locale"], name: "index_region_translations_on_locale"
+    t.index ["region_id"], name: "index_region_translations_on_region_id"
+  end
+
   create_table "regions", force: :cascade do |t|
     t.string "name"
+    t.string "code"
     t.string "region"
     t.index ["name"], name: "index_regions_on_name"
   end
@@ -141,8 +201,19 @@ ActiveRecord::Schema.define(version: 20170629152120) do
     t.index ["name"], name: "index_roles_on_name"
   end
 
+  create_table "type_translations", force: :cascade do |t|
+    t.integer "type_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.index ["locale"], name: "index_type_translations_on_locale"
+    t.index ["type_id"], name: "index_type_translations_on_type_id"
+  end
+
   create_table "types", force: :cascade do |t|
     t.string "name"
+    t.string "code"
   end
 
   create_table "users", force: :cascade do |t|
@@ -166,8 +237,13 @@ ActiveRecord::Schema.define(version: 20170629152120) do
     t.datetime "confirmation_sent_at"
     t.string "phone"
     t.string "unconfirmed_email"
+<<<<<<< HEAD
     t.string "avatar"
     t.string "locale", default: "ru"
+=======
+    t.bigint "agency_id"
+    t.index ["agency_id"], name: "index_users_on_agency_id"
+>>>>>>> develop
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

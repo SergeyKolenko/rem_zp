@@ -10,19 +10,22 @@ RSpec.describe City, type: :model do
 
   context 'db column' do
     it { expect have_db_column(:name).of_type(:string) }
+    it { expect have_db_column(:code).of_type(:string) }
     it { expect have_db_column(:region_id).of_type(:integer) }
-    it { expect validate_uniqueness_of(:region) }
   end
 
   context 'validate column' do
     it { expect validate_presence_of(:name) }
+    it { expect validate_presence_of(:code) }
+    it { expect validate_uniqueness_of(:code) }
     it { expect validate_presence_of(:region) }
+    it { expect validate_uniqueness_of(:region) }
   end
 
   describe 'validation' do
-    let(:region1) { FactoryGirl.build(:region, name: Faker::StarWars.planet) }
-    let(:city_valid) { FactoryGirl.build(:city, region: region1) }
-    let(:city_invalid) { FactoryGirl.build(:city, region_id: '') }
+    let(:region) { FactoryGirl.build(:region) }
+    let(:city_valid) { FactoryGirl.build(:city, region: region) }
+    let(:city_invalid) { FactoryGirl.build(:city, region_id: '', code: '') }
 
     it 'is valid with valid attributes' do
       expect(city_valid).to be_valid
@@ -33,9 +36,9 @@ RSpec.describe City, type: :model do
     end
 
     context 'with region' do
-      let(:region2) { FactoryGirl.build(:region, name: Faker::StarWars.planet) }
+      let(:region2) { FactoryGirl.build(:region, name: Faker::StarWars.planet, code: 'other_region') }
       let(:city_valid_dup) { FactoryGirl.build(:city, region: region2) }
-      let(:city_invalid_dup) { FactoryGirl.build(:region, name: Faker::StarWars.planet) }
+      let(:city_invalid_dup) { FactoryGirl.build(:region, name: Faker::StarWars.planet, code: 'other_region2') }
       before {city_valid_dup.save}
       before {city_invalid_dup.save}
 

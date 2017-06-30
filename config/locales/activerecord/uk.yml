@@ -58,12 +58,15 @@ uk:
         pnone: Телефон
       category:
         name: Найменування
+        code: Код
         weight: Вага
       city:
         name: Назва
+        code: Код
         region: Область
       district:
         name: Назва
+        code: Код
         city: Місто
       option_value:
         value: Значення
@@ -71,6 +74,7 @@ uk:
         option: Опція
       option:
         name: Найменування
+        code: Код
         unit: Одиниця виміру
       proposal:
         title: Заголовок
@@ -89,10 +93,12 @@ uk:
         images: Зображення
       region:
         name: Назва
+        code: Код
       role:
         name: Назва
       type:
         name: Назва
+        code: Код
       user:
         email: Email
         password: Пароль
