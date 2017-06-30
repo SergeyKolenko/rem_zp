@@ -11,15 +11,13 @@ en:
   add: Add
   return_back: Retun back
   back: Back
-  weight: Weight
-
+  actions: Actions
   shared:
     categories: Categories
     agencies: Agencies
     proposals: Proposals
     errors:
       wrong_phone: Invalid number format
-
   application:
     wrong_role: 'Unavailable user role'
     header:
@@ -44,6 +42,9 @@ en:
       stub_description: Buying, selling, renting a home in Ukraine
 
   admin:
+    file:
+      title: file
+      import_button: Import
     got_to_site: Go to site
     aside:
       users: Members
@@ -57,4 +58,21 @@ en:
       create_notice: Category created!
       update_notice: Category updated!
       destroy_notice: Category deleted!
+    regions:
+      title: Regions
+      create_title: 'In order to create a new region, enter the name:'
+      import_title: 'Import from the file:'
+      file_tooltipe: 'Available extensions: csv, json, xls, xlsx, xml'
+    helpers:
+      upload_instructions:
+        title: Upload instruction
+        json: 'In order to upload data from the json file, every new object should be surrounded by braces {}. Inside of them
+              enter the object attributes using "key" : "value" format. The beginning and the end of file should be surrounded
+              by square brackets []. Attributes and objects should be separated by commas'
+        csv: In order to upload data from the csv, enter the keys separated via commas within the first line. From the beginning
+             of the second line, enter the object attrobutes using the same order as you have used for keys.
+        exel: In order to upload data from the xml, xls or xlsl file, enter the keys within the first line. From the beginning
+              of the second line, enter the object attrobutes using the same order as you have used for keys.
+        keys: Keys
+        example_value: Example value
 

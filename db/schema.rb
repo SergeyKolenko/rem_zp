@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170622103200) do
+ActiveRecord::Schema.define(version: 20170627113210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -130,6 +130,7 @@ ActiveRecord::Schema.define(version: 20170622103200) do
 
   create_table "regions", force: :cascade do |t|
     t.string "name"
+    t.string "region"
     t.index ["name"], name: "index_regions_on_name"
   end
 

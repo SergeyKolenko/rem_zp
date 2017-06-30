@@ -1,0 +1,46 @@
+.row
+  .col-xs-10.col-sm-10.col-md-12
+    %h1.text-center
+      = t('admin.regions.title')
+    .col-sm-6
+      %h5
+        = t('admin.regions.create_title')
+      = form_with scope: Region.new, url: admin_regions_path, local: true, class: 'form-inline' do |f|
+        .form-group
+          = f.label :name, class: 'control-label'
+          = f.text_field :name, class: 'form-control', required: true
+          = f.submit t('create'), class: 'mart-5 btn btn-success'
+    .col-sm-6
+      %h5
+        = t('admin.regions.import_title')
+      = form_with url: import_admin_regions_path, multipart: true, local: true, class: 'form-inline' do |f|
+        .form-group
+          = f.label :file, t('admin.file.title'), class: 'control-label'
+          = f.file_field :file
+        .form-group
+          = link_to '?', admin_upload_instructions_path, data: { toggle: 'tooltip' }, title: t('admin.regions.file_tooltipe')
+          = f.submit t('admin.file.import_button'), class: 'btn btn-primary'
+    .col-sm-12
+      %table.table.table-bordered.mart-5
+        %thead
+          %tr
+            %th.col-sm-1 Id
+            %th
+              = t('activerecord.attributes.region.name')
+            %th.col-sm-2
+              = t('actions')
+        %tbody
+          - @regions.each do |region|
+            %tr
+              %th.col-sm-1
+                #{region.id}
+              %td
+                #{region.name}
+              %td.col-sm-2
+                %a.btn.btn-warning.btn-xs.update-btn.glyphicon.glyphicon-pencil{ data: { url: "/admin/regions/#{region.id}",
+                                                  name: region.name, toggle: 'modal', target: '#region_modal'} }
+                  = t('edit')
+                = link_to t('delete'), admin_region_path(region.id), method: :delete, data: { confirm: t('are_you_sure') },
+                                                        class: 'btn btn-danger btn-xs glyphicon glyphicon-trash'
+      = will_paginate @regions
+    = render 'update_region_form'
