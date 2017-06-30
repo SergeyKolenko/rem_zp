@@ -4,14 +4,15 @@
       .modal-header
         %button.close{ data: { dismiss: 'modal'}, aria: {label: 'Close' }}
           %span{ aria: { hidden: true} } &times;
-        %h4.modal-title#myModalLabel Редактировать регион
-      .modal-body
-        = form_with scope: :region, url: admin_region_path(:id), method: 'patch', local: true, id: 'update_region_form' do |f|
+        %h4.modal-title#myModalLabel
+          = t('edit')
+      = form_with scope: Region.new, url: admin_region_path(:id), method: 'patch', local: true, id: 'update_region_form' do |f|
+        .modal-body
           .row
             .form-group
-              .col-sm-8
-                = f.label :name, class: 'control-label'
-                = f.text_field :name, id: 'region_name', class: 'form-control', required: true
-            .form-group
-              .col-sm-8
-                = f.submit 'Редактировать', class: 'btn btn-success mart-5'
+              .col-sm-3.control-label
+                = f.label :name
+              .col-sm-9
+                = f.text_field :name, class: 'form-control', id: 'region_name', required: true
+        .modal-footer
+          = f.submit t('edit'), class: 'btn btn-success'

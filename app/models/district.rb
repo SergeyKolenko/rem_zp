@@ -6,7 +6,7 @@ class District < ApplicationRecord
   has_and_belongs_to_many :agencies, optional: true
 
   translates :name
-  attribute :name
+  attribute :name, :string
 
   validates :name, :city, presence: true
 end

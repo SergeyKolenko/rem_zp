@@ -1,0 +1,49 @@
+.page-header
+  %h1
+    = t('shared.categories')
+  %button.btn.btn-primary.btn-lg{ data:{target: "#category_createModal", toggle: "modal", whatever: "@mdo", type: "button"} }
+    %span.glyphicon.glyphicon-plus
+    = t('create')
+.row
+  .col-xs-12
+    %table.table.table-bordered
+      %thead
+        %tr
+          %th.text-right.col-sm-1 Id
+          %th.text-center
+            = Category.human_attribute_name(:name)
+          %th.text-center.col-sm-2
+            = Category.human_attribute_name(:weight)
+          %th.text-center.col-sm-3.col-xs-1
+            = t('actions')
+      %tbody
+        - @categories.each do |category|
+          %tr
+            %th.text-right
+              #{category.id}
+            %td
+              #{category.name}
+            %td
+              #{category.weight}
+            %td.text-center.actions
+              %button.btn.btn-warning.btn-xs.edit_btn{ data:{ target: "#category_updateModal", toggle: "modal", whatever: "@mdo", type: "button",
+                                                                                        name:"#{category.name}", weight:"#{category.weight}", url:admin_category_path(category.id)}}
+                %span.glyphicon.glyphicon-pencil
+                = t('edit')
+              = link_to admin_category_path(category.id), method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger btn-xs' do
+                %span.glyphicon.glyphicon-trash
+                = t('delete')
+.row
+  .col-xs-12
+    - if (@categories.count > 0 && @categories.total_pages > 1)
+      .text-center
+        = paginate @categories, theme: 'twitter-bootstrap-3'
+= render 'new_category_form'
+= render 'update_category_form'
+
+
+
+
+
+
+

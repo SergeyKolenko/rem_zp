@@ -5,7 +5,8 @@ class Option < ApplicationRecord
   has_many :option_values
 
   translates :name, :unit
-  attribute :name, :unit
+  attribute :name, :string
+  attribute :unit, :string
 
   validates :name, presence: true, length: { minimum: 2, maximum: 20 }
 end
