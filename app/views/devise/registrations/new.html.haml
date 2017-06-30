@@ -36,7 +36,7 @@
       .form-group
         .col-sm-8.col-sm-offset-3.mart-5
           = f.label :locale, class: 'control-label'
-          = f.select :locale, I18n.available_locales, class: 'form-control'
+          = f.select :locale, available_languages, class: 'form-control'
       .form-group
         .col-sm-8.col-sm-offset-3
           = f.label :avatar, class: 'control-label'

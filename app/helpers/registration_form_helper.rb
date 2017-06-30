@@ -9,4 +9,8 @@ module RegistrationFormHelper
       }
     end
   end
+
+  def available_languages
+    [%w(Русский ru), %w(Українська ua), %w(English en)]
+  end
 end
