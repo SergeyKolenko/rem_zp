@@ -66,7 +66,7 @@ en:
     regions:
       new: New region
       title: Regions
-      create_title: 'In order to create a new region, enter the name:'
+      create_title: 'In order to create a new region, enter the code and the name:'
       import_title: 'Import from the file:'
       file_tooltipe: 'Available extensions: csv, json, xls, xlsx, xml'
     helpers:
@@ -80,6 +80,7 @@ en:
         exel: In order to upload data from the xml, xls or xlsl file, enter the keys within the first line. From the beginning
               of the second line, enter the object attrobutes using the same order as you have used for keys.
         keys: Keys
+        example_code: Example code
         example_value: Example value
 
   views:

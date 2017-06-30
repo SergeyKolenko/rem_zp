@@ -48,14 +48,17 @@ en:
       category:
         code: Code
         name: Name
+        code: Code
         weight: Weight
       city:
         code: Code
         name: Name
+        code: Code
         region: Region
       district:
         code: Code
         name: Name
+        code: Code
         city: City
       option_value:
         value: Value
@@ -64,6 +67,7 @@ en:
       option:
         code: Code
         name: Name
+        code: Code
         unit: Unit
       proposal:
         title: Title
@@ -82,10 +86,12 @@ en:
         images: Images
       region:
         name: Name
+        code: Code
       role:
         name: Name
       type:
         name: Name
+        code: Code
       user:
         email: Email
         password: Password
@@ -96,3 +102,6 @@ en:
         remember_me: Remember me
         password_confirmation: Password confirmation
         current_password: Current password
+        avatar: Avatar
+        remove_avatar: Delete avatar
+        locale: Interface language

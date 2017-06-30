@@ -58,14 +58,17 @@ ru:
       category:
         code: Код
         name: Наименование
+        code: Код
         weight: Вес
       city:
         code: Код
         name: Название
+        code: Код
         region: Область
       district:
         code: Код
         name: Название
+        code: Код
         city: Город
       option_value:
         value: Значение
@@ -74,6 +77,7 @@ ru:
       option:
         code: Код
         name: Наименование
+        code: Код
         unit: Еденица измерения
       proposal:
         title: Заголовок
@@ -93,10 +97,12 @@ ru:
       region:
         code: Код
         name: Название
+        code: Код
       role:
         name: Название
       type:
         name: Название
+        code: Код
       user:
         email: Email
         password: Пароль
@@ -107,3 +113,6 @@ ru:
         remember_me: Запомнить меня
         password_confirmation: Подвердите пароль
         current_password: Текущий пароль
+        avatar: Аватар
+        remove_avatar: Удалить аватар
+        locale: Язык интерфейса

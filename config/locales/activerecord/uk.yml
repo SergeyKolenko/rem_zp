@@ -59,14 +59,17 @@ uk:
       category:
         code: Код
         name: Найменування
+        code: Код
         weight: Вага
       city:
         code: Код
         name: Назва
+        code: Код
         region: Область
       district:
         code: Код
         name: Назва
+        code: Код
         city: Місто
       option_value:
         value: Значення
@@ -75,6 +78,7 @@ uk:
       option:
         code: Код
         name: Найменування
+        code: Код
         unit: Одиниця виміру
       proposal:
         title: Заголовок
@@ -94,10 +98,12 @@ uk:
       region:
         code: Код
         name: Назва
+        code: Код
       role:
         name: Назва
       type:
         name: Назва
+        code: Код
       user:
         email: Email
         password: Пароль
@@ -107,4 +113,7 @@ uk:
         phone: Телефон
         remember_me: "Запам'ятати мене"
         password_confirmation: Підтвердіть пароль
-        current_password: Поточний пароль
+        current_password: Поточний пароль.
+        avatar: Аватар
+        remove_avatar: Видалити аватар
+        locale: Мова інтерфейсу

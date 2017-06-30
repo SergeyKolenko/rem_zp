@@ -185,8 +185,8 @@ ActiveRecord::Schema.define(version: 20170630101632) do
 
   create_table "regions", force: :cascade do |t|
     t.string "name"
-    t.string "code"
     t.string "region"
+    t.string "code"
     t.index ["name"], name: "index_regions_on_name"
   end
 
@@ -233,6 +233,8 @@ ActiveRecord::Schema.define(version: 20170630101632) do
     t.datetime "confirmation_sent_at"
     t.string "phone"
     t.string "unconfirmed_email"
+    t.string "avatar"
+    t.string "locale", default: "ru"
     t.bigint "agency_id"
     t.index ["agency_id"], name: "index_users_on_agency_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
