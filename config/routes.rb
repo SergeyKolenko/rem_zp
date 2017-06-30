@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :user, controllers: { registrations: 'user/registrations'}
+  devise_for :user, controllers: {devise: 'user/registrations'}
 
   root 'proposals#index'
 
@@ -11,6 +11,10 @@ Rails.application.routes.draw do
 
   # ADMIN PANEL
   namespace :admin do
+
+    devise_scope :user do
+      get 'user/edit',  to: 'user/registrations#edit', as: :edit_user_registration
+    end
 
     controller :dashboards do
       get '/', action: :dashboard, as: :dashboard

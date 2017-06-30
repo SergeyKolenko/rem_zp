@@ -47,7 +47,7 @@ ru:
     file:
       title: Файл
       import_button: Импортировать
-    got_to_site: Перейти на сайт
+    go_to_site: Перейти на сайт
     aside:
       users: Пользователи
       regions: Регионы

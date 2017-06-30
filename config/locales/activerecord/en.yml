@@ -92,3 +92,6 @@ en:
         remember_me: Remember me
         password_confirmation: Password confirmation
         current_password: Current password
+        avatar: Avatar
+        remove_avatar: Delete avatar
+        locale: Interface language

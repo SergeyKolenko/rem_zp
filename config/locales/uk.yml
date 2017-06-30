@@ -47,7 +47,7 @@ uk:
     file:
       title: Файл
       import_button: Імпортувати
-    got_to_site: Перейти на сайт
+    go_to_site: Перейти на сайт
     aside:
       users: Користувачі
       regions: Регіони

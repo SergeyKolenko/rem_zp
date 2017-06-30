@@ -102,4 +102,7 @@ uk:
         phone: Телефон
         remember_me: "Запам'ятати мене"
         password_confirmation: Підтвердіть пароль
-        current_password: Поточний пароль
+        current_password: Поточний пароль.
+        avatar: Аватар
+        remove_avatar: Видалити аватар
+        locale: Мова інтерфейсу

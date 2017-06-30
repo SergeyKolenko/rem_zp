@@ -102,3 +102,6 @@ ru:
         remember_me: Запомнить меня
         password_confirmation: Подвердите пароль
         current_password: Текущий пароль
+        avatar: Аватар
+        remove_avatar: Удалить аватар
+        locale: Язык интерфейса

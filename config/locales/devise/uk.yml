@@ -71,6 +71,9 @@ uk:
       registrate: Зареєструватися
       reg_new_realtor: Реєстрація нового ріелтора
       reg_new_user: Реєстрація нового користувача
+      select_locale_blank: Оберіть мову інтерфейсу
+      select_agency_region_blank: Оберіть регіон
+      select_agency_city_blank: Оберіть місто
     sessions:
       signed_in: "Увійшли успішно."
       signed_out: "Вийшли успішно."

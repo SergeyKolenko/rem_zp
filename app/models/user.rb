@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
   delegate :name, to: :role, prefix: true
 
+  mount_uploader :avatar, UsersAvatarUploader
+
   validates :first_name, :last_name, :role, presence: true
   validates :agency, presence: true, if: Proc.new { |u| %w(agent).include? u.role_name }
   validates :agency, absence: true, unless: Proc.new { |u| %w(agent).include? u.role_name }

@@ -1,0 +1,67 @@
+.row
+  .col-xs-12
+    %h2.text-center
+      = t 'devise.registrations.edit'
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      .text-center= devise_error_messages!
+      = f.hidden_field :reset_password_token
+      .form-group
+        .col-sm-8.col-sm-offset-2
+          = f.label :first_name, class: 'control-label'
+          = f.text_field :first_name, class: 'form-control'
+      .form-group
+        .col-sm-8.col-sm-offset-2
+          = f.label :last_name, class: 'control-label'
+          = f.text_field :last_name, class: 'form-control'
+      .form-group
+        .col-sm-8.col-sm-offset-2
+          = f.label :email, class: 'control-label'
+          = f.email_field :email, autofocus: true, class: 'form-control'
+          - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+            %div
+              = t 'devise.registrations.not_accepted', email: resource.unconfirmed_email
+      .form-group
+        .col-sm-8.col-sm-offset-2
+          = f.label :password, class: 'control-label'
+          = f.password_field :password, autocomplete: 'off', class: 'form-control'
+          %i
+            = t 'devise.registrations.free_pass'
+      .form-group
+        .col-sm-8.col-sm-offset-2
+          = f.label :password_confirmation, class: 'control-label'
+          = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control'
+      .form-group
+        .col-sm-8.col-sm-offset-2
+          = f.label :phone, class: 'control-label'
+          = f.telephone_field :phone, autofocus: true, class: 'form-control telephone-field', placeholder: '099-999-99-99'
+      .form-group
+        .col-sm-8.col-sm-offset-2.mart-5
+          = f.label :locale, class: 'control-label'
+          = f.select :locale, I18n.available_locales, class: 'form-control'
+      .form-group
+        .col-sm-8.col-sm-offset-2
+          = f.label :current_password, class: 'control-label'
+          = f.password_field :current_password, autocomplete: 'off', class: 'form-control', required: true
+          %i
+            = t 'devise.registrations.need_pass'
+      - if current_user.avatar.url.present?
+        .form-group
+          .col-sm-8.col-sm-offset-2.mart-5.text-center
+            = image_tag current_user.avatar
+            .form-group
+              = f.label :remove_avatar, class: 'control-label'
+              = f.check_box :remove_avatar
+            .form-inline.text-center
+              = f.label :avatar, class: 'control-label'
+              = f.file_field :avatar
+              = f.hidden_field :avatar_cache
+      .form-group
+        .col-sm-8.col-sm-offset-2.mart-5.text-center
+          = f.submit t('update_info'), class: 'btn btn-success'
+          .mart-5
+            = render 'devise/shared/links'
+.row
+  .col-xs-12.text-center
+    = button_to t('devise.registrations.del_acc'), registration_path(resource_name),
+            data: { confirm: t('are_you_sure') }, method: :delete, class: 'btn btn-danger'
+

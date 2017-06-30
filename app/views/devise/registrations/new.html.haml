@@ -33,6 +33,15 @@
           = f.label :phone, class: 'control-label'
           = f.telephone_field :phone, autofocus: true, class: 'form-control telephone-field',
                                       required: true, placeholder: '099-999-99-99'
+      .form-group
+        .col-sm-8.col-sm-offset-3.mart-5
+          = f.label :locale, class: 'control-label'
+          = f.select :locale, I18n.available_locales, class: 'form-control'
+      .form-group
+        .col-sm-8.col-sm-offset-3
+          = f.label :avatar, class: 'control-label'
+          = f.file_field :avatar
+          = f.hidden_field :avatar_cache
     - if session[:role_id] == role_ids[:agency_director]
       .col-xs-6.col-sm-6.col-md-6
         %h3
@@ -62,13 +71,13 @@
           .form-group
             .col-sm-8
               = agency_form.label :region_ids, class: 'control-label'
-              = agency_form.collection_select :region_ids, Region.all, :id, :name, {include_blank: 'Выберете область'},
-                                                                          {multiple: false, class: 'select2 region_select'}
+              = agency_form.collection_select :region_ids, Region.all, :id, :name,
+                {include_blank: t('devise.registrations.select_agency_region_blank')}, {multiple: false, class: 'select2 region_select'}
           .form-group
             .col-sm-8
               = agency_form.label :city_ids, class: 'control-label'
-              = agency_form.collection_select :city_ids, City.all, :id, :name, {include_blank: 'Выберете город'},
-                                                                      {multiple: false, class: 'select2'}
+              = agency_form.collection_select :city_ids, City.all, :id, :name,
+                {include_blank: t('devise.registrations.select_agency_city_blank')}, {multiple: false, class: 'select2'}
     .form-group
       .col-sm-12.text-center.mart-5
         = f.submit t('devise.registrations.registrate'), class: 'btn btn-success'
