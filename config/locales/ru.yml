@@ -44,7 +44,7 @@ ru:
       stub_description: Покупка, продажа, аренда жилья в Украине
 
   admin:
-    got_to_site: Перейти на сайт
+    go_to_site: Перейти на сайт
     aside:
       users: Пользователи
       regions: Регионы

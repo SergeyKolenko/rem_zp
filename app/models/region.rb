@@ -6,6 +6,7 @@ class Region < ApplicationRecord
   has_and_belongs_to_many :agencies
 
   translates :name
+  attribute :name
 
   validates :name, presence: true, uniqueness: true
 end

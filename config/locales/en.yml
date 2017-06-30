@@ -44,7 +44,7 @@ en:
       stub_description: Buying, selling, renting a home in Ukraine
 
   admin:
-    got_to_site: Go to site
+    go_to_site: Go to site
     aside:
       users: Members
       regions: Regions

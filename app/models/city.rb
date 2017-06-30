@@ -7,6 +7,7 @@ class City < ApplicationRecord
   has_many :proposals
 
   translates :name
+  attribute :name
 
   validates :name, :region, presence: true
 end

@@ -44,7 +44,7 @@ uk:
       stub_description: Купівля, продаж, оренда житла в Україні
 
   admin:
-    got_to_site: Перейти на сайт
+    go_to_site: Перейти на сайт
     aside:
       users: Користувачі
       regions: Регіони

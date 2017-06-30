@@ -15,7 +15,7 @@ RSpec.describe OptionValue, type: :model do
   describe 'validation' do
 
     before(:all) do
-      @category = FactoryGirl.create(:category, name: 'Дом', weight: 1)
+      @category = FactoryGirl.create(:house)
       @option = FactoryGirl.create(:square)
       @option.categories << @category
     end
