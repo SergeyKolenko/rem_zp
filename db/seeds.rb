@@ -289,4 +289,6 @@ I18n.with_locale(:en) do
     }
     types.each { |code, name| Type.find_or_create_by(code: code).update(name: name) }
   end
+
+  User.create(first_name: 'Oleg' , last_name: 'rfyr', email:'eegeg@jjj.com', password: '123456', password_confirmation: '123456', role_id: 6, phone: '063-400-20-20')
 end

@@ -56,12 +56,15 @@ ru:
         director: Директор
         pnone: Телефон
       category:
+        code: Код
         name: Наименование
         weight: Вес
       city:
+        code: Код
         name: Название
         region: Область
       district:
+        code: Код
         name: Название
         city: Город
       option_value:
@@ -69,6 +72,7 @@ ru:
         proposal: Предложение
         option: Опция
       option:
+        code: Код
         name: Наименование
         unit: Еденица измерения
       proposal:
@@ -87,6 +91,7 @@ ru:
         district: Район
         images: Изображения
       region:
+        code: Код
         name: Название
       role:
         name: Название

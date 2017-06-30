@@ -46,12 +46,15 @@ en:
         director: Director
         pnone: Phone
       category:
+        code: Code
         name: Name
         weight: Weight
       city:
+        code: Code
         name: Name
         region: Region
       district:
+        code: Code
         name: Name
         city: City
       option_value:
@@ -59,6 +62,7 @@ en:
         proposal: Proposal
         option: Option
       option:
+        code: Code
         name: Name
         unit: Unit
       proposal:

@@ -3,7 +3,6 @@ class Admin::CategoriesController < Admin::AdminController
 
   def index
     @categories = Category.all.page(params[:page]).per(10)
-    # @categories = Category.paginate(page: params[:page].per(10))
   end
 
   def new
@@ -15,7 +14,7 @@ class Admin::CategoriesController < Admin::AdminController
     if @category.save
       redirect_to admin_categories_path, notice: 'Категория создана!'
     else
-      render :new
+      render :create
     end
   end
 
