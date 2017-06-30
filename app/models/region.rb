@@ -5,6 +5,7 @@ class Region < ApplicationRecord
   has_many :proposals
   has_and_belongs_to_many :agencies
 
+  paginates_per 10
   validates :name, presence: true, uniqueness: true
 
   def self.import(file)

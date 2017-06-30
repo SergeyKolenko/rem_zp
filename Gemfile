@@ -24,6 +24,7 @@ gem 'oj'
 gem 'roo', '~> 2.7.0'
 gem 'roo-xls'
 gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 
 group :development do
   gem 'listen'
