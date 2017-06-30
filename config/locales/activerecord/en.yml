@@ -46,17 +46,14 @@ en:
         director: Director
         pnone: Phone
       category:
-        code: Code
         name: Name
         code: Code
         weight: Weight
       city:
-        code: Code
         name: Name
         code: Code
         region: Region
       district:
-        code: Code
         name: Name
         code: Code
         city: City
@@ -65,7 +62,6 @@ en:
         proposal: Proposal
         option: Option
       option:
-        code: Code
         name: Name
         code: Code
         unit: Unit

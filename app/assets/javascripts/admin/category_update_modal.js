@@ -5,10 +5,12 @@ $(document).ready( function ()  {
 			url = $(this).data('url');
 			var name = $(this).data('name');
 			var weight = $(this).data('weight');
+			var code = $(this).data('code');
 		$('#category_updateModal').on('shown.bs.modal', function () {
 			$(form).attr('action', url);
 			$('#category_name').val(name);
 			$('#category_weight').val(weight);
+			$('#category_code').val(code);
 		});
 	});
 });

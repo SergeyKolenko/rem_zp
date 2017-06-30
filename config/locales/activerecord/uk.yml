@@ -57,17 +57,14 @@ uk:
         director: Директор
         pnone: Телефон
       category:
-        code: Код
         name: Найменування
         code: Код
         weight: Вага
       city:
-        code: Код
         name: Назва
         code: Код
         region: Область
       district:
-        code: Код
         name: Назва
         code: Код
         city: Місто
@@ -76,7 +73,6 @@ uk:
         proposal: Пропозиція
         option: Опція
       option:
-        code: Код
         name: Найменування
         code: Код
         unit: Одиниця виміру
@@ -96,7 +92,6 @@ uk:
         district: Район
         images: Зображення
       region:
-        code: Код
         name: Назва
         code: Код
       role:

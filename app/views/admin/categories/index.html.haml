@@ -26,8 +26,8 @@
             %td
               #{category.weight}
             %td.text-center.actions
-              %button.btn.btn-warning.btn-xs.edit_btn{ data:{ target: "#category_updateModal", toggle: "modal", whatever: "@mdo", type: "button",
-                                                                                        name:"#{category.name}", weight:"#{category.weight}", url:admin_category_path(category.id)}}
+              %button.btn.btn-warning.btn-xs.edit_btn{ data:{ target: "#category_updateModal", toggle: "modal", whatever: "@mdo", type: "button", code:"#{category.code}",
+                                                      name:"#{category.name}", weight:"#{category.weight}", url:admin_category_path(category.id)}}
                 %span.glyphicon.glyphicon-pencil
                 = t('edit')
               = link_to admin_category_path(category.id), method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger btn-xs' do
