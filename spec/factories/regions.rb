@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :region do
-    name Faker::Lorem.characters(10)
+    name Faker::StarWars.planet
+    code Faker::StarWars.planet.downcase
   end
 end

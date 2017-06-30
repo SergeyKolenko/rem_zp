@@ -19,6 +19,7 @@ uk:
     proposals: Пропозиції
     errors:
       wrong_phone: Невірний формат номеру
+      wrong_format: Невірний формат
 
   application:
     wrong_role: 'Недоступна роль користувача'
@@ -47,7 +48,7 @@ uk:
     file:
       title: Файл
       import_button: Імпортувати
-    got_to_site: Перейти на сайт
+    go_to_site: Перейти на сайт
     aside:
       users: Користувачі
       regions: Регіони

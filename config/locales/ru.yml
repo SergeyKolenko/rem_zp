@@ -19,6 +19,7 @@ ru:
     proposals: Предложения
     errors:
       wrong_phone: Неверный формат номера
+      wrong_format: Неверный формат
 
   application:
     wrong_role: 'Недоступная роль пользователя'
@@ -47,7 +48,7 @@ ru:
     file:
       title: Файл
       import_button: Импортировать
-    got_to_site: Перейти на сайт
+    go_to_site: Перейти на сайт
     aside:
       users: Пользователи
       regions: Регионы

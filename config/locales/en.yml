@@ -19,6 +19,8 @@ en:
     proposals: Proposals
     errors:
       wrong_phone: Invalid number format
+      wrong_format: Invalid format
+
   application:
     wrong_role: 'Unavailable user role'
     header:
@@ -46,7 +48,7 @@ en:
     file:
       title: file
       import_button: Import
-    got_to_site: Go to site
+    go_to_site: Go to site
     aside:
       users: Members
       regions: Regions

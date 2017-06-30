@@ -9,11 +9,13 @@ RSpec.describe Region, type: :model do
 
   context 'db column' do
     it { expect have_db_column(:name).of_type(:string)}
+    it { expect have_db_column(:code).of_type(:string)}
   end
 
   context 'basic validate column' do
     it { expect validate_presence_of(:name) }
-    it { expect validate_uniqueness_of(:name) }
+    it { expect validate_presence_of(:code) }
+    it { expect validate_uniqueness_of(:code) }
   end
 
   describe 'validation' do
