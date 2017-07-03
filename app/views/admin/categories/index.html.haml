@@ -12,6 +12,8 @@
           %th.text-right.col-sm-1 Id
           %th.text-center
             = Category.human_attribute_name(:name)
+          %th.text-center
+            = Category.human_attribute_name(:code)
           %th.text-center.col-sm-2
             = Category.human_attribute_name(:weight)
           %th.text-center.col-sm-3.col-xs-1
@@ -23,6 +25,8 @@
               #{category.id}
             %td
               #{category.name}
+            %td
+              #{category.code}
             %td
               #{category.weight}
             %td.text-center.actions
