@@ -3,7 +3,6 @@ module Admin
     include LocaleSwitch
     protect_from_forgery with: :exception
     layout 'admin'
-    before_action :set_locale
 
     # before_action :authenticate_user!
     # before_action :verify_role!

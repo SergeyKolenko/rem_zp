@@ -26,10 +26,7 @@
             = link_to '#', class: 'dropdown-toggle', role: 'button', aria: {haspopup: true, expanded: false}, data: {toggle: 'dropdown'} do
               = t('activerecord.attributes.user.locale')
               %span.caret
-            %ul.dropdown-menu
-              - available_languages.each do |locale|
-                %li
-                  = link_to locale[0], '#', data: { locale: locale[1] }, class: 'locale_switch'
+            = render 'layouts/shared/locale_dropdown_menu'
           - if current_user && current_user.role_name != 'simple_user'
             %li
               = link_to '#', class: 'btn btn-primary' do

@@ -1,8 +1,12 @@
 module LocaleSwitch
   extend ActiveSupport::Concern
 
+  included do
+    before_action :set_locale
+  end
+
   def set_locale
-    if params[:locale].present? && %w(ru uk en).include?(params[:locale])
+    if params[:locale].present? && Settings.languages.include?(params[:locale])
       current_user.update(locale: params[:locale]) if current_user
       I18n.locale = params[:locale]
       session[:current_locale] = params[:locale]
