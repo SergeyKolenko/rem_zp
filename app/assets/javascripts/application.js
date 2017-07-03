@@ -17,5 +17,6 @@
 //= require select2
 //= require_tree ./app
 //= require cable
+//= require ./shared/switch_locale
 
 

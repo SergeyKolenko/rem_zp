@@ -1,0 +1,4 @@
+%ul.dropdown-menu.locale-dropdown
+  - available_languages.each do |locale|
+    %li
+      = link_to locale[0], '#', data: { locale: locale[1] }, class: 'locale_switch'
