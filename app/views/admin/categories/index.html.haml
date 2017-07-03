@@ -1,9 +1,12 @@
-.page-header
-  %h1
-    = t('shared.categories')
-  %button.btn.btn-primary.btn-lg{ data:{target: "#category_createModal", toggle: "modal", whatever: "@mdo", type: "button"} }
-    %span.glyphicon.glyphicon-plus
-    = t('create')
+.row
+  .col-xs-12
+    .page-header
+      %h1
+        = t('shared.categories')
+      %button.btn.btn-primary.btn-lg.js-modal-form-btn{ type: 'button', data: { url: admin_categories_path,
+                                                        action: 'new', title: t('admin.categories.new') } }
+        %span.glyphicon.glyphicon-plus
+        = t('create')
 .row
   .col-xs-12
     %table.table.table-bordered
@@ -30,8 +33,8 @@
             %td
               #{category.weight}
             %td.text-center.actions
-              %button.btn.btn-warning.btn-xs.edit_btn{ data:{ target: "#category_updateModal", toggle: "modal", whatever: "@mdo", type: "button", code:"#{category.code}",
-                                                      name:"#{category.name}", weight:"#{category.weight}", url:admin_category_path(category.id)}}
+              %button.btn.btn-warning.btn-xs.js-modal-form-btn{type: 'button', data:{ object: category.attributes,
+              url: admin_category_path(category.id), action: 'edit', title: t('admin.categories.change') }}
                 %span.glyphicon.glyphicon-pencil
                 = t('edit')
               = link_to admin_category_path(category.id), method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger btn-xs' do
@@ -42,8 +45,7 @@
     - if (@categories.count > 0 && @categories.total_pages > 1)
       .text-center
         = paginate @categories, theme: 'twitter-bootstrap-3'
-= render 'new_category_form'
-= render 'update_category_form'
+= render 'modal_form'
 
 
 
