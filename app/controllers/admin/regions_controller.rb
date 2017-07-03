@@ -2,7 +2,7 @@ class Admin::RegionsController < Admin::AdminController
   before_action :get_region, only: [:update, :destroy]
 
   def index
-    @regions = Region.order(:name).all.page(params[:page]).per(10)
+    @regions = Region.all.page(params[:page]).per(10)
   end
 
   def create

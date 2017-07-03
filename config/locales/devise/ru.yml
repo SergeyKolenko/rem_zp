@@ -71,6 +71,9 @@ ru:
       registrate: Зарегестрироваться
       reg_new_realtor: Регистрация нового риэлтора
       reg_new_user: Регистрация нового пользователя
+      select_locale_blank: Выберете язык интерфейса
+      select_agency_region_blank: Выберете регион
+      select_agency_city_blank: Выберете город
     sessions:
       signed_in: "Вошли успешно."
       signed_out: "Вышли успешно."

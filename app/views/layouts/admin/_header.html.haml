@@ -8,11 +8,14 @@
             = t('admin.go_to_site')
         - if current_user
           %li
-            = link_to '#' do
-              %span.glyphicon.glyphicon-user
+            = link_to admin_edit_user_registration_path do
+              - if current_user.avatar.present?
+                = image_tag current_user.avatar, class: 'header_avatar'
+              - else
+                %span.glyphicon.glyphicon-user
               = current_user.full_name
           %li
-            = link_to destroy_user_session_path do
+            = link_to destroy_user_session_path, method: :delete do
               %span.glyphicon.glyphicon-log-out
               = t('application.header.sign_out')
         %li.pull-right.hidden-lg.hidden-md.hidden-sm
