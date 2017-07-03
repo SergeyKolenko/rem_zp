@@ -21,7 +21,12 @@ Rails.application.routes.draw do
     end
 
     resources :categories, only: [:index, :create, :update, :destroy]
+
     resources :regions, only: [:index, :create, :update, :destroy] do
+      collection { post :import }
+    end
+
+    resources :cities, only: [:index, :create, :update, :destroy] do
       collection { post :import }
     end
 

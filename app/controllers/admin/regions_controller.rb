@@ -8,25 +8,25 @@ class Admin::RegionsController < Admin::AdminController
   def create
     @region = Region.new(region_params)
     @region.save!
-    flash[:success] = 'Регион был создан!'
+    flash[:success] = t('admin.regions.create_notice')
     redirect_to admin_regions_path
   end
 
   def update
     @region.update_attributes(region_params)
-    flash[:success] = 'Регион обновлен'
+    flash[:success] = t('admin.regions.update_notice')
     redirect_back(fallback_location: admin_regions_path)
   end
 
   def destroy
     @region.destroy
-    flash[:success] = 'Регион удален'
+    flash[:success] = t('admin.regions.destroy_notice')
     redirect_back(fallback_location: admin_regions_path)
   end
 
   def import
     Region.import(params[:file])
-    redirect_to admin_regions_path, notice: 'Данные загружены'
+    redirect_to admin_regions_path, notice: t('shared.import_notice')
   rescue NoMethodError, ActiveRecord::RecordInvalid => exception
     show_errors(exception)
   end
