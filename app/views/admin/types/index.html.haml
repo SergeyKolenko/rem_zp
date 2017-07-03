@@ -13,24 +13,20 @@
         %tr
           %th.text-right.col-sm-1 Id
           %th.text-center
-            = Category.human_attribute_name(:name)
+            = Type.human_attribute_name(:name)
           %th.text-center
-            = Category.human_attribute_name(:code)
-          %th.text-center.col-sm-2
-            = Category.human_attribute_name(:weight)
+            = Type.human_attribute_name(:code)
           %th.text-center.col-sm-3.col-xs-1
             = t('actions')
       %tbody
-        - @categories.each do |category|
+        - @typees.each do |type|
           %tr
             %th.text-right
-              #{category.id}
+              #{type.id}
             %td
-              #{category.name}
+              #{type.name}
             %td
-              #{category.code}
-            %td
-              #{category.weight}
+              #{type.code}
             %td.text-center.actions
               %button.btn.btn-warning.btn-xs.edit_btn{ data:{ target: "#category_updateModal", toggle: "modal", whatever: "@mdo", type: "button", code:"#{category.code}",
                                                       name:"#{category.name}", weight:"#{category.weight}", url:admin_category_path(category.id)}}
@@ -41,11 +37,11 @@
                 = t('delete')
 .row
   .col-xs-12
-    - if (@categories.count > 0 && @categories.total_pages > 1)
+    - if (@types.count > 0 && @types.total_pages > 1)
       .text-center
-        = paginate @categories, theme: 'twitter-bootstrap-3'
-= render 'new_category_form'
-= render 'update_category_form'
+        = paginate @types, theme: 'twitter-bootstrap-3'
+= render 'new_type_form'
+= render 'update_type_form'
 
 
 
