@@ -64,8 +64,8 @@ ru:
         code: Код
         region: Область
       district:
-        name: Название
         code: Код
+        name: Название
         city: Город
       option_value:
         value: Значение

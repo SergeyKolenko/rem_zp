@@ -12,6 +12,8 @@
           %th.text-right.col-sm-1 Id
           %th.text-center
             = Category.human_attribute_name(:name)
+          %th.text-center
+            = Category.human_attribute_name(:code)
           %th.text-center.col-sm-2
             = Category.human_attribute_name(:weight)
           %th.text-center.col-sm-3.col-xs-1
@@ -24,10 +26,12 @@
             %td
               #{category.name}
             %td
+              #{category.code}
+            %td
               #{category.weight}
             %td.text-center.actions
-              %button.btn.btn-warning.btn-xs.edit_btn{ data:{ target: "#category_updateModal", toggle: "modal", whatever: "@mdo", type: "button",
-                                                                                        name:"#{category.name}", weight:"#{category.weight}", url:admin_category_path(category.id)}}
+              %button.btn.btn-warning.btn-xs.edit_btn{ data:{ target: "#category_updateModal", toggle: "modal", whatever: "@mdo", type: "button", code:"#{category.code}",
+                                                      name:"#{category.name}", weight:"#{category.weight}", url:admin_category_path(category.id)}}
                 %span.glyphicon.glyphicon-pencil
                 = t('edit')
               = link_to admin_category_path(category.id), method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger btn-xs' do
