@@ -1,5 +1,6 @@
 module Admin
   class AdminController < ActionController::Base
+    include LocaleSwitch
     protect_from_forgery with: :exception
     layout 'admin'
 

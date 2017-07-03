@@ -20,6 +20,9 @@ body {
   @media(min-width:768px){
     padding: 10px;
   }
+  .row{
+    margin: 0;
+  }
 }
 
 .huge {
@@ -71,6 +74,9 @@ body {
         }
       }
     }
+  }
+  .locale-dropdown{
+    background-color: #000 !important;
   }
 }
 
@@ -207,3 +213,4 @@ td.actions{
     margin: 5px;
   }
 }
+

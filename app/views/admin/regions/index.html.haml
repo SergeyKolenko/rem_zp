@@ -49,7 +49,7 @@
                 %td
                   #{region.name}
                 %td.actions.text-center
-                  %a.btn.btn-warning.btn-xs.update-btn{ data: { url: "/admin/regions/#{region.id}", code: region.code,
+                  %a.btn.btn-warning.btn-xs.update-btn{ data: { url: admin_region_path(region), code: region.code,
                                                     name: region.name, toggle: 'modal', target: '#region_modal'} }
                     %span.glyphicon.glyphicon-pencil
                     = t('edit')
