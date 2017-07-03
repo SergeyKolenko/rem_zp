@@ -2,8 +2,9 @@
   .col-xs-12
     .page-header
       %h1
-        = t('shared.categories')
-      %button.btn.btn-primary.btn-lg{ data:{target: "#category_createModal", toggle: "modal", whatever: "@mdo", type: "button"} }
+        = t('shared.types')
+      %button.btn.btn-primary.btn-lg.js-modal-form-btn{ type: 'button', data: { url: admin_types_path,
+                                                        action: 'new', title: t('admin.types.new') } }
         %span.glyphicon.glyphicon-plus
         = t('create')
 .row
@@ -19,7 +20,7 @@
           %th.text-center.col-sm-3.col-xs-1
             = t('actions')
       %tbody
-        - @typees.each do |type|
+        - @types.each do |type|
           %tr
             %th.text-right
               #{type.id}
@@ -28,11 +29,11 @@
             %td
               #{type.code}
             %td.text-center.actions
-              %button.btn.btn-warning.btn-xs.edit_btn{ data:{ target: "#category_updateModal", toggle: "modal", whatever: "@mdo", type: "button", code:"#{category.code}",
-                                                      name:"#{category.name}", weight:"#{category.weight}", url:admin_category_path(category.id)}}
+              %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data:{ code: type.code,
+                                                      name: type.name, url:admin_type_path(type.id)}}
                 %span.glyphicon.glyphicon-pencil
                 = t('edit')
-              = link_to admin_category_path(category.id), method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger btn-xs' do
+              = link_to admin_type_path(type.id), method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger btn-xs' do
                 %span.glyphicon.glyphicon-trash
                 = t('delete')
 .row
@@ -40,8 +41,8 @@
     - if (@types.count > 0 && @types.total_pages > 1)
       .text-center
         = paginate @types, theme: 'twitter-bootstrap-3'
-= render 'new_type_form'
-= render 'update_type_form'
+= render 'modal_form'
+
 
 
 

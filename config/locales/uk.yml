@@ -14,6 +14,7 @@ uk:
   actions: Дії
   cancel: Скасувати
   shared:
+    types: Типи
     categories: Категорії
     agencies: Агенції
     proposals: Пропозиції
@@ -63,6 +64,12 @@ uk:
       create_notice: Категорія створена!
       update_notice: Категория оновлена!
       destroy_notice: Категория видалена!
+    types:
+      change: Змінити тип
+      new: Новий тип
+      create_notice: Тип створен!
+      update_notice: Тип оновлен!
+      destroy_notice: Тип видален!
     regions:
       new: Новий регіон
       title: Регіони

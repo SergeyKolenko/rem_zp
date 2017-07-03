@@ -1,4 +1,4 @@
-class Admin::RegionsController < Admin::AdminController
+class Admin::TypesController < Admin::AdminController
   before_action :get_type, only: [:update, :destroy]
 
   def index
@@ -8,28 +8,28 @@ class Admin::RegionsController < Admin::AdminController
   def create
     @type = Type.new(region_params)
     @type.save!
-    flash[:success] = ' был создан!'
+    flash[:success] = 'Тип создан!'
     redirect_to admin_types_path
   end
 
   def update
     @type.update_attributes(type_params)
-    flash[:success] = 'Регион обновлен'
+    flash[:success] = 'Тип обновлен'
     redirect_back(fallback_location: admin_types_path)
   end
 
   def destroy
     @type.destroy
-    flash[:success] = 'Регион удален'
+    flash[:success] = 'Тип удален'
     redirect_back(fallback_location: admin_types_path)
   end
 
-  def import
-    Type.import(params[:file])
-    redirect_to admin_types_path, notice: 'Данные загружены'
-  rescue NoMethodError, ActiveRecord::RecordInvalid => exception
-    show_errors(exception)
-  end
+  # def import
+  #   Type.import(params[:file])
+  #   redirect_to admin_types_path, notice: 'Данные загружены'
+  # rescue NoMethodError, ActiveRecord::RecordInvalid => exception
+  #   show_errors(exception)
+  # end
 
   private
 
@@ -38,7 +38,7 @@ class Admin::RegionsController < Admin::AdminController
   end
 
   def type_params
-    params.require(:type).permit(:name)
+    params.require(:type).permit(:name, :code)
   end
 
   def show_errors(exception)

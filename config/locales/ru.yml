@@ -14,6 +14,7 @@ ru:
   actions: Действия
   cancel: Отмена
   shared:
+    types: Типы
     categories: Категории
     agencies: Агенции
     proposals: Предложения
@@ -64,6 +65,12 @@ ru:
       create_notice: Категория создана!
       update_notice: Категория обновлена!
       destroy_notice: Категория удалена!
+    types:
+      change: Изменить тип
+      new: Новый тип
+      create_notice: Тип создан!
+      update_notice: Тип обновлён!
+      destroy_notice: Тип удалён!
     regions:
       new: Новый регион
       title: Регионы
