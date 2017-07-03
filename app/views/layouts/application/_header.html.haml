@@ -22,6 +22,14 @@
           %li
             = link_to t('shared.agencies'), '#'
         %ul.nav.navbar-nav.navbar-right
+          %li.dropdown
+            = link_to '#', class: 'dropdown-toggle', role: 'button', aria: {haspopup: true, expanded: false}, data: {toggle: 'dropdown'} do
+              = t('activerecord.attributes.user.locale')
+              %span.caret
+            %ul.dropdown-menu
+              - available_languages.each do |locale|
+                %li
+                  = link_to locale[0], '#', data: { locale: locale[1] }, class: 'locale_switch'
           - if current_user && current_user.role_name != 'simple_user'
             %li
               = link_to '#', class: 'btn btn-primary' do
