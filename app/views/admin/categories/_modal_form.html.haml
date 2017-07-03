@@ -1,12 +1,11 @@
-%footer#category_createModal.modal.fade{"aria-labelledby": "category_createModalLabel", role: "dialog", tabindex: "-1"}
-  .modal-dialog{role: "document"}
+.js-modal-window.modal.fade{ aria:{ labelledby: 'category_createModalLabel' }, role: 'dialog', tabindex: '-1' }
+  .modal-dialog{role: 'document'}
     .modal-content
       .modal-header
-        %button.close{"aria-label": "Close", "data-dismiss": "modal", type: "button"}
-          %span{"aria-hidden": "true"} ×
+        %button.close{ aria: { label: 'Close' }, data: { dismiss: 'modal' }, type: 'button' }
+          %span{ aria: { hidden: true } } ×
         %h4#category_createModalLabel.modal-title
-          = t('admin.categories.new')
-      = form_with scope: Category.new, url: admin_categories_path, method: :post, class: 'form-horizontal', local: true do |c|
+      = form_with scope: Category.new, url: admin_categories_path, method: :post, class: 'form-horizontal js-modal-form', local: true do |c|
         .modal-body
           .form-group
             .col-sm-3.control-label
@@ -25,5 +24,5 @@
               = c.text_field :code, class: 'form-control', required: true
         .modal-footer
           = c.submit t('save'), class: 'btn btn-success'
-          %button.btn.btn-default{"data-dismiss": "modal", type: "button"}
+          %button.btn.btn-default{ data: { dismiss: 'modal' }, type: 'button' }
             = t('cancel')
