@@ -1,5 +1,5 @@
 class Admin::CitiesController < Admin::AdminController
-  before_action :get_city, only: [:update, :destroy]
+  before_action :set_city, only: [:update, :destroy]
 
   def index
     cities = params[:region_id].present? ? City.where(region_id: params[:region_id]) : City.all
@@ -43,7 +43,7 @@ class Admin::CitiesController < Admin::AdminController
 
   private
 
-  def get_city
+  def set_city
     @city = City.find_by(id: params[:id])
   end
 

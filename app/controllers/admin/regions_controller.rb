@@ -1,5 +1,5 @@
 class Admin::RegionsController < Admin::AdminController
-  before_action :get_region, only: [:update, :destroy]
+  before_action :set_region, only: [:update, :destroy]
 
   def index
     @regions = Region.all.page(params[:page]).per(10)
@@ -42,7 +42,7 @@ class Admin::RegionsController < Admin::AdminController
 
   private
 
-  def get_region
+  def set_region
     @region = Region.find_by(id: params[:id])
   end
 
