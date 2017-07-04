@@ -7,7 +7,6 @@ class Admin::RegionsController < Admin::AdminController
 
   def create
     @region = Region.new(region_params)
-    p @region
     @region.save!
     flash[:success] = 'Регион был создан!'
     redirect_to admin_regions_path

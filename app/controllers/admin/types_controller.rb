@@ -25,7 +25,6 @@ class Admin::TypesController < Admin::AdminController
   end
 
   private
-
   def set_type
     @type = Type.find(params[:id])
   end
