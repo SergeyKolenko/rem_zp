@@ -2,9 +2,9 @@
   .modal-dialog{ role: 'document'}
     .modal-content
       .modal-header
-        %button.close{ aria: { label: 'Close' }, data: { dismiss: 'modal' }, type: 'button' }
+        %button.close{  data: { dismiss: 'modal' }, aria: { label: 'Close' } }
           %span{ aria: { hidden: true } } ×
-        %h4#category_createModalLabel.modal-title
+        %h4.modal-title#category_createModalLabel
       = form_with scope: Category.new, url: admin_categories_path, method: :post, class: 'form-horizontal js-modal-form', local: true do |c|
         .modal-body
           .form-group

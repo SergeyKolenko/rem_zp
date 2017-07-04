@@ -29,8 +29,8 @@
             %td
               #{type.code}
             %td.text-center.actions
-              %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data:{ code: type.code,
-                                                      name: type.name, url:admin_type_path(type.id)}}
+              %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data:{ object: type.attributes,
+                                                                url: admin_type_path(type.id), action: 'edit'} }
                 %span.glyphicon.glyphicon-pencil
                 = t('edit')
               = link_to admin_type_path(type.id), method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger btn-xs' do

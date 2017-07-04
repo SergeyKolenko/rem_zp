@@ -1,8 +1,8 @@
-.js-modal-window.modal.fade{ aria:{ labelledby: 'category_createModalLabel' }, role: 'dialog', tabindex: '-1' }
+.js-modal-window.modal.fade{ aria:{ labelledby: 'type_createModalLabel' }, role: 'dialog', tabindex: '-1' }
   .modal-dialog{ role: 'document' }
     .modal-content
       .modal-header
-        %button.close{ data: { dismiss: 'modal'}, aria: {label: 'Close' }}
+        %button.close{ data: { dismiss: 'modal'}, aria: {label: 'Close' } }
           %span{ aria: { hidden: true} } ×
         %h4.modal-title#myModalLabel
           = t('edit')
@@ -10,14 +10,14 @@
         .modal-body
           .form-group
             .col-sm-3.control-label
-              = f.label :code
-            .col-sm-9
-              = f.text_field :code, class: 'form-control', required: true
-          .form-group
-            .col-sm-3.control-label
               = f.label :name
             .col-sm-9
               = f.text_field :name, class: 'form-control', required: true
+          .form-group
+            .col-sm-3.control-label
+              = f.label :code
+            .col-sm-9
+              = f.text_field :code, class: 'form-control', required: true
         .modal-footer
           = f.submit t('save'), class: 'btn btn-success'
           %button.btn.btn-default{ data: { dismiss: 'modal' }, type: 'button' }
