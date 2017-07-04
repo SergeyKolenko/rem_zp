@@ -25,13 +25,13 @@
         - @options.each do |option|
           %tr
             %th.text-right
-              #{option.id}
+              = option.id
             %td
-              #{option.name}
+              = option.name
             %td
-              #{option.code}
+              = option.code
             %td
-              #{option.unit}
+              = raw option.unit
             %td.text-center.actions
               %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data:{ object: option.attributes,
                                                                 url: admin_option_path(option.id), action: 'edit'} }
