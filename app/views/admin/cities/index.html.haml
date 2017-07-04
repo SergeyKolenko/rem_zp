@@ -20,9 +20,9 @@
         %span.caret
         %span.sr-only Toggle Dropdown
       %ul.dropdown-menu
-        - Region.all.each do |region|
+        - all_regions.each do |region|
           %li
-            = link_to region.name, '#', data: { id: region.id }, class: 'select_region'
+            = link_to region.name, '#', data: { id: region.id }, class: 'js-select-region'
     %hr
     %table.table.table-bordered
       %thead
@@ -41,9 +41,9 @@
           %tr
             %th.text-right
               #{city.id}
-            %td.text-center
+            %td
               #{Region.find(city.region_id).name}
-            %td.text-center
+            %td
               #{city.code}
             %td
               #{city.name}

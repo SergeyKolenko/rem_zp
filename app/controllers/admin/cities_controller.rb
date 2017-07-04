@@ -2,29 +2,35 @@ class Admin::CitiesController < Admin::AdminController
   before_action :get_city, only: [:update, :destroy]
 
   def index
-    if params[:region_id].present?
-      @cities = City.where(region_id: params[:region_id]).page(params[:page]).per(10)
-    else
-      @cities = City.all.page(params[:page]).per(10)
-    end
+    cities = params[:region_id].present? ? City.where(region_id: params[:region_id]) : City.all
+    @cities = cities.page(params[:page]).per(10)
   end
 
   def create
     @city = City.new(cities_params)
-    @city.save!
-    flash[:success] = t('admin.cities.create_notice')
+    if @city.save
+      flash[:success] = t('admin.cities.create_notice')
+    else
+      flash[:danger] = @city.errors.full_messages
+    end
     redirect_to admin_cities_path
   end
 
   def update
-    @city.update_attributes(cities_params)
-    flash[:success] = t('admin.cities.update_notice')
+    if @city.update(cities_params)
+      flash[:success] = t('admin.cities.update_notice')
+    else
+      flash[:danger] = @city.errors.full_messages
+    end
     redirect_back(fallback_location: admin_cities_path)
   end
 
   def destroy
-    @city.destroy
-    flash[:success] = t('admin.cities.destroy_notice')
+    if @city.destroy
+      flash[:success] = t('admin.cities.destroy_notice')
+    else
+      flash[:danger] = @city.errors.full_messages
+    end
     redirect_back(fallback_location: admin_cities_path)
   end
 

@@ -4,7 +4,7 @@
       .modal-header
         %button.close{ aria: { label: 'Close' }, data: { dismiss: 'modal' }, type: 'button' }
           %span{ aria: { hidden: true } } ×
-        %h4.modal-title#myModalLabel
+        %h4.modal-title#city_importModalLabel
           = t('shared.import_title')
         %p
           = t('admin.cities.import_instruction')
@@ -15,7 +15,7 @@
             .col-sm-3.control-label
               = f.label :region_id, "#{t('activerecord.models.region.one')}:", class: 'control-label'
             .col-sm-9
-              = f.select :region_id, available_regions, class: 'form-control'
+              = f.select :region_id, regions_for_select, class: 'form-control'
           .form-group
             .col-sm-3.control-label
               = f.label :file, t('shared.import_title'), class: 'control-label'

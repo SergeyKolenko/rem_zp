@@ -1,5 +1,5 @@
 $(document).ready( function ()  {
-  $('.select_region').on('click', function(e){
+  $('.js-select-region').on('click', function(e){
     e.preventDefault();
     var selected_region = 'region_id=' + $(this).data('id'),
         current_url = window.location.href;
