@@ -23,4 +23,10 @@ module ApplicationHelper
       Type.all
     end
   end
+
+  def all_regions
+    Rails.cache.fetch("admin_all_regions_#{I18n.locale}") do
+      Region.all
+    end
+  end
 end

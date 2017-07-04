@@ -21,6 +21,10 @@ en:
     errors:
       wrong_phone: Invalid number format
       wrong_format: Invalid format
+    import_notice: Data imported
+    import_title: 'Import from the file:'
+    file_tooltipe: 'Available extensions: csv, json, xls, xlsx, xml'
+    instruction: Instruction
 
   application:
     wrong_role: 'Unavailable user role'
@@ -44,6 +48,7 @@ en:
       stub_title: Real estate in Ukraine
       stub_keywords: Buying, selling, renting, housing, warehouse, apartment, room, cottage, garage
       stub_description: Buying, selling, renting a home in Ukraine
+
 
   admin:
     file:
@@ -72,10 +77,22 @@ en:
       destroy_notice: Type deleted!
     regions:
       new: New region
+      change: Change region
       title: Regions
       create_title: 'In order to create a new region, enter the code and the name:'
-      import_title: 'Import from the file:'
-      file_tooltipe: 'Available extensions: csv, json, xls, xlsx, xml'
+      create_notice: Region created!
+      update_notice: Region updated!
+      destroy_notice: Region deleted!
+    cities:
+      change: Change city
+      new: New city
+      create_title: 'In order to create a new city, select region, enter the code and the name:'
+      create_notice: City created!
+      update_notice: City updated!
+      destroy_notice: City deleted!
+      region_select: Select region
+      import_instruction: 'Available extensions: csv, json, xls, xlsx, xml. Please, select needed region before import.
+                           Full instruction can be founded here:'
     helpers:
       upload_instructions:
         title: Upload instruction

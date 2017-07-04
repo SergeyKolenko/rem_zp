@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170630101632) do
+ActiveRecord::Schema.define(version: 20170703103101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20170630101632) do
     t.string "name"
     t.bigint "region_id"
     t.string "code"
+    t.string "city"
     t.index ["name"], name: "index_cities_on_name"
     t.index ["region_id"], name: "index_cities_on_region_id"
   end
@@ -185,8 +186,8 @@ ActiveRecord::Schema.define(version: 20170630101632) do
 
   create_table "regions", force: :cascade do |t|
     t.string "name"
-    t.string "code"
     t.string "region"
+    t.string "code"
     t.index ["name"], name: "index_regions_on_name"
   end
 
@@ -233,9 +234,9 @@ ActiveRecord::Schema.define(version: 20170630101632) do
     t.datetime "confirmation_sent_at"
     t.string "phone"
     t.string "unconfirmed_email"
-    t.bigint "agency_id"
     t.string "avatar"
     t.string "locale", default: "ru"
+    t.bigint "agency_id"
     t.index ["agency_id"], name: "index_users_on_agency_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true

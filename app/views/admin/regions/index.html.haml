@@ -18,13 +18,13 @@
         = f.submit t('create'), class: 'btn btn-success'
   .col-md-6
     %h5
-      = t('admin.regions.import_title')
+      = t('shared.import_title')
     = form_with url: import_admin_regions_path, multipart: true, local: true, class: 'form-inline' do |f|
       .form-group
         = f.label :file, t('admin.file.title'), class: 'control-label'
         = f.file_field :file
       .form-group
-        = link_to '?', admin_upload_instructions_path, data: { toggle: 'tooltip' }, title: t('admin.regions.file_tooltipe')
+        = link_to '?', admin_upload_instructions_path, data: { toggle: 'tooltip' }, title: t('shared.file_tooltipe')
         = f.submit t('admin.file.import_button'), class: 'btn btn-primary'
 %hr
 .row
