@@ -83,14 +83,24 @@ uk:
       update_notice: Регіон оновлено!
       destroy_notice: Регіон видалено!
     cities:
-      new: Новый регион
-      change: Изменить регион
+      new: Нове місто
+      change: Змінити місто
       create_title: 'Щоб додати нове місто, виберіть регіон, введіть код та назву:'
       create_notice: Місто створено!
       update_notice: Місто оновлено!
       destroy_notice: Місто видалено!
       region_select: Виберіть регіон
       import_instruction: 'Доступні разширення: csv, json, xls, xlsx, xml. Обов`язково виберіть регіон
+                           перед імпортуванням. Детальна інструкція доступна за посиланням:'
+    districts:
+      new: Новый район
+      change: Змінити район
+      create_title: 'Щоб додати новий район, виберіть місто, введіть код та назву:'
+      create_notice: Район створено!
+      update_notice: Район оновлено!
+      destroy_notice: Район видалено!
+      city_select: Виберіть місто
+      import_instruction: 'Доступні разширення: csv, json, xls, xlsx, xml. Обов`язково виберіть місто
                            перед імпортуванням. Детальна інструкція доступна за посиланням:'
     helpers:
       upload_instructions:

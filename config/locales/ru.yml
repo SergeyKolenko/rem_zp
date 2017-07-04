@@ -93,6 +93,16 @@ ru:
       region_select: Выберите регион
       import_instruction: 'Доступные разрешения: csv, json, xls, xlsx, xml. Обязательно выберите область
                            перед импортированием. Подробная инструкция доступна по ссылке:'
+    districts:
+      new: Новый район
+      change: Изменить район
+      create_title: 'Чтобы добавить новый район, выберите город, введите код и название:'
+      create_notice: Район создан!
+      update_notice: Район обновлен!
+      destroy_notice: Район удален!
+      city_select: Выберите город
+      import_instruction: 'Доступные разрешения: csv, json, xls, xlsx, xml. Обязательно выберите город
+                           перед импортированием. Подробная инструкция доступна по ссылке:'
     helpers:
       upload_instructions:
         title: Инструкция по загрузке
