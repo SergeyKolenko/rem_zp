@@ -1,68 +1,63 @@
 .row
+  .page-header
+    %h1
+      = t('activerecord.models.city.many')
   .col-xs-12
-    .page-header
-      %h1
-        = t('admin.regions.title')
-    .row
-      .col-md-6
-        %h5
-          = t('admin.regions.create_title')
-        = form_with scope: City.new, url: admin_cities_path, local: true, class: 'form-inline' do |f|
-          .form-group
-            = f.label :region_id
-            = f.collection_select :region_ids, Region.all, :id, :name,
-                {include_blank: t('admin.cities.region_select')}, {multiple: false, class: 'select2 region_select'}
-          .form-group
-            = f.label :code, class: 'control-label'
-            = f.text_field :code, class: 'form-control', required: true
-          .form-group
-            = f.label :name, class: 'control-label'
-            = f.text_field :name, class: 'form-control', required: true
-          .form-group
-            = f.submit t('create'), class: 'btn btn-success'
-      .col-md-6
-        %h5
-          = t('shared.import_title')
-        = form_with url: import_admin_cities_path, multipart: true, local: true, class: 'form-inline' do |f|
-          .form-group
-            = f.label :file, t('admin.file.title'), class: 'control-label'
-            = f.file_field :file
-          .form-group
-            = link_to '?', admin_upload_instructions_path, data: { toggle: 'tooltip' }, title: t('shared.file_tooltipe')
-            = f.submit t('admin.file.import_button'), class: 'btn btn-primary'
+    %button.btn.btn-primary.btn-lg.js-modal-form-btn{ type: 'button', data: { url: admin_cities_path,
+                                                      action: 'new', title: t('admin.cities.new') } }
+      %span.glyphicon.glyphicon-plus
+      = t('create')
+    %button.btn.btn-primary.btn-lg{ data: { toggle: 'modal', target: '#importModal' } }
+      = t('shared.import_title')
+%hr
+.row
+  .col-xs-12
+    .btn-group
+      %button{ type: 'button', class: 'btn btn-default' }
+        = t('admin.cities.region_select')
+      %button{ type: 'button', class: 'btn btn-default dropdown-toggle', data: { toggle: 'dropdown' },
+                                                          aria: { haspopup: true, expanded: false } }
+        %span.caret
+        %span.sr-only Toggle Dropdown
+      %ul.dropdown-menu
+        - Region.all.each do |region|
+          %li
+            = link_to region.name, '#', data: { id: region.id }, class: 'select_region'
     %hr
-    .row
-      .col-xs-12
-        %table.table.table-bordered
-          %thead
-            %tr
-              %th.col-xs-1.text-right Id
-              %th.text-center
-                = t('activerecord.attributes.city.code')
-              %th.text-center
-                = t('activerecord.attributes.city.name')
-              %th.col-sm-3.col-xs-1.text-center
-                = t('actions')
-          %tbody
-            - @cities.each do |city|
-              %tr
-                %th.text-right
-                  #{city.id}
-                %td.text-center
-                  #{city.code}
-                %td
-                  #{city.name}
-                %td.actions.text-center
-                  %a.btn.btn-warning.btn-xs.update-btn{ data: { url: admin_cities_path(city), code: city.code,
-                                                    name: city.name, toggle: 'modal', target: '#cities_modal'} }
-                    %span.glyphicon.glyphicon-pencil
-                    = t('edit')
-                  = link_to admin_cities_path(city.id), method: :delete, data: { confirm: t('are_you_sure') },
-                                                          class: 'btn btn-danger btn-xs' do
-                    %span.glyphicon.glyphicon-trash
-                    = t('delete')
-  .row
-    - if (@cities.count > 0 && @cities.total_pages > 1)
-      .col-sx-12.text-center
-        = paginate @cities, theme: 'twitter-bootstrap-3'
-= render 'update_cities_form'
+    %table.table.table-bordered
+      %thead
+        %tr
+          %th.col-xs-1.text-right Id
+          %th.text-center
+            = t('activerecord.models.region.one')
+          %th.text-center
+            = City.human_attribute_name(:code)
+          %th.text-center
+            = City.human_attribute_name(:name)
+          %th.col-sm-3.col-xs-1.text-center
+            = t('actions')
+      %tbody
+        - @cities.each do |city|
+          %tr
+            %th.text-right
+              #{city.id}
+            %td.text-center
+              #{Region.find(city.region_id).name}
+            %td.text-center
+              #{city.code}
+            %td
+              #{city.name}
+            %td.text-center.actions
+              %button.btn.btn-warning.btn-xs.js-modal-form-btn{type: 'button', data:{ object: city.attributes,
+                url: admin_city_path(city), action: 'edit', title: t('admin.cities.change') }}
+                %span.glyphicon.glyphicon-pencil
+                = t('edit')
+              = link_to admin_city_path(city), method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger btn-xs' do
+                %span.glyphicon.glyphicon-trash
+                = t('delete')
+.row
+  - if (@cities.count > 0 && @cities.total_pages > 1)
+    .col-sx-12.text-center
+      = paginate @cities, theme: 'twitter-bootstrap-3'
+= render 'modal_form'
+= render 'import_modal'

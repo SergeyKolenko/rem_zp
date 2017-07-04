@@ -29,7 +29,7 @@ class Admin::CitiesController < Admin::AdminController
   end
 
   def import
-    City.import(params[:file])
+    City.import(params[:file], params[:region_id])
     redirect_to admin_cities_path, notice: t('shared.import_notice')
   rescue NoMethodError, ActiveRecord::RecordInvalid => exception
     show_errors(exception)
@@ -42,7 +42,7 @@ class Admin::CitiesController < Admin::AdminController
   end
 
   def cities_params
-    params.require(:city).permit(:name, :region_id)
+    params.require(:city).permit(:name, :region_id, :code)
   end
 
   def show_errors(exception)

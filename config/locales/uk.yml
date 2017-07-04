@@ -23,6 +23,7 @@ uk:
     import_notice: Дані імпортовані
     import_title: 'Імпортувати з файлу:'
     file_tooltipe: 'Доступні формати: csv, json, xls, xlsx, xml'
+    instruction: Інструкція
 
   application:
     wrong_role: 'Недоступна роль користувача'
@@ -68,18 +69,22 @@ uk:
       destroy_notice: Категория видалена!
     regions:
       new: Новий регіон
+      change: Змінити регіон
       title: Регіони
       create_title: 'Щоб додати новий регіон, введіть код та назву:'
-      import_title: 'Імпортувати з файлу:'
-      file_tooltipe: 'Доступні формати: csv, json, xls, xlsx, xml'
       create_notice: Регіон створено!
       update_notice: Регіон оновлено!
       destroy_notice: Регіон видалено!
     cities:
+      new: Новый регион
+      change: Изменить регион
+      create_title: 'Щоб додати нове місто, виберіть регіон, введіть код та назву:'
       create_notice: Місто створено!
       update_notice: Місто оновлено!
       destroy_notice: Місто видалено!
       region_select: Виберіть регіон
+      import_instruction: 'Доступні разширення: csv, json, xls, xlsx, xml. Обов`язково виберіть регіон
+                           перед імпортуванням. Детальна інструкція доступна за посиланням:'
     helpers:
       upload_instructions:
         title: Інструкція по завантаженню
