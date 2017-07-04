@@ -14,6 +14,7 @@ en:
   actions: Actions
   cancel: cancel
   shared:
+    types: Types
     categories: Categories
     agencies: Agencies
     proposals: Proposals
@@ -63,6 +64,12 @@ en:
       create_notice: Category created!
       update_notice: Category updated!
       destroy_notice: Category deleted!
+    types:
+      change: change Type
+      new: New Type
+      create_notice: Type created!
+      update_notice: Type updated!
+      destroy_notice: Type deleted!
     regions:
       new: New region
       title: Regions

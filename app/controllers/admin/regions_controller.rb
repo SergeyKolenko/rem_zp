@@ -38,7 +38,7 @@ class Admin::RegionsController < Admin::AdminController
   end
 
   def region_params
-    params.require(:region).permit(:name)
+    params.require(:region).permit(:name, :code)
   end
 
   def show_errors(exception)
