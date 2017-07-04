@@ -1,15 +1,15 @@
 %ul.nav.navbar-nav.side-nav
   %li
-    %a{ href: '#' } Пользователи
-    -#= link_to t('admin.aside.users'), admin_users_path
+    -#%a{ href: '#' } Пользователи
+    = link_to t('admin.aside.users'), admin_users_path
   %li
     = link_to t('admin.aside.regions'), admin_regions_path
   %li
-    %a{ href: '#' } Города
-    -#= link_to t('admin.aside.cities'), admin_cities_path
+    -#%a{ href: '#' } Города
+    = link_to t('admin.aside.cities'), admin_cities_path
   %li
-    %a{ href: '#' } Районы
-    -#= link_to t('admin.aside.districts'), admin_districts_path
+    -#%a{ href: '#' } Районы
+    = link_to t('admin.aside.districts'), admin_districts_path
   %li
     = link_to t('admin.aside.categories'), admin_categories_path
   %li
