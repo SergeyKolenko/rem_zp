@@ -7,21 +7,30 @@ class Admin::TypesController < Admin::AdminController
 
   def create
     @type = Type.new(type_params)
-    @type.save!
-    flash[:success] = 'Тип создан!'
+    if @type.save
+      flash[:success] = t('admin.types.create_notice')
+    else
+      flash[:danger] = @type.errors.full_messages
+    end
     redirect_to admin_types_path
   end
 
   def update
-    @type.update_attributes(type_params)
-    flash[:success] = 'Тип обновлен'
-    redirect_back(fallback_location: admin_types_path)
+    if @type.update(type_params)
+      flash[:success] = t('admin.types.update_notice')
+    else
+      flash[:danger] = @type.errors.full_messages
+    end
+    redirect_to admin_types_path
   end
 
   def destroy
-    @type.destroy
-    flash[:success] = 'Тип удален'
-    redirect_back(fallback_location: admin_types_path)
+    if @type.destroy
+      flash[:success] = t('admin.types.update_notice')
+    else
+      flash[:danger] = @type.errors.full_messages
+    end
+    redirect_to admin_types_path
   end
 
   private

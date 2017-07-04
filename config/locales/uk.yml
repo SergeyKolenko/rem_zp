@@ -76,6 +76,8 @@ uk:
       new: Новий регіон
       title: Регіони
       create_title: 'Щоб додати новий регіон, введіть код та назву:'
+      update_notice: Регіон оновлен!
+      destroy_notice: Регіон видален!
       import_title: 'Імпортувати з файлу:'
       file_tooltipe: 'Доступні формати: csv, json, xls, xlsx, xml'
     options:
@@ -83,7 +85,7 @@ uk:
       new: Нова опція
       create_notice: Опція створена!
       update_notice: Опція оновлена!
-      destroy_notice: Опція видален!
+      destroy_notice: Опція видалена!
     helpers:
       upload_instructions:
         title: Інструкція по завантаженню

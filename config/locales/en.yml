@@ -76,6 +76,8 @@ en:
       new: New region
       title: Regions
       create_title: 'In order to create a new region, enter the code and the name:'
+      update_notice: Region updated!
+      destroy_notice: Region deleted!
       import_title: 'Import from the file:'
       file_tooltipe: 'Available extensions: csv, json, xls, xlsx, xml'
     options:

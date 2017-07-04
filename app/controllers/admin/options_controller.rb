@@ -7,21 +7,30 @@ class Admin::OptionsController < Admin::AdminController
 
   def create
     @option = Option.new(option_params)
-    @option.save!
-    flash[:success] = 'Опция создана!'
+    if @option.save
+      flash[:success] = t('admin.options.create_notice')
+    else
+      flash[:danger] = @option.errors.full_messages
+    end
     redirect_to admin_options_path
   end
 
   def update
-    @option.update_attributes(option_params)
-    flash[:success] = 'Опция обновлена'
-    redirect_back(fallback_location: admin_options_path)
+    if @option.update(option_params)
+      flash[:success] = t('admin.options.update_notice')
+    else
+      flash[:danger] = @option.errors.full_messages
+    end
+    redirect_to admin_options_path
   end
 
   def destroy
-    @option.destroy
-    flash[:success] = 'Опция удалена'
-    redirect_back(fallback_location: admin_options_path)
+    if @option.destroy
+      flash[:success] = t('admin.options.destroy_notice')
+    else
+      flash[:danger] = @option.errors.full_messages
+    end
+    redirect_to admin_options_path
   end
 
   private

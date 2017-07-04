@@ -5,30 +5,32 @@ class Admin::CategoriesController < Admin::AdminController
     @categories = Category.all.page(params[:page]).per(10)
   end
 
-  def new
-    @category = Category.new
-  end
-
   def create
     @category = Category.new(category_params)
     if @category.save
-      redirect_to admin_categories_path, notice: 'Категория создана!'
+      flash[:success] = t('admin.categories.create_notice')
     else
-      render :create
+      flash[:danger] = @category.errors.full_messages
     end
+    redirect_to admin_categories_path
   end
 
   def update
     if @category.update(category_params)
-      redirect_to admin_categories_path, notice: 'Категория изменена.'
+      flash[:success] = t('admin.categories.update_notice')
     else
-      render :update
+      flash[:danger] = @category.errors.full_messages
     end
+    redirect_to admin_categories_path
   end
 
   def destroy
-    @category.destroy
-    redirect_to admin_categories_path, notice: 'Категория удалена.'
+    if @category.destroy
+      flash[:success] = t('admin.categories.destroy_notice')
+    else
+      flash[:danger] = @category.errors.full_messages
+    end
+    redirect_to admin_categories_path
   end
 
   private

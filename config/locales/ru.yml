@@ -77,6 +77,8 @@ ru:
       new: Новый регион
       title: Регионы
       create_title: 'Чтобы добавить новый регион, введите код и название:'
+      update_notice: Регион обновлён!
+      destroy_notice: Регион удалён!
       import_title: 'Импортировать из файла:'
       file_tooltipe: 'Доступные разрешения: csv, json, xls, xlsx, xml'
     options:
