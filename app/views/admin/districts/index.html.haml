@@ -22,7 +22,7 @@
       %ul.dropdown-menu
         - all_cities.each do |city|
           %li
-            = link_to city.name, '#', data: { id: city.id }, class: 'js-select-city'
+            = link_to city.name, '#', data: { param: "city_id=#{city.id}" }, class: 'js-select-parent'
     %hr
     %table.table.table-bordered
       %thead

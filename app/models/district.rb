@@ -13,12 +13,6 @@ class District < ApplicationRecord
 
   def self.import(file, city_id)
     parent = ['city_id', city_id]
-    case File.extname(file.original_filename)
-      when '.csv' then csv_import(file, City, parent)
-      when '.json' then json_import(file, City, parent)
-      when '.xlsx' then xlsx_import(file, City, parent)
-      when '.xls' then xls_import(file, City, parent)
-      when '.xml' then xml_import(file, City, parent)
-    end
+    files_import(file, District, parent)
   end
 end

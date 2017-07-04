@@ -22,7 +22,7 @@
       %ul.dropdown-menu
         - all_regions.each do |region|
           %li
-            = link_to region.name, '#', data: { id: region.id }, class: 'js-select-region'
+            = link_to region.name, '#', data: { param: "region_id=#{region.id}" }, class: 'js-select-parent'
     %hr
     %table.table.table-bordered
       %thead
