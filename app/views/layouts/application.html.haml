@@ -12,6 +12,7 @@
   %body
     = render 'layouts/application/header'
     .container
-      = bootstrap_flash
+      .row
+        = bootstrap_flash
       = yield
     = render 'layouts/application/footer'

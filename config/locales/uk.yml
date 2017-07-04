@@ -22,6 +22,10 @@ uk:
     errors:
       wrong_phone: Невірний формат номеру
       wrong_format: Невірний формат
+    import_notice: Дані імпортовані
+    import_title: 'Імпортувати з файлу:'
+    file_tooltipe: 'Доступні формати: csv, json, xls, xlsx, xml'
+    instruction: Інструкція
 
   application:
     wrong_role: 'Недоступна роль користувача'
@@ -74,10 +78,13 @@ uk:
       destroy_notice: Тип видален!
     regions:
       new: Новий регіон
+      change: Змінити регіон
       title: Регіони
       create_title: 'Щоб додати новий регіон, введіть код та назву:'
+      create_notice: Регіон створено!
       update_notice: Регіон оновлен!
       destroy_notice: Регіон видален!
+      region_select: Виберіть регіон
       import_title: 'Імпортувати з файлу:'
       file_tooltipe: 'Доступні формати: csv, json, xls, xlsx, xml'
     options:
@@ -86,6 +93,15 @@ uk:
       create_notice: Опція створена!
       update_notice: Опція оновлена!
       destroy_notice: Опція видалена!
+    cities:
+      new: Новый регион
+      change: Изменить регион
+      create_title: 'Щоб додати нове місто, виберіть регіон, введіть код та назву:'
+      create_notice: Місто створено!
+      update_notice: Місто оновлено!
+      destroy_notice: Місто видалено!
+      import_instruction: 'Доступні разширення: csv, json, xls, xlsx, xml. Обов`язково виберіть регіон
+                           перед імпортуванням. Детальна інструкція доступна за посиланням:'
     helpers:
       upload_instructions:
         title: Інструкція по завантаженню

@@ -22,6 +22,10 @@ ru:
     errors:
       wrong_phone: Неверный формат номера
       wrong_format: Неверный формат
+    import_notice: Данные импортированы
+    import_title: Импортировать из файла
+    file_tooltipe: 'Доступные разрешения: csv, json, xls, xlsx, xml'
+    instruction: Инструкция
 
   application:
     wrong_role: 'Недоступная роль пользователя'
@@ -75,8 +79,10 @@ ru:
       destroy_notice: Тип удалён!
     regions:
       new: Новый регион
+      change: Изменить регион
       title: Регионы
       create_title: 'Чтобы добавить новый регион, введите код и название:'
+      create_notice: Опция создана!
       update_notice: Регион обновлён!
       destroy_notice: Регион удалён!
       import_title: 'Импортировать из файла:'
@@ -87,6 +93,16 @@ ru:
       create_notice: Опция создана!
       update_notice: Опция обновлена!
       destroy_notice: Опция удалена!
+    cities:
+      new: Новый город
+      change: Изменить город
+      create_title: 'Чтобы добавить новый город, выберите регион, введите код и название:'
+      create_notice: Город создан!
+      update_notice: Город обновлен!
+      destroy_notice: Город удален!
+      region_select: Выберите регион
+      import_instruction: 'Доступные разрешения: csv, json, xls, xlsx, xml. Обязательно выберите область
+                           перед импортированием. Подробная инструкция доступна по ссылке:'
     helpers:
       upload_instructions:
         title: Инструкция по загрузке

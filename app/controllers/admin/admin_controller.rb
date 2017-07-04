@@ -1,7 +1,7 @@
 module Admin
   class AdminController < ActionController::Base
-    include LocaleSwitch
     protect_from_forgery with: :exception
+    include LocaleSwitch
     layout 'admin'
 
     # before_action :authenticate_user!
