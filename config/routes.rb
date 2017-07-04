@@ -20,9 +20,15 @@ Rails.application.routes.draw do
       get '/', action: :dashboard, as: :dashboard
     end
 
+<<<<<<< HEAD
     resources :categories, only: [:index, :create, :update, :destroy]
 
     resources :regions, only: [:index, :create, :update, :destroy] do
+=======
+    resources :categories, except: [:show, :new, :edit]
+    resources :types, except: [:show, :new, :edit]
+    resources :regions, except: [:show, :new, :edit] do
+>>>>>>> develop
       collection { post :import }
     end
 
