@@ -1,5 +1,8 @@
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start do
+  add_filter '/initializers/'
+  add_filter '/uploaders/'
+end
 require 'capybara/rspec'
 require 'money-rails/test_helpers'
 
