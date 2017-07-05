@@ -93,6 +93,8 @@ en:
       region_select: Select region
       import_instruction: 'Available extensions: csv, json, xls, xlsx, xml. Please, select needed region before import.
                            Full instruction can be founded here:'
+    users:
+      full_name: Full name
     helpers:
       upload_instructions:
         title: Upload instruction

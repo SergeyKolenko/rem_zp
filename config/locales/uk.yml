@@ -92,6 +92,8 @@ uk:
       region_select: Виберіть регіон
       import_instruction: 'Доступні разширення: csv, json, xls, xlsx, xml. Обов`язково виберіть регіон
                            перед імпортуванням. Детальна інструкція доступна за посиланням:'
+    users:
+      full_name: Повне ім`я
     helpers:
       upload_instructions:
         title: Інструкція по завантаженню

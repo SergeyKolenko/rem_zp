@@ -1,11 +1,8 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < Admin::AdminController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @users = User.all
-  end
-
-  def show
+    @users = User.all.page(params[:page]).per(10)
   end
 
   def new
@@ -18,7 +15,7 @@ class Admin::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to @user, notice: 'Юзер был создан!'
+      redirect_to new_admin_user_path, notice: 'Юзер был создан!'
     else
       render :new
     end
@@ -26,7 +23,7 @@ class Admin::UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: 'User was successfully updated.'
+      redirect_to edit_admin_user_path, notice: 'User was successfully updated.'
     else
       render :edit
     end
@@ -38,11 +35,13 @@ class Admin::UsersController < ApplicationController
   end
 
   private
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    def user_params
-      params.fetch(:user, {})
-    end
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :phone, :locale, :avatar,
+                                 :remove_avatar, :avatar_cache, :role)
+  end
 end

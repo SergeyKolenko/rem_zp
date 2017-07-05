@@ -26,9 +26,11 @@ Rails.application.routes.draw do
       collection { post :import }
     end
 
-    resources :cities, only: [:index, :create, :update, :destroy] do
+    resources :cities, except: [:show, :new, :edit] do
       collection { post :import }
     end
+
+    resources :users, except: [:show]
 
     controller :helpers do
       get '/upload_instructions', action: :upload_instructions

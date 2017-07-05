@@ -93,6 +93,8 @@ ru:
       region_select: Выберите регион
       import_instruction: 'Доступные разрешения: csv, json, xls, xlsx, xml. Обязательно выберите область
                            перед импортированием. Подробная инструкция доступна по ссылке:'
+    users:
+      full_name: Полное имя
     helpers:
       upload_instructions:
         title: Инструкция по загрузке
