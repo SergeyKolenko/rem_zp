@@ -25,10 +25,15 @@ engines:
 
 ratings:
   paths:
-    - Gemfile.lock
-    - "**.rb"
-    - "**.rake"
-    - "**.haml"
-    - "**.js"
-    - "**.md"
-    - "**.scss"
+  - Gemfile.lock
+  - "**.rb"
+  - "**.rake"
+  - "**.haml"
+  - "**.js"
+  - "**.md"
+  - "**.scss"
+
+exclude_paths:
+- config/**/*
+- spec/**/*
+- vendor/**/*
