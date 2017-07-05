@@ -4,7 +4,17 @@ module FilesImport
 
   module ClassMethods
 
-    def csv_import(file, model, parent = nil)
+    def files_import(file, model, parent = nil)
+      case File.extname(file.original_filename)
+        when '.csv' then csv_import(file, model, parent)
+        when '.json' then json_import(file, model, parent)
+        when '.xlsx' then xlsx_import(file, model, parent)
+        when '.xls' then xls_import(file, model, parent)
+        when '.xml' then xml_import(file, model, parent)
+      end
+    end
+
+    def csv_import(file, model, parent)
       require 'csv'
       CSV.foreach(file.path, headers: true) do |row|
         row << parent if parent.present?
@@ -12,7 +22,7 @@ module FilesImport
       end
     end
 
-    def json_import(file, model, parent = nil)
+    def json_import(file, model, parent)
       require 'oj'
       json = Oj.load(File.read(file.path))
       json.each do |row|
@@ -21,17 +31,17 @@ module FilesImport
       end
     end
 
-    def xlsx_import(file, model, parent = nil)
+    def xlsx_import(file, model, parent)
       spreadsheet = Roo::Excelx.new(file.path)
       xls_xlsx_xml_import(spreadsheet, model, parent)
     end
 
-    def xls_import(file, model, parent = nil)
+    def xls_import(file, model, parent)
       spreadsheet = Roo::Excel.new(file.path)
       xls_xlsx_xml_import(spreadsheet, model, parent)
     end
 
-    def xml_import(file, model, parent = nil)
+    def xml_import(file, model, parent)
       spreadsheet = Roo::Excel2003XML.new(file.path)
       xls_xlsx_xml_import(spreadsheet, model, parent)
     end

@@ -1,3 +1,5 @@
+require 'simplecov'
+SimpleCov.start
 require 'capybara/rspec'
 require 'money-rails/test_helpers'
 

@@ -53,6 +53,6 @@ class ModalForm {
 
 $(document).ready(function () {
     if ($('.js-modal-form-btn').length > 0 && $('.js-modal-window .js-modal-form').length > 0) {
-        new ModalForm();
+        const modal = new ModalForm();
     }
 });

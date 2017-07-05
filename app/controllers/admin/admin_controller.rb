@@ -4,11 +4,15 @@ module Admin
     include LocaleSwitch
     layout 'admin'
 
-    # before_action :authenticate_user!
-    # before_action :verify_role!
+    before_action :authenticate_user!
+    before_action :verify_role!
+
+    rescue_from CanCan::AccessDenied do |exception|
+      redirect_to root_path, alert: exception.message
+    end
 
     def after_sign_in_path_for(resource)
-      admin_dashboard_path
+      admin_path
     end
 
     private

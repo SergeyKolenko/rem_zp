@@ -23,7 +23,7 @@ uk:
       wrong_phone: Невірний формат номеру
       wrong_format: Невірний формат
     import_notice: Дані імпортовані
-    import_title: 'Імпортувати з файлу:'
+    import_title: Імпортувати з файлу
     file_tooltipe: 'Доступні формати: csv, json, xls, xlsx, xml'
     instruction: Інструкція
 
@@ -94,13 +94,25 @@ uk:
       update_notice: Опція оновлена!
       destroy_notice: Опція видалена!
     cities:
-      new: Новый регион
-      change: Изменить регион
+      new: Нове місто
+      change: Змінити місто
+      title: Міста
       create_title: 'Щоб додати нове місто, виберіть регіон, введіть код та назву:'
       create_notice: Місто створено!
       update_notice: Місто оновлено!
       destroy_notice: Місто видалено!
       import_instruction: 'Доступні разширення: csv, json, xls, xlsx, xml. Обов`язково виберіть регіон
+                           перед імпортуванням. Детальна інструкція доступна за посиланням:'
+    districts:
+      new: Новый район
+      change: Змінити район
+      title: Райони
+      create_title: 'Щоб додати новий район, виберіть місто, введіть код та назву:'
+      create_notice: Район створено!
+      update_notice: Район оновлено!
+      destroy_notice: Район видалено!
+      city_select: Виберіть місто
+      import_instruction: 'Доступні разширення: csv, json, xls, xlsx, xml. Обов`язково виберіть місто
                            перед імпортуванням. Детальна інструкція доступна за посиланням:'
     helpers:
       upload_instructions:
@@ -124,4 +136,11 @@ uk:
       last: "&raquo;"
       previous: "&lsaquo;"
       next: "&rsaquo;"
+
+  unauthorized:
+    manage:
+      all: У вас нема прав відвідувати цю сторінку.
+      user: У вас нема прав редагувати данні користувача.
+    update:
+      project: У вас нема прав редагувати ці данні.
 

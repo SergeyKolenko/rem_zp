@@ -1,4 +1,5 @@
 class Admin::CitiesController < Admin::AdminController
+  load_and_authorize_resource
   before_action :set_city, only: [:update, :destroy]
 
   def index
@@ -33,9 +34,9 @@ class Admin::CitiesController < Admin::AdminController
     end
     redirect_back(fallback_location: admin_cities_path)
   end
-
+  
   def import
-    City.import(params[:file], params[:region_id])
+    City.files_import(params[:file], City, ['region_id', params[:region_id]])
     redirect_to admin_cities_path, notice: t('shared.import_notice')
   rescue NoMethodError, ActiveRecord::RecordInvalid => exception
     show_errors(exception)

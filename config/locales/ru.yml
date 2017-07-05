@@ -96,12 +96,24 @@ ru:
     cities:
       new: Новый город
       change: Изменить город
+      title: Города
       create_title: 'Чтобы добавить новый город, выберите регион, введите код и название:'
       create_notice: Город создан!
       update_notice: Город обновлен!
       destroy_notice: Город удален!
       region_select: Выберите регион
       import_instruction: 'Доступные разрешения: csv, json, xls, xlsx, xml. Обязательно выберите область
+                           перед импортированием. Подробная инструкция доступна по ссылке:'
+    districts:
+      new: Новый район
+      change: Изменить район
+      title: Районы
+      create_title: 'Чтобы добавить новый район, выберите город, введите код и название:'
+      create_notice: Район создан!
+      update_notice: Район обновлен!
+      destroy_notice: Район удален!
+      city_select: Выберите город
+      import_instruction: 'Доступные разрешения: csv, json, xls, xlsx, xml. Обязательно выберите город
                            перед импортированием. Подробная инструкция доступна по ссылке:'
     helpers:
       upload_instructions:
@@ -127,3 +139,9 @@ ru:
       previous: "&lsaquo;"
       next: "&rsaquo;"
 
+  unauthorized:
+    manage:
+      all: У вас нет прав просматривать эту страницу.
+      user: У вас нет прав редактировать данные пользователя.
+    update:
+      project: У вас нет прав редактировать эти данные.

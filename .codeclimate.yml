@@ -1,0 +1,9 @@
+engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+        ruby:
+          mass_threshold: 10
+        javascript:
+          mass_threshold: 20

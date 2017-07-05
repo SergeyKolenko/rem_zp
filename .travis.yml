@@ -1,0 +1,8 @@
+rvm:
+  - 2.4.1
+script: 'bundle exec rspec spec'
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - psql -c 'create database travis_ci_test;' -U postgres
+after_success:
+  - bundle exec codeclimate-test-reporter
