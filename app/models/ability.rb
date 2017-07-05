@@ -8,26 +8,25 @@ class Ability
       can :manage, :all
     when 'moderator'
       can :read, :all
-      can :manage, Category
-      can :manage, Region
-      can :manage, City
-      can :manage, District
-      can :manage, Option
-      can :manage, Type
+      can :manage, [Category, Region, City, District, Option, Type]
+      can :ban, :update, User
     when 'agency_director'
-      can :manage, Agency
-      can :manage, Proposal
-      can :manage, OptionValue
+      can :manage, [Agency, Proposal, OptionValue]
+      can :manage, User, id: user.id
+      can :read, [Category, Region, City, District, Type]
     when 'agent'
       can :manage, Proposal
+      can :manage, User, id: user.id
+      can :read, [Category, Region, City, District, Type]
     when 'realtor'
       can :manage, Proposal
+      can :manage, User, id: user.id
+      can :read, [Category, Region, City, District, Type]
     when Role.simple_user
-      can :manage, current_user
+      can :manage, Proposal
+      can :manage, User, id: user.id
     else ''
-      can :read, Proposal
-      can :read, Option
-      can :read, Agency
+      can :read, [Proposal, Option, Agency]
     end
     # The first argument to `can` is the action you are giving the user
     # permission to do.

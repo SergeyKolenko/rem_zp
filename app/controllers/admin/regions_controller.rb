@@ -1,4 +1,5 @@
 class Admin::RegionsController < Admin::AdminController
+  load_and_authorize_resource
   before_action :set_region, only: [:update, :destroy]
 
   def index

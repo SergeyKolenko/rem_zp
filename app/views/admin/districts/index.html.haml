@@ -1,15 +1,16 @@
 .row
   .page-header
     %h1
-      = t('activerecord.models.district.many')
-  .col-xs-12
-    %button.btn.btn-primary.btn-lg.js-modal-form-btn{ type: 'button', data: { url: admin_districts_path,
-                                                      action: 'new', title: t('admin.districts.new') } }
-      %span.glyphicon.glyphicon-plus
-      = t('create')
-    %button.btn.btn-primary.btn-lg{ data: { toggle: 'modal', target: '#importModal' } }
-      = t('shared.import_title')
-%hr
+      = t('admin.districts.title')
+  - if can? :create, District
+    .col-xs-12
+      %button.btn.btn-primary.btn-lg.js-modal-form-btn{ type: 'button', data: { url: admin_districts_path,
+                                                        action: 'new', title: t('admin.districts.new') } }
+        %span.glyphicon.glyphicon-plus
+        = t('create')
+      %button.btn.btn-primary.btn-lg{ data: { toggle: 'modal', target: '#importModal' } }
+        = t('shared.import_title')
+      %hr
 .row
   .col-xs-12
     .btn-group
@@ -34,8 +35,9 @@
             = District.human_attribute_name(:code)
           %th.text-center
             = District.human_attribute_name(:name)
-          %th.col-sm-3.col-xs-1.text-center
-            = t('actions')
+          - if can? [:update, :delete], District
+            %th.col-sm-3.col-xs-1.text-center
+              = t('actions')
       %tbody
         - @districts.each do |district|
           %tr
@@ -47,17 +49,19 @@
               #{district.code}
             %td
               #{district.name}
-            %td.text-center.actions
-              %button.btn.btn-warning.btn-xs.js-modal-form-btn{type: 'button', data:{ object: district.attributes,
-                url: admin_district_path(district), action: 'edit', title: t('admin.districts.change') }}
-                %span.glyphicon.glyphicon-pencil
-                = t('edit')
-              = link_to admin_district_path(district), method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger btn-xs' do
-                %span.glyphicon.glyphicon-trash
-                = t('delete')
+            - if can? [:update, :delete], District
+              %td.text-center.actions
+                %button.btn.btn-warning.btn-xs.js-modal-form-btn{type: 'button', data:{ object: district.attributes,
+                  url: admin_district_path(district), action: 'edit', title: t('admin.districts.change') }}
+                  %span.glyphicon.glyphicon-pencil
+                  = t('edit')
+                = link_to admin_district_path(district), method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger btn-xs' do
+                  %span.glyphicon.glyphicon-trash
+                  = t('delete')
 .row
   - if (@districts.count > 0 && @districts.total_pages > 1)
     .col-sx-12.text-center
       = paginate @districts, theme: 'twitter-bootstrap-3'
-= render 'modal_form'
-= render 'import_modal'
+- if can? :create, District
+  = render 'modal_form'
+  = render 'import_modal'
