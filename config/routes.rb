@@ -30,6 +30,10 @@ Rails.application.routes.draw do
       collection { post :import }
     end
 
+    resources :districts, only: [:index, :create, :update, :destroy] do
+      collection { post :import }
+    end
+
     controller :helpers do
       get '/upload_instructions', action: :upload_instructions
     end
