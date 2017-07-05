@@ -25,13 +25,13 @@
         - @categories.each do |category|
           %tr
             %th.text-right
-              #{category.id}
+              = category.id
             %td
-              #{category.name}
+              = category.name
             %td
-              #{category.code}
+              = category.code
             %td
-              #{category.weight}
+              = category.weight
             %td.text-center.actions
               %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data:{ object: category.attributes, url: admin_category_path(category.id),
                                                                 action: 'edit', title: t('admin.categories.change') }}

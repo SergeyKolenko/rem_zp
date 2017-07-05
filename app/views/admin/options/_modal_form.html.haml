@@ -23,6 +23,12 @@
               = f.label :unit
             .col-sm-9
               = f.text_field :unit, class: 'form-control'
+          .form-group
+            .col-sm-3.control-label
+              = f.label :category_ids, t('shared.categories')
+            .col-sm-9
+              = f.collection_select :category_ids, all_categories, :id, :name,
+                {}, {multiple: true, class: 'select2 form-control.col-sm-9' }
         .modal-footer
           = f.submit t('save'), class: 'btn btn-success'
           %button.btn.btn-default{ data: { dismiss: 'modal' }, type: 'button' }

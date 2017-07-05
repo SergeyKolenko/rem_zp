@@ -40,13 +40,13 @@
         - @cities.each do |city|
           %tr
             %th.text-right
-              #{city.id}
+              = city.id
             %td
-              #{Region.find(city.region_id).name}
+              = Region.find(city.region_id).name
             %td
-              #{city.code}
+              = city.code
             %td
-              #{city.name}
+              = city.name
             %td.text-center.actions
               %button.btn.btn-warning.btn-xs.js-modal-form-btn{type: 'button', data:{ object: city.attributes,
                 url: admin_city_path(city), action: 'edit', title: t('admin.cities.change') }}

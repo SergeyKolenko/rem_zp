@@ -23,11 +23,11 @@
         - @types.each do |type|
           %tr
             %th.text-right
-              #{type.id}
+              = type.id
             %td
-              #{type.name}
+              = type.name
             %td
-              #{type.code}
+              = type.code
             %td.text-center.actions
               %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data:{ object: type.attributes,
                                                                 url: admin_type_path(type.id), action: 'edit'} }

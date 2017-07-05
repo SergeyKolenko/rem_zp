@@ -19,6 +19,8 @@
             = Option.human_attribute_name(:code)
           %th.text-center
             = Option.human_attribute_name(:unit)
+          %th.text-center
+            = t('shared.categories')
           %th.text-center.col-sm-3.col-xs-1
             = t('actions')
       %tbody
@@ -32,6 +34,10 @@
               = option.code
             %td
               = raw option.unit
+            %td
+              - option.categories.each do |category|
+                = link_to category.name, admin_categories_path(category)
+                %br
             %td.text-center.actions
               %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data:{ object: option.attributes,
                                                                 url: admin_option_path(option.id), action: 'edit'} }

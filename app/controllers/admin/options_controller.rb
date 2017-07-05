@@ -39,7 +39,7 @@ class Admin::OptionsController < Admin::AdminController
   end
 
   def option_params
-    params.require(:option).permit(:name, :code, :unit)
+    params.require(:option).permit(:name, :code, :unit, category_ids: [])
   end
 
 end
