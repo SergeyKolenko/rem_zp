@@ -104,6 +104,8 @@ GEM
     chromedriver-helper (1.1.0)
       archive-zip (~> 0.7.0)
       nokogiri (~> 1.6)
+    codeclimate-test-reporter (1.0.7)
+      simplecov
     coderay (1.1.1)
     concurrent-ruby (1.0.5)
     config (1.4.0)
@@ -348,6 +350,7 @@ DEPENDENCIES
   capybara-screenshot
   carrierwave (~> 1.0)
   chromedriver-helper
+  codeclimate-test-reporter
   config
   database_cleaner
   devise

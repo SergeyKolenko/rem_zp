@@ -1,4 +1,7 @@
 [![Build Status](https://travis-ci.org/SergeyKolenko/rem_zp.svg?branch=develop)](https://travis-ci.org/SergeyKolenko/rem_zp)
+[![Code Climate](https://codeclimate.com/github/SergeyKolenko/rem_zp/badges/gpa.svg)](https://codeclimate.com/github/SergeyKolenko/rem_zp)
+[![Test Coverage](https://codeclimate.com/github/SergeyKolenko/rem_zp/badges/coverage.svg)](https://codeclimate.com/github/SergeyKolenko/rem_zp/coverage)
+[![Issue Count](https://codeclimate.com/github/SergeyKolenko/rem_zp/badges/issue_count.svg)](https://codeclimate.com/github/SergeyKolenko/rem_zp)
 
 # Real Estate Market ZP
 
