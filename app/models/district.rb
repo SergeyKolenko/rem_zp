@@ -11,8 +11,4 @@ class District < ApplicationRecord
 
   validates :name, :city, presence: true
 
-  def self.import(file, city_id)
-    parent = ['city_id', city_id]
-    files_import(file, District, parent)
-  end
 end

@@ -12,9 +12,6 @@ class Region < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
-  def self.import(file)
-    files_import(file, Region)
-  end
 end
 
 

@@ -35,7 +35,7 @@ class Admin::DistrictsController < Admin::AdminController
   end
 
   def import
-    District.import(params[:file], params[:city_id])
+    District.files_import(params[:file], District, ['city_id', params[:city_id]])
     redirect_to admin_districts_path, notice: t('shared.import_notice')
   rescue NoMethodError, ActiveRecord::RecordInvalid => exception
     show_errors(exception)

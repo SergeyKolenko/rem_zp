@@ -34,7 +34,7 @@ class Admin::RegionsController < Admin::AdminController
   end
 
   def import
-    Region.import(params[:file])
+    Region.files_import(params[:file], Region)
     redirect_to admin_regions_path, notice: t('shared.import_notice')
   rescue NoMethodError, ActiveRecord::RecordInvalid => exception
     show_errors(exception)
