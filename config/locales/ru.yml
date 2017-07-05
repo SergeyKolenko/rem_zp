@@ -14,6 +14,7 @@ ru:
   actions: Действия
   cancel: Отмена
   shared:
+    options: Опции
     types: Типы
     categories: Категории
     agencies: Агенции
@@ -62,6 +63,7 @@ ru:
       categories: Категории
       types: Типы предложений
       actions: Действия
+      options: Опции
     wrong_rules: У вас нет прав.
     categories:
       change: Изменить категорию
@@ -80,9 +82,17 @@ ru:
       change: Изменить регион
       title: Регионы
       create_title: 'Чтобы добавить новый регион, введите код и название:'
-      create_notice: Регион создан!
-      update_notice: Регион обновлен!
-      destroy_notice: Регион удален!
+      create_notice: Опция создана!
+      update_notice: Регион обновлён!
+      destroy_notice: Регион удалён!
+      import_title: 'Импортировать из файла:'
+      file_tooltipe: 'Доступные разрешения: csv, json, xls, xlsx, xml'
+    options:
+      change: Изменить опция
+      new: Новая опция
+      create_notice: Опция создана!
+      update_notice: Опция обновлена!
+      destroy_notice: Опция удалена!
     cities:
       new: Новый город
       change: Изменить город
