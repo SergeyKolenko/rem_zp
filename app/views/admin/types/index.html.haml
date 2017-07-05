@@ -3,10 +3,11 @@
     .page-header
       %h1
         = t('shared.types')
-      %button.btn.btn-primary.btn-lg.js-modal-form-btn{ type: 'button', data: { url: admin_types_path,
-                                                        action: 'new', title: t('admin.types.new') } }
-        %span.glyphicon.glyphicon-plus
-        = t('create')
+      - if can? :create, Types
+        %button.btn.btn-primary.btn-lg.js-modal-form-btn{ type: 'button', data: { url: admin_types_path,
+                                                          action: 'new', title: t('admin.types.new') } }
+          %span.glyphicon.glyphicon-plus
+          = t('create')
 .row
   .col-xs-12
     %table.table.table-bordered
@@ -17,8 +18,9 @@
             = Type.human_attribute_name(:name)
           %th.text-center
             = Type.human_attribute_name(:code)
-          %th.text-center.col-sm-3.col-xs-1
-            = t('actions')
+          - if can? [:update, :delete], Types
+            %th.text-center.col-sm-3.col-xs-1
+              = t('actions')
       %tbody
         - @types.each do |type|
           %tr
@@ -28,20 +30,22 @@
               #{type.name}
             %td
               #{type.code}
-            %td.text-center.actions
-              %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data:{ object: type.attributes,
-                                                                url: admin_type_path(type.id), action: 'edit'} }
-                %span.glyphicon.glyphicon-pencil
-                = t('edit')
-              = link_to admin_type_path(type.id), method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger btn-xs' do
-                %span.glyphicon.glyphicon-trash
-                = t('delete')
+            - if can? [:update, :delete], Types
+              %td.text-center.actions
+                %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data:{ object: type.attributes,
+                                                                  url: admin_type_path(type.id), action: 'edit'} }
+                  %span.glyphicon.glyphicon-pencil
+                  = t('edit')
+                = link_to admin_type_path(type.id), method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger btn-xs' do
+                  %span.glyphicon.glyphicon-trash
+                  = t('delete')
 .row
   .col-xs-12
     - if (@types.count > 0 && @types.total_pages > 1)
       .text-center
         = paginate @types, theme: 'twitter-bootstrap-3'
-= render 'modal_form'
+- if can? :create || :update, Types
+  = render 'modal_form'
 
 
 

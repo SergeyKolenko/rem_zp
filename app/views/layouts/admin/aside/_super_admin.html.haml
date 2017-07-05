@@ -1,7 +1,6 @@
 %ul.nav.navbar-nav.side-nav
   %li
-    %a{ href: '#' }
-      = t('admin.aside.users')
+    = link_to t('admin.aside.users'), '#'
   %li
     = link_to t('admin.aside.regions'), admin_regions_path
   %li
@@ -11,5 +10,4 @@
   %li
     = link_to t('admin.aside.categories'), admin_categories_path
   %li
-    %a{ href: '#' }
-      = t('admin.aside.types')
+    = link_to t('admin.aside.types'), admin_types_path

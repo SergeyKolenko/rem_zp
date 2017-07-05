@@ -86,6 +86,7 @@ en:
     cities:
       change: Change city
       new: New city
+      title: Cities
       create_title: 'In order to create a new city, select region, enter the code and the name:'
       create_notice: City created!
       update_notice: City updated!
@@ -96,6 +97,7 @@ en:
     districts:
       change: Change district
       new: New district
+      title: Districts
       create_title: 'In order to create a new district, select city, enter the code and the name:'
       create_notice: District created!
       update_notice: District updated!
@@ -124,3 +126,9 @@ en:
         previous: "&lsaquo;"
         next: "&rsaquo;"
 
+  unauthorized:
+    manage:
+      all: "Not authorized to %{action} %{subject}."
+      user: "Not allowed to manage other user accounts."
+    update:
+      project: "Not allowed to update this project."
