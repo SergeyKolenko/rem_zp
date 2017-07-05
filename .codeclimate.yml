@@ -1,6 +1,10 @@
 engines:
   duplication:
-    enabled: false
+    enabled: true
+    config:
+      languages:
+        - ruby
+        - javascript
   brakeman:
     enabled: true
   eslint:
