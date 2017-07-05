@@ -4,6 +4,6 @@ engines:
     config:
       languages:
         ruby:
-          mass_threshold: 20
+          mass_threshold: 30
         javascript:
-          mass_threshold: 20
+          mass_threshold: 30
