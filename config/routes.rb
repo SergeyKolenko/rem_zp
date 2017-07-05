@@ -22,6 +22,10 @@ Rails.application.routes.draw do
 
     resources :categories, except: [:show, :new, :edit]
     resources :types, except: [:show, :new, :edit]
+    resources :options, except: [:show, :new, :edit]
+    resources :users, except: [:show, :new, :edit]
+    resources :cities, except: [:show, :new, :edit]
+    resources :districts, except: [:show, :new, :edit]
     resources :regions, except: [:show, :new, :edit] do
       collection { post :import }
     end
