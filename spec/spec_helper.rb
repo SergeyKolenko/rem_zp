@@ -1,13 +1,10 @@
 require 'simplecov'
-SimpleCov.start do
-  add_filter '/initializers/'
-  add_filter '/uploaders/'
-end
+SimpleCov.start { add_filter %w(config/initializers/ app/uploaders/) }
 require 'capybara/rspec'
 require 'money-rails/test_helpers'
 
 Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 
 Capybara.javascript_driver = :chrome
