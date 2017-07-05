@@ -47,6 +47,7 @@
   - if (@regions.count > 0 && @regions.total_pages > 1)
     .col-sx-12.text-center
       = paginate @regions, theme: 'twitter-bootstrap-3'
-- if can? :create, Region
+- if can? :create || :update, Region
   = render 'modal_form'
+- if can? :create, Region
   = render 'import_modal'

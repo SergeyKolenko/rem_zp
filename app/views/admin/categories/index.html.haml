@@ -48,7 +48,7 @@
     - if (@categories.count > 0 && @categories.total_pages > 1)
       .text-center
         = paginate @categories, theme: 'twitter-bootstrap-3'
-- if can? :create, Category
+- if can? :create || :update, Category
   = render 'modal_form'
 
 

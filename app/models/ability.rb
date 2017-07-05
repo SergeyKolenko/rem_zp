@@ -4,7 +4,8 @@ class Ability
   def initialize(user)
     user ||= User.new # guest user (not logged in)
     case user.role_name
-    when 'super_admin' then can :manage, :all
+    when 'super_admin'
+      can :manage, :all
     when 'moderator'
       can :read, :all
       can :manage, [Category, Region, City, District, Option, Type]
@@ -17,10 +18,11 @@ class Ability
       can :manage, Proposal
       can :manage, User, id: user.id
       can :read, [Category, Region, City, District, Type]
-    when Role.simple_user
+    when 'simple_user'
       can :manage, Proposal
       can :manage, User, id: user.id
-    else can :read, [Proposal, Option, Agency]
+    else
+      can :read, [Proposal, Option, Agency]
     end
     # The first argument to `can` is the action you are giving the user
     # permission to do.

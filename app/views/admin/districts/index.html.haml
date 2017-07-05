@@ -62,6 +62,7 @@
   - if (@districts.count > 0 && @districts.total_pages > 1)
     .col-sx-12.text-center
       = paginate @districts, theme: 'twitter-bootstrap-3'
-- if can? :create, District
+- if can? :create || :update, District
   = render 'modal_form'
+- if can? :create, District
   = render 'import_modal'

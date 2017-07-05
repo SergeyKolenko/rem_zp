@@ -44,7 +44,7 @@
     - if (@types.count > 0 && @types.total_pages > 1)
       .text-center
         = paginate @types, theme: 'twitter-bootstrap-3'
-- if can? :create, Types
+- if can? :create || :update, Types
   = render 'modal_form'
 
 
