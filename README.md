@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/SergeyKolenko/rem_zp.svg?branch=master)](https://travis-ci.org/SergeyKolenko/rem_zp)
+[![Build Status](https://travis-ci.org/SergeyKolenko/rem_zp.svg?branch=develop)](https://travis-ci.org/SergeyKolenko/rem_zp)
 
 # Real Estate Market ZP
 
