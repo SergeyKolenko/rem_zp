@@ -10,6 +10,7 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
+require 'i18n/backend/fallbacks'
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -30,6 +31,7 @@ module RemZp
     I18n.available_locales = Settings.languages
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     config.i18n.default_locale = :ru
+    config.i18n.fallbacks = true
     # config.i18n.fallback_locale = :en
   end
 end

@@ -16,7 +16,7 @@
 //= require jquery.maskedinput.min
 //= require select2
 //= require_tree ./app
+//= require_tree ./shared/
 //= require cable
-//= require ./shared/switch_locale
 
 
