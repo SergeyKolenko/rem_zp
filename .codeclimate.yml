@@ -3,9 +3,9 @@ engines:
     enabled: true
     config:
       languages:
-        - ruby:
+      - ruby:
           mass_threshold: 50
-        - javascript:
+      - javascript:
           mass_threshold: 40
   brakeman:
     enabled: true
