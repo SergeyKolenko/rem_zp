@@ -1,9 +1,7 @@
 engines:
   duplication:
     enabled: true
-    checks:
-      Similar code:
-        enabled: false
+    count_threshold: 5
   brakeman:
     enabled: true
   eslint:
@@ -29,6 +27,8 @@ ratings:
   paths:
     - Gemfile.lock
     - "**.rb"
+    - "**.rake"
+    - "**.haml"
     - "**.js"
     - "**.md"
     - "**.scss"
