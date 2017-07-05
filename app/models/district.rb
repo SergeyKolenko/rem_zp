@@ -1,4 +1,5 @@
 class District < ApplicationRecord
+  include FilesImport
   include CodeValidations
 
   belongs_to :city
@@ -9,4 +10,5 @@ class District < ApplicationRecord
   attribute :name, :string
 
   validates :name, :city, presence: true
+
 end

@@ -86,12 +86,24 @@ en:
     cities:
       change: Change city
       new: New city
+      title: Cities
       create_title: 'In order to create a new city, select region, enter the code and the name:'
       create_notice: City created!
       update_notice: City updated!
       destroy_notice: City deleted!
       region_select: Select region
-      import_instruction: 'Available extensions: csv, json, xls, xlsx, xml. Please, select needed region before import.
+      import_instruction: 'Available extensions: csv, json, xls, xlsx, xml. Please, select region before import.
+                           Full instruction can be founded here:'
+    districts:
+      change: Change district
+      new: New district
+      title: Districts
+      create_title: 'In order to create a new district, select city, enter the code and the name:'
+      create_notice: District created!
+      update_notice: District updated!
+      destroy_notice: District deleted!
+      city_select: Select city
+      import_instruction: 'Available extensions: csv, json, xls, xlsx, xml. Please, select city before import.
                            Full instruction can be founded here:'
     users:
       full_name: Full name
@@ -116,3 +128,9 @@ en:
         previous: "&lsaquo;"
         next: "&rsaquo;"
 
+  unauthorized:
+    manage:
+      all: "Not authorized to %{action} %{subject}."
+      user: "Not allowed to manage other user accounts."
+    update:
+      project: "Not allowed to update this project."

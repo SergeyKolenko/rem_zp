@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       get '/', action: :dashboard, as: :dashboard
     end
 
+    resources :users, except: [:show]
     resources :categories, except: [:show, :new, :edit]
     resources :types, except: [:show, :new, :edit]
     resources :regions, except: [:show, :new, :edit] do
@@ -30,7 +31,9 @@ Rails.application.routes.draw do
       collection { post :import }
     end
 
-    resources :users, except: [:show]
+    resources :districts, only: [:index, :create, :update, :destroy] do
+      collection { post :import }
+    end
 
     controller :helpers do
       get '/upload_instructions', action: :upload_instructions

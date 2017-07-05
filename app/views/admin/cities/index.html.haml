@@ -1,14 +1,15 @@
 .row
   .page-header
     %h1
-      = t('activerecord.models.city.many')
-  .col-xs-12
-    %button.btn.btn-primary.btn-lg.js-modal-form-btn{ type: 'button', data: { url: admin_cities_path,
-                                                      action: 'new', title: t('admin.cities.new') } }
-      %span.glyphicon.glyphicon-plus
-      = t('create')
-    %button.btn.btn-primary.btn-lg{ data: { toggle: 'modal', target: '#importModal' } }
-      = t('shared.import_title')
+      = t('admin.cities.title')
+  - if can? :create, City
+    .col-xs-12
+      %button.btn.btn-primary.btn-lg.js-modal-form-btn{ type: 'button', data: { url: admin_cities_path,
+                                                        action: 'new', title: t('admin.cities.new') } }
+        %span.glyphicon.glyphicon-plus
+        = t('create')
+      %button.btn.btn-primary.btn-lg{ data: { toggle: 'modal', target: '#importModal' } }
+        = t('shared.import_title')
 %hr
 .row
   .col-xs-12
@@ -22,7 +23,7 @@
       %ul.dropdown-menu
         - all_regions.each do |region|
           %li
-            = link_to region.name, '#', data: { id: region.id }, class: 'js-select-region'
+            = link_to region.name, '#', data: { param: "region_id=#{region.id}" }, class: 'js-select-parent'
     %hr
     %table.table.table-bordered
       %thead
@@ -34,30 +35,34 @@
             = City.human_attribute_name(:code)
           %th.text-center
             = City.human_attribute_name(:name)
-          %th.col-sm-3.col-xs-1.text-center
-            = t('actions')
+          - if can? [:update, :delete], City
+            %th.col-sm-3.col-xs-1.text-center
+              = t('actions')
       %tbody
         - @cities.each do |city|
           %tr
             %th.text-right
               #{city.id}
             %td
-              #{Region.find(city.region_id).name}
+              #{city.region.name}
             %td
               #{city.code}
             %td
               #{city.name}
-            %td.text-center.actions
-              %button.btn.btn-warning.btn-xs.js-modal-form-btn{type: 'button', data:{ object: city.attributes,
-                url: admin_city_path(city), action: 'edit', title: t('admin.cities.change') }}
-                %span.glyphicon.glyphicon-pencil
-                = t('edit')
-              = link_to admin_city_path(city), method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger btn-xs' do
-                %span.glyphicon.glyphicon-trash
-                = t('delete')
+            - if can? [:update, :delete], City
+              %td.text-center.actions
+                %button.btn.btn-warning.btn-xs.js-modal-form-btn{type: 'button', data:{ object: city.attributes,
+                  url: admin_city_path(city), action: 'edit', title: t('admin.cities.change') }}
+                  %span.glyphicon.glyphicon-pencil
+                  = t('edit')
+                = link_to admin_city_path(city), method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger btn-xs' do
+                  %span.glyphicon.glyphicon-trash
+                  = t('delete')
 .row
   - if (@cities.count > 0 && @cities.total_pages > 1)
     .col-sx-12.text-center
       = paginate @cities, theme: 'twitter-bootstrap-3'
-= render 'modal_form'
-= render 'import_modal'
+- if can? :create || :update, City
+  = render 'modal_form'
+- if can? :create, City
+  = render 'import_modal'

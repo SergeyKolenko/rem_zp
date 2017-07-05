@@ -3,10 +3,11 @@
     .page-header
       %h1
         = t('shared.categories')
-      %button.btn.btn-primary.btn-lg.js-modal-form-btn{ type: 'button', data: { url: admin_categories_path,
-                                                        action: 'new', title: t('admin.categories.new') } }
-        %span.glyphicon.glyphicon-plus
-        = t('create')
+      - if can? :create, Category
+        %button.btn.btn-primary.btn-lg.js-modal-form-btn{ type: 'button', data: { url: admin_categories_path,
+                                                          action: 'new', title: t('admin.categories.new') } }
+          %span.glyphicon.glyphicon-plus
+          = t('create')
 .row
   .col-xs-12
     %table.table.table-bordered
@@ -19,8 +20,9 @@
             = Category.human_attribute_name(:code)
           %th.text-center.col-sm-2
             = Category.human_attribute_name(:weight)
-          %th.text-center.col-sm-3.col-xs-1
-            = t('actions')
+          - if can? [:update, :delete], Category
+            %th.text-center.col-sm-3.col-xs-1
+              = t('actions')
       %tbody
         - @categories.each do |category|
           %tr
@@ -32,20 +34,22 @@
               #{category.code}
             %td
               #{category.weight}
-            %td.text-center.actions
-              %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data:{ object: category.attributes, url: admin_category_path(category.id),
-                                                                action: 'edit', title: t('admin.categories.change') }}
-                %span.glyphicon.glyphicon-pencil
-                = t('edit')
-              = link_to admin_category_path(category.id), method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger btn-xs' do
-                %span.glyphicon.glyphicon-trash
-                = t('delete')
+            - if can? [:update, :delete], Category
+              %td.text-center.actions
+                %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data:{ object: category.attributes, url: admin_category_path(category.id),
+                                                                  action: 'edit', title: t('admin.categories.change') }}
+                  %span.glyphicon.glyphicon-pencil
+                  = t('edit')
+                = link_to admin_category_path(category.id), method: :delete, data: { confirm: t('are_you_sure') }, class: 'btn btn-danger btn-xs' do
+                  %span.glyphicon.glyphicon-trash
+                  = t('delete')
 .row
   .col-xs-12
     - if (@categories.count > 0 && @categories.total_pages > 1)
       .text-center
         = paginate @categories, theme: 'twitter-bootstrap-3'
-= render 'modal_form'
+- if can? :create || :update, Category
+  = render 'modal_form'
 
 
 

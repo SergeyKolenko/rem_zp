@@ -51,6 +51,7 @@ build-iPhoneSimulator/
 .idea/
 /config/database.yml
 /log/
+coverage
 
 config/settings.local.yml
 config/settings/*.local.yml

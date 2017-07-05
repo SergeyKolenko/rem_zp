@@ -1,4 +1,5 @@
 class Admin::TypesController < Admin::AdminController
+  load_and_authorize_resource
   before_action :set_type, only: [:update, :destroy]
 
   def index
