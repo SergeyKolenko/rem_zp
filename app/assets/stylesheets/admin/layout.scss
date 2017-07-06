@@ -156,7 +156,7 @@ ul {
 
       &:hover,
       &:focus {
-        background-color: $black !important;
+        background-color: $black;
         color: $white;
         outline: none;
       }
@@ -187,10 +187,11 @@ ul {
   border-color: $light-green;
 
   .panel-heading {
+    background-color: $light-green;
     border-color: $light-green;
     color: $white;
-    background-color: $light-green;
   }
+
   a {
     color: $light-green;
 
@@ -204,10 +205,11 @@ ul {
   border-color: $light-red;
 
   .panel-heading {
+    background-color: $light-red;
     border-color: $light-red;
     color: $white;
-    background-color: $light-red;
   }
+
   a {
     color: $light-red;
 
