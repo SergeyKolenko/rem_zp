@@ -103,6 +103,19 @@ uk:
       destroy_notice: Місто видалено!
       import_instruction: 'Доступні разширення: csv, json, xls, xlsx, xml. Обов`язково виберіть регіон
                            перед імпортуванням. Детальна інструкція доступна за посиланням:'
+    users:
+      new: Новий користувач
+      title: Користувачі
+      full_name: Повне ім`я
+      create_notice: Користувача створено!
+      update_notice: Користувача оновлено!
+      destroy_notice: Користувача видалено!
+      confirmation_sent: Лист з інструкцією відправлено
+      password_reset: Пароль видалено. Лист з інструкцією відправлено
+      submit_block: Заблокувати
+      blocked: Користувача заблоковано!
+      submit_unblock: Розблокувати
+      unblocked: Користувача розблоковано!
     districts:
       new: Новый район
       change: Змінити район
@@ -129,6 +142,7 @@ uk:
         keys: Ключі
         example_code: Код приклад
         example_value: Значення приклад
+    wrong_rules: У вас немає прав.
 
   views:
     pagination:
