@@ -3,8 +3,7 @@ class Admin::CategoriesController < Admin::AdminController
   before_action :set_category, only: [:update, :destroy]
 
   def index
-    @categories = Category.all.page(params[:page]).per(10)
-    @categories = Category.order(sort_column + " " + sort_direction)
+    @categories = Category.sorting(params[:sort], params[:direction]).page(params[:page])
   end
 
   def create
@@ -36,14 +35,6 @@ class Admin::CategoriesController < Admin::AdminController
   end
 
   private
-  def sort_column
-    Category.column_names.include?(params[:sort]) ? params[:sort] : "name"
-  end
-
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-  end
-
   def set_category
     @category = Category.find(params[:id])
   end

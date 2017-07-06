@@ -10,16 +10,20 @@
           = t('create')
 .row
   .col-xs-12
-    %table.table.table-bordered
+    %table.table.table-bordered.sortable
       %thead
         %tr
-          %th.text-right.col-sm-1 Id
+          %th.text-right.col-sm-1
+            Id
+            = sortable_link('id', 'asc')
+            %br
+            = sortable_link('id', 'desc')
           %th.text-center
-            = sortable Category.human_attribute_name(:name)
+            -#= Category.human_attribute_name(:name)
           %th.text-center
-            = sortable Category.human_attribute_name(:code)
+            -#= sortable_link('code')
           %th.text-center.col-sm-2
-            = sortable Category.human_attribute_name(:weight)
+            -#= sortable 'weight'
           - if can? [:update, :delete], Category
             %th.text-center.col-sm-3.col-xs-1
               = t('actions')

@@ -1,0 +1,10 @@
+.disable-sort-link {
+  color: $gray;
+  pointer-events: none;
+}
+.actions {
+  a,
+  button {
+    margin: 5px;
+  }
+}
