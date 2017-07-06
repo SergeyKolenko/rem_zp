@@ -42,7 +42,7 @@ body {
 .top-nav {
   background-color: $black-222;
   padding: 0 15px;
-  
+
   li {
     display: inline-block;
     float: left;
@@ -223,9 +223,9 @@ ul {
   border-color: $dark-yellow;
 
   .panel-heading {
+    background-color: $dark-yellow;
     border-color: $dark-yellow;
     color: $white;
-    background-color: $dark-yellow;
   }
 
   a {
