@@ -42,6 +42,13 @@ class Admin::CitiesController < Admin::AdminController
     show_errors(exception)
   end
 
+  def cities_for_region
+    @cities = City.where(region_id: params[:id])
+    respond_to do |format|
+      format.json
+    end
+  end
+
   private
 
   def set_city

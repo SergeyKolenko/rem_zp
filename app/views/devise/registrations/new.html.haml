@@ -5,7 +5,7 @@
   = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form' }) do |f|
     .text-center
       = devise_error_messages!
-    %div{ class: session[:role_id] == role_ids[:agency_director] ? 'col-xs-6' : 'col-xs-8' }
+    %div{ class: session[:role_id] == role_ids[:agency_director] ? 'col-xs-6' : 'col-xs-10' }
       .col-sm-8.col-sm-offset-3
         %h3
           = t('devise.registrations.main_info')
@@ -59,13 +59,15 @@
               = agency_form.telephone_field :phone, autofocus: true, class: 'form-control telephone-field',
                                             required: true, placeholder: '099-999-99-99'
             .form-group
-              = agency_form.label :region_ids, class: 'control-label'
-              = agency_form.collection_select :region_ids, Region.all, :id, :name,
-                  {include_blank: t('devise.registrations.select_agency_region_blank')}, {multiple: false, class: 'select2 region_select'}
+              = agency_form.label :region_id, class: 'control-label'
+              =# agency_form.select :region_id, options_for_select(regions_for_select, 1), { include_blank: t('devise.registrations.select_agency_region_blank') }, { id: 'region_select' }
+              = agency_form.select :region_id, options_for_select(regions_for_select, 1),
+                { include_blank: t('devise.registrations.select_agency_region_blank') }, { id: 'region_select' }
             .form-group
               = agency_form.label :city_ids, class: 'control-label'
-              = agency_form.collection_select :city_ids, City.all, :id, :name,
-                  {include_blank: t('devise.registrations.select_agency_city_blank')}, {multiple: false, class: 'select2'}
+              =# agency_form.collection_select :city_ids, City.all, :id, :name, {include_blank: t('devise.registrations.select_agency_city_blank')}, {multiple: false, class: 'select2'}
+              = agency_form.select :city_ids, options_for_select(cities_for_select, 0),
+                {include_blank: t('devise.registrations.select_agency_city_blank')}, { id: 'cities_select' }
     .form-group
       .col-sm-12.text-center.mart-5
         = f.submit t('devise.registrations.registrate'), class: 'btn btn-success'

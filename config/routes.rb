@@ -12,15 +12,16 @@ Rails.application.routes.draw do
   # ADMIN PANEL
   namespace :admin do
 
-    devise_scope :user do
-      get 'user/edit',  to: 'user/registrations#edit', as: :edit_user_registration
-    end
-
     controller :dashboards do
       get '/', action: :dashboard, as: :dashboard
     end
 
     resources :users, except: [:show]
+
+    devise_scope :user do
+      get 'user/edit',  to: 'user/registrations#edit', as: :edit_user_registration
+    end
+
     scope :user do
       controller 'user/helpers' do
         get '/:id/sent_confirmation', action: :sent_confirmation_instruction, as: :sent_user_confirmation
@@ -33,9 +34,8 @@ Rails.application.routes.draw do
     resources :categories, except: [:show, :new, :edit]
     resources :types, except: [:show, :new, :edit]
     resources :options, except: [:show, :new, :edit]
-    resources :users, except: [:show, :new, :edit]
-    resources :cities, except: [:show, :new, :edit]
     resources :districts, except: [:show, :new, :edit]
+
     resources :regions, except: [:show, :new, :edit] do
       collection { post :import }
     end
@@ -43,6 +43,7 @@ Rails.application.routes.draw do
     resources :cities, except: [:show, :new, :edit] do
       collection { post :import }
     end
+    get '/cities_for_region/:id', action: :cities_for_region, as: 'cities_for_region'
 
     resources :districts, only: [:index, :create, :update, :destroy] do
       collection { post :import }

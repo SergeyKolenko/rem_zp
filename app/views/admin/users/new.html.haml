@@ -7,34 +7,28 @@
   .col-xs-12
     = form_with scope: @user, url: admin_users_path, method: 'post', local: true, class: 'form-horizontal' do |f|
       = render 'layouts/shared/error_messages', target: @user
-      .form-group
-        .col-sm-8.col-sm-offset-2
+      .col-sm-8.col-sm-offset-2
+        .form-group
           = f.label :first_name, class: 'control-label'
           = f.text_field :first_name, class: 'form-control'
-      .form-group
-        .col-sm-8.col-sm-offset-2
+        .form-group
           = f.label :last_name, class: 'control-label'
           = f.text_field :last_name, class: 'form-control'
-      .form-group
-        .col-sm-8.col-sm-offset-2
+        .form-group
           = f.label :email, class: 'control-label'
           = f.email_field :email, autofocus: true, class: 'form-control'
-      .form-group
-        .col-sm-8.col-sm-offset-2
+        .form-group
           = f.label :password, class: 'control-label'
           = f.password_field :password, autocomplete: 'off', class: 'form-control'
-      .form-group
-        .col-sm-8.col-sm-offset-2
+        .form-group
           = f.label :password_confirmation, class: 'control-label'
           = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control'
-      .form-group
-        .col-sm-8.col-sm-offset-2
+        .form-group
           = f.label :phone, class: 'control-label'
           = f.telephone_field :phone, autofocus: true, class: 'form-control telephone-field', placeholder: '099-999-99-99'
-      .form-group
-        .col-sm-8.col-sm-offset-2.mart-5
+        .form-group
           = f.label :locale, class: 'control-label'
-          = f.select :locale, available_languages, class: 'form-control'
-      .form-group
-        .col-sm-8.col-sm-offset-2.mart-5.text-center
-          = f.submit t('create'), class: 'btn btn-success'
+          = f.select :locale, available_languages, {}, class: 'form-control'
+        .form-group
+          .mart-5.text-center
+            = f.submit t('create'), class: 'btn btn-success'
