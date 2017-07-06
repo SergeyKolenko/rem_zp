@@ -40,7 +40,7 @@ body {
 // Top Navigation
 
 .top-nav {
-  background-color: $black_222;
+  background-color: $black-222;
   padding: 0 15px;
   
   li {
@@ -74,7 +74,7 @@ body {
       border: 1px solid $black-op-15;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      -webkit-box-shadow: 0 6px 12px $black-op-175;
+      -webkit-box-shadow: 0 6px 12px $black-op-175; // No lint reported
       box-shadow: 0 6px 12px $black-op-175;
       float: left;
       margin-top: 0;
@@ -124,7 +124,7 @@ ul {
 
 // Side Navigation
 .side-nav {
-  background-color: $black_222;
+  background-color: $black-222;
   border: 0;
   bottom: 0;
   overflow-x: hidden;
