@@ -1,4 +1,5 @@
-= form_with scope: @user, url: admin_user_path(@user.id), method: 'patch', local: true, class: 'form-horizontal' do |f|
+= form_with scope: @user, url: admin_user_path(@user), method: 'patch', local: true, class: 'form-horizontal' do |f|
+  = render 'layouts/shared/error_messages', target: @user
   .form-group
     .col-sm-8.col-sm-offset-2.mart-5.text-center
       - if @user.avatar.url.present?

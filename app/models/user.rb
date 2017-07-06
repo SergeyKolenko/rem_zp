@@ -14,6 +14,8 @@ class User < ApplicationRecord
   mount_uploader :avatar, UsersAvatarUploader
 
   validates :first_name, :last_name, :role, presence: true
+  validates :first_name, length: { minimum: 2, maximum: 20 }
+  validates :last_name, length: { minimum: 2, maximum: 50 }
   validates :agency, presence: true, if: Proc.new { |u| %w(agent).include? u.role_name }
   validates :agency, absence: true, unless: Proc.new { |u| %w(agent).include? u.role_name }
   validates :phone, format: { with: /\A[0]\d[(39|50|63|66|67|68|91|92|93|94|95|96|97|98|99)]-\d{3}-\d{2}-\d{2}\z/,
@@ -34,14 +36,14 @@ class User < ApplicationRecord
   end
 
   def active_for_authentication?
-    super && !self.blocked
+    super && !blocked?
   end
 
   def block_user
-    self.update(blocked: true)
+    update(blocked: true)
   end
 
   def unblock_user
-    self.update(blocked: false)
+    update(blocked: false)
   end
 end

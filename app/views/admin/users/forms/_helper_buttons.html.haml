@@ -1,14 +1,14 @@
 - if can? :ban, User
   - if @user.blocked
-    = link_to t('admin.users.submit_unblock'), admin_unblock_path(@user), class: 'btn btn-danger'
+    = link_to t('admin.users.submit_unblock'), admin_unblock_user_path(@user), class: 'btn btn-danger'
   - else
-    = link_to admin_block_path(@user), class: 'btn btn-danger marr-3' do
+    = link_to admin_block_user_path(@user), class: 'btn btn-danger marr-3' do
       %span.glyphicon.glyphicon-lock
         = t('admin.users.submit_block')
 - if can? :update, User
-  = link_to t('devise.passwords.change_pass'), admin_reset_password_path(@user), class: 'btn btn-primary'
+  = link_to t('devise.passwords.change_pass'), admin_reset_user_password_path(@user), class: 'btn btn-primary'
   - unless @user.confirmed?
-    = link_to t('devise.confirmations.submit'), admin_sent_confirmation_path(@user), class: 'btn btn-default'
+    = link_to t('devise.confirmations.submit'), admin_sent_user_confirmation_path(@user), class: 'btn btn-default'
 - if can? :delete, User
   = link_to admin_user_path(@user), method: :delete, data: { confirm: t('are_you_sure') },
                                                         class: 'btn btn-danger' do

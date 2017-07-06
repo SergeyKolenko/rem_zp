@@ -21,7 +21,6 @@ class Admin::UsersController < Admin::AdminController
       flash[:success] = t('admin.users.create_notice')
       redirect_to admin_users_path
     else
-      flash[:danger] = @user.errors.full_messages
       render :new
     end
   end
@@ -29,10 +28,10 @@ class Admin::UsersController < Admin::AdminController
   def update
     if @user.update(user_params)
       flash[:success] = t('admin.users.update_notice')
+      redirect_back(fallback_location: admin_users_path)
     else
-      flash[:danger] = @user.errors.full_messages
+      render :edit
     end
-    redirect_back(fallback_location: admin_users_path)
   end
 
   def destroy
