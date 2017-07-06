@@ -21,6 +21,11 @@ Rails.application.routes.draw do
     end
 
     resources :users, except: [:show]
+    get 'sent_confirmation/:id', to: 'user/helpers#sent_confirmation_instruction', as: :sent_confirmation
+    get 'reset_password/:id', to: 'user/helpers#reset_password', as: :reset_password
+    get 'block/:id', to: 'user/helpers#block_user', as: :block
+    get 'unblock/:id', to: 'user/helpers#unblock_user', as: :unblock
+
     resources :categories, except: [:show, :new, :edit]
     resources :types, except: [:show, :new, :edit]
     resources :regions, except: [:show, :new, :edit] do

@@ -9,7 +9,7 @@ class Ability
     when 'moderator'
       can :read, :all
       can :manage, [Category, Region, City, District, Option, Type]
-      can :ban, :update, User
+      can [:ban, :update], User
     when 'agency_director'
       can :manage, [Agency, Proposal, OptionValue]
       can :manage, User, id: user.id

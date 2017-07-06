@@ -5,4 +5,4 @@
         = t('edit')
 .row
   .col-xs-12
-    = render 'form'
+    = render "#{current_user.role_name == 'super_admin' ? 'admin/users/forms/super_user_form' : 'admin/users/forms/form'}"

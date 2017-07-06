@@ -2,7 +2,12 @@
   .col-xs-12
     .page-header
       %h1
-        = t('activerecord.models.user.many')
+        = t('admin.users.title')
+    - if can? :create, User
+      = link_to new_admin_user_path, class: 'btn btn-primary btn-lg' do
+        %span.glyphicon.glyphicon-plus
+          = t('create')
+      %hr
 .row
   .col-xs-12
     %table.table.table-bordered
@@ -29,13 +34,15 @@
             %td
               #{user.email}
             %td.text-center.actions
-              = link_to edit_admin_user_path(user), class: 'btn btn-warning btn-xs' do
-                %span.glyphicon.glyphicon-pencil
-                = t('edit')
-              = link_to admin_user_path(user), method: :delete, data: { confirm: t('are_you_sure') },
-                                                      class: 'btn btn-danger btn-xs' do
-                %span.glyphicon.glyphicon-trash
-                = t('delete')
+              - if can? :update, User
+                = link_to edit_admin_user_path(user), class: 'btn btn-warning btn-xs' do
+                  %span.glyphicon.glyphicon-pencil
+                  = t('edit')
+              - if can? :delete, User
+                = link_to admin_user_path(user), method: :delete, data: { confirm: t('are_you_sure') },
+                                                        class: 'btn btn-danger btn-xs' do
+                  %span.glyphicon.glyphicon-trash
+                  = t('delete')
 .row
   - if (@users.count > 0 && @users.total_pages > 1)
     .col-sx-12.text-center

@@ -1,6 +1,7 @@
 class Admin::UsersController < Admin::AdminController
-  load_and_authorize_resource
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  include Helpers
+  before_action :verify_admin_roles
+  before_action :set_user, except: [:index, :new]
 
   def index
     @users = User.all.page(params[:page]).per(10)
@@ -16,23 +17,31 @@ class Admin::UsersController < Admin::AdminController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to new_admin_user_path, notice: 'Юзер был создан!'
+      @user.send_confirmation_instructions
+      flash[:success] = t('admin.users.create_notice')
+      redirect_to admin_users_path
     else
+      flash[:danger] = @user.errors.full_messages
       render :new
     end
   end
 
   def update
     if @user.update(user_params)
-      redirect_to edit_admin_user_path, notice: 'User was successfully updated.'
+      flash[:success] = t('admin.users.update_notice')
     else
-      render :edit
+      flash[:danger] = @user.errors.full_messages
     end
+    redirect_back(fallback_location: admin_users_path)
   end
 
   def destroy
-    @user.destroy
-    redirect_to admin_users_url, notice: 'User was successfully destroyed.'
+    if @user.destroy
+      flash[:success] = t('admin.users.destroy_notice')
+    else
+      flash[:danger] = @user.errors.full_messages
+    end
+    redirect_back(fallback_location: admin_users_path)
   end
 
   private

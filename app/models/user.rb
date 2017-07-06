@@ -32,4 +32,16 @@ class User < ApplicationRecord
   def ability
     @ability ||= Ability.new(self)
   end
+
+  def active_for_authentication?
+    super && !self.blocked
+  end
+
+  def block_user
+    self.update(blocked: true)
+  end
+
+  def unblock_user
+    self.update(blocked: false)
+  end
 end
