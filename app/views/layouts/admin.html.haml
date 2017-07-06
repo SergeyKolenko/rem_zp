@@ -2,8 +2,10 @@
 %html
   %head
     %meta{content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type'}/
-    %title Контрольная панель
+    %title
+      = t('application.header.control_panel')
     = csrf_meta_tags
+    = render 'layouts/shared/current_locale'
     = stylesheet_link_tag    'admin', media: 'all'
     = javascript_include_tag 'admin'
   %body
