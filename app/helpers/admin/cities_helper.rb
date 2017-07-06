@@ -6,9 +6,11 @@ module Admin::CitiesHelper
     end
   end
 
+
   def all_cities
     Rails.cache.fetch("admin_all_cities_#{I18n.locale}") do
       City.all
     end
   end
+
 end
