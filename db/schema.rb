@@ -238,7 +238,6 @@ ActiveRecord::Schema.define(version: 20170706085401) do
     t.bigint "agency_id"
     t.string "avatar"
     t.string "locale", default: "ru"
-    t.bigint "agency_id"
     t.boolean "blocked", default: false
     t.index ["agency_id"], name: "index_users_on_agency_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
