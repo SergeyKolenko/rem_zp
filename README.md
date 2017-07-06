@@ -27,4 +27,4 @@ To start project run
 
 To run test `rspec spec`
 
-¯\_(ツ)_/¯
+¯\\\_(ツ)_/¯
