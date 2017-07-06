@@ -14,6 +14,7 @@ en:
   actions: Actions
   cancel: cancel
   shared:
+    options: Options
     types: Types
     categories: Categories
     agencies: Agencies
@@ -62,6 +63,7 @@ en:
       districts: Districts
       categories: Categories
       types: "Proposal's types"
+      options: options
     actions: Actions
     categories:
       change: Change category
@@ -83,6 +85,14 @@ en:
       create_notice: Region created!
       update_notice: Region updated!
       destroy_notice: Region deleted!
+      import_title: 'Import from the file:'
+      file_tooltipe: 'Available extensions: csv, json, xls, xlsx, xml'
+    options:
+      change: Change option
+      new: New Option
+      create_notice: Option created!
+      update_notice: Option updated!
+      destroy_notice: Option deleted!
     cities:
       change: Change city
       new: New city

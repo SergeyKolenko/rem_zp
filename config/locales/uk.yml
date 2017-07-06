@@ -14,6 +14,7 @@ uk:
   actions: Дії
   cancel: Скасувати
   shared:
+    options: Опції
     types: Типи
     categories: Категорії
     agencies: Агенції
@@ -61,6 +62,7 @@ uk:
       districts: Райони
       categories: Категорії
       types: Типи пропозицій
+      options: Опції
     actions: Дії
     categories:
       change: Змінити категорію
@@ -80,8 +82,17 @@ uk:
       title: Регіони
       create_title: 'Щоб додати новий регіон, введіть код та назву:'
       create_notice: Регіон створено!
-      update_notice: Регіон оновлено!
-      destroy_notice: Регіон видалено!
+      update_notice: Регіон оновлен!
+      destroy_notice: Регіон видален!
+      region_select: Виберіть регіон
+      import_title: 'Імпортувати з файлу:'
+      file_tooltipe: 'Доступні формати: csv, json, xls, xlsx, xml'
+    options:
+      change: Змінити опцію
+      new: Нова опція
+      create_notice: Опція створена!
+      update_notice: Опція оновлена!
+      destroy_notice: Опція видалена!
     cities:
       new: Нове місто
       change: Змінити місто
@@ -90,7 +101,6 @@ uk:
       create_notice: Місто створено!
       update_notice: Місто оновлено!
       destroy_notice: Місто видалено!
-      region_select: Виберіть регіон
       import_instruction: 'Доступні разширення: csv, json, xls, xlsx, xml. Обов`язково виберіть регіон
                            перед імпортуванням. Детальна інструкція доступна за посиланням:'
     users:

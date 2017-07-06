@@ -27,7 +27,13 @@ class ModalForm {
 
             for (let key of Object.keys(data)) {
                 if (key.match(/^object/)) {
-                    $('[name$="[' + key.replace(/object/, '').toLowerCase() + ']"]', this.form).val(data[key]);
+	                  const normalized_key = key.replace(/object/, '').split(/(?=[A-Z])/).join('_').toLowerCase();
+	                  const element = $('[name*="[' + normalized_key + ']"]:last', this.form);
+	                  if ($(element).hasClass('select2')) {
+		                  $(element).select2('val', [data[key]]);
+	                  } else {
+		                  $(element).val(data[key]);
+	                  }
                 }
             }
         } else {
@@ -47,6 +53,6 @@ class ModalForm {
 
 $(document).ready(function () {
     if ($('.js-modal-form-btn').length > 0 && $('.js-modal-window .js-modal-form').length > 0) {
-        new ModalForm();
+        const modal = new ModalForm();
     }
 });

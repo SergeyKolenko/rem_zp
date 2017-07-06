@@ -1,9 +1,6 @@
 rvm:
   - 2.4.1
 script: 'bundle exec rspec spec'
-addons:
-  code_climate:
-    repo_token: ae301dffb36219edfeed464000858202eb71ae6e42a2dacd5ddea37ff25149d9
 before_script:
   - cp config/database.travis.yml config/database.yml
   - psql -c 'create database travis_ci_test;' -U postgres

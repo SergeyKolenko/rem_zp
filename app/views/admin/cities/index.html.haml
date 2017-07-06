@@ -42,13 +42,13 @@
         - @cities.each do |city|
           %tr
             %th.text-right
-              #{city.id}
+              = city.id
             %td
-              #{city.region.name}
+              = city.region.name
             %td
-              #{city.code}
+              = city.code
             %td
-              #{city.name}
+              = city.name
             - if can? [:update, :delete], City
               %td.text-center.actions
                 %button.btn.btn-warning.btn-xs.js-modal-form-btn{type: 'button', data:{ object: city.attributes,
