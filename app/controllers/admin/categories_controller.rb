@@ -4,6 +4,7 @@ class Admin::CategoriesController < Admin::AdminController
 
   def index
     @categories = Category.all.page(params[:page]).per(10)
+    @categories = Category.order(sort_column + " " + sort_direction)
   end
 
   def create
@@ -35,6 +36,14 @@ class Admin::CategoriesController < Admin::AdminController
   end
 
   private
+  def sort_column
+    Category.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
   def set_category
     @category = Category.find(params[:id])
   end

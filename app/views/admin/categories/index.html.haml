@@ -15,11 +15,11 @@
         %tr
           %th.text-right.col-sm-1 Id
           %th.text-center
-            = Category.human_attribute_name(:name)
+            = sortable Category.human_attribute_name(:name)
           %th.text-center
-            = Category.human_attribute_name(:code)
+            = sortable Category.human_attribute_name(:code)
           %th.text-center.col-sm-2
-            = Category.human_attribute_name(:weight)
+            = sortable Category.human_attribute_name(:weight)
           - if can? [:update, :delete], Category
             %th.text-center.col-sm-3.col-xs-1
               = t('actions')
