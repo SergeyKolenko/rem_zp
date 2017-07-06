@@ -35,11 +35,13 @@ module ApplicationHelper
       City.all
     end
   end
+
   def all_cities1
     Rails.cache.fetch("admin_all_cities_#{I18n.locale}") do
       City.all
     end
   end
+
   def all_cities2
     Rails.cache.fetch("admin_all_cities_#{I18n.locale}") do
       City.all
