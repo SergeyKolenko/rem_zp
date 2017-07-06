@@ -26,3 +26,5 @@ To start project run
 `rails s`
 
 To run test `rspec spec`
+
+¯\_(ツ)_/¯
