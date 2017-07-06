@@ -23,8 +23,6 @@ engines:
     enabled: true
   scss-lint:
     enabled: true
-  stylelint:
-    enabled: true
 
 ratings:
   paths:
@@ -34,10 +32,7 @@ ratings:
   - "**.haml"
   - "**.js"
   - "**.md"
-  - "**.css"
-  - "**.less"
   - "**.scss"
-  - "**.sss"
 
 exclude_paths:
 - config/**/*
