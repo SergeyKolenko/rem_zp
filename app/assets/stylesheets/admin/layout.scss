@@ -6,7 +6,7 @@ body {
   }
 }
 
-#wrapper {
+.main-wrapper {
   padding-left: 0;
 
   @media(min-width: 768px) {
@@ -14,7 +14,7 @@ body {
   }
 }
 
-#page-wrapper {
+.page-wrapper {
   background-color: $white;
   padding: 0;
   width: 100%;
@@ -42,38 +42,44 @@ body {
 .top-nav {
   background-color: $black_222;
   padding: 0 15px;
+  
   li {
     display: inline-block;
     float: left;
+
     a {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      line-height: 20px;
       color: $gray;
+      line-height: 20px;
+      padding-bottom: 15px;
+      padding-top: 15px;
+
       &:hover,
       &:focus {
-        color: $white;
         background-color: $black;
+        color: $white;
       }
     }
   }
+
   .open {
     a,
     a:hover,
     a:focus {
-      color: $white;
       background-color: $black;
+      color: $white;
     }
+
     .dropdown-menu {
-      float: left;
-      position: absolute;
-      margin-top: 0;
-      border: 1px solid $black_op_15;
+      background-color: $white;
+      border: 1px solid $black-op-15;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      background-color: $white;
-      -webkit-box-shadow: 0 6px 12px $black_op_175;
-      box-shadow: 0 6px 12px $black_op_175;
+      -webkit-box-shadow: 0 6px 12px $black-op-175;
+      box-shadow: 0 6px 12px $black-op-175;
+      float: left;
+      margin-top: 0;
+      position: absolute;
+
       li {
         a {
           white-space: normal;
@@ -81,31 +87,36 @@ body {
       }
     }
   }
+
   .locale-dropdown {
-    background-color: $black !important;
+    background-color: $black;
   }
 }
 
 ul {
   &.message-dropdown {
-    padding: 0;
     max-height: 250px;
     overflow-x: hidden;
     overflow-y: auto;
+    padding: 0;
+
     li {
       &.message-preview {
+        border-bottom: 1px solid $black-op-15;
         width: 275px;
-        border-bottom: 1px solid $black_op_15;
+
         a {
-          padding-top: 15px;
           padding-bottom: 15px;
+          padding-top: 15px;
         }
       }
+
       &.message-footer {
         margin: 5px 0;
       }
     }
   }
+
   &.alert-dropdown {
     width: 200px;
   }
@@ -113,40 +124,41 @@ ul {
 
 // Side Navigation
 .side-nav {
-  border: 0;
-  overflow-y: auto;
   background-color: $black_222;
+  border: 0;
   bottom: 0;
   overflow-x: hidden;
+  overflow-y: auto;
 
   @media(min-width: 768px) {
-    position: fixed;
-    top: 51px;
     left: 225px;
-    width: 225px;
     margin-left: -225px;
     padding-bottom: 40px;
+    position: fixed;
+    top: 51px;
+    width: 225px;
   }
 
   @media(max-width: 767px) {
     left: 15px;
-    position: absolute;
     max-height: 300px;
+    position: absolute;
     top: 73px;
     width: 100%;
   }
 
   li {
     a {
+      color: $gray;
       display: block;
       padding: 10px 15px 10px 38px;
       text-decoration: none;
-      color: $gray;
+
       &:hover,
       &:focus {
-        outline: none;
         background-color: $black !important;
         color: $white;
+        outline: none;
       }
 
       @media(min-width: 768px) {
@@ -157,29 +169,31 @@ ul {
 }
 
 .icon-bar {
-  display: block;
-  width: 22px;
-  height: 2px;
-  border-radius: 1px;
   background-color: $gray;
+  border-radius: 1px;
+  display: block;
+  height: 2px;
   margin-top: 4px;
+  width: 22px;
 }
 
 // Custom Colored Panels
 
-.huge {
+.panel.huge {
   font-size: 40px;
 }
 
 .panel-green {
-  border-color: $light_green;
+  border-color: $light-green;
+
   .panel-heading {
-    border-color: $light_green;
+    border-color: $light-green;
     color: $white;
-    background-color: $light_green;
+    background-color: $light-green;
   }
   a {
-    color: $light_green;
+    color: $light-green;
+
     &:hover {
       color: $green;
     }
@@ -187,39 +201,41 @@ ul {
 }
 
 .panel-red {
-  border-color: $light_red;
+  border-color: $light-red;
+
   .panel-heading {
-    border-color: $light_red;
+    border-color: $light-red;
     color: $white;
-    background-color: $light_red;
+    background-color: $light-red;
   }
-  
   a {
-    color: $light_red;
+    color: $light-red;
+
     &:hover {
-      color: $dark_red;
+      color: $dark-red;
     }
   }
 }
 
 .panel-yellow {
-  border-color: $dark_yellow;
+  border-color: $dark-yellow;
+
   .panel-heading {
-    border-color: $dark_yellow;
+    border-color: $dark-yellow;
     color: $white;
-    background-color: $dark_yellow;
+    background-color: $dark-yellow;
   }
 
   a {
-    color: $dark_yellow;
+    color: $dark-yellow;
 
     &:hover {
-      color: $fat_yellow;
+      color: $fat-yellow;
     }
   }
 }
 
-td.actions {
+.actions {
   a,
   button {
     margin: 5px;
