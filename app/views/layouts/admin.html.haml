@@ -9,10 +9,10 @@
     = stylesheet_link_tag    'admin', media: 'all'
     = javascript_include_tag 'admin'
   %body
-    #wrapper
+    .main-wrapper
       = render 'layouts/admin/header'
       = render 'layouts/admin/aside'
-      #page-wrapper
+      .page-wrapper
         .row
           = bootstrap_flash
         = yield
