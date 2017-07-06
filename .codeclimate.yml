@@ -16,7 +16,7 @@ engines:
   flog:
     enabled: true
     config:
-      score_threshold: 20.0
+      score_threshold: 50.0
   markdownlint:
     enabled: true
   rubocop:
