@@ -1,0 +1,48 @@
+engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+        ruby:
+          mass_threshold: 50
+        javascript:
+          mass_threshold: 60
+  brakeman:
+    enabled: true
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+  flog:
+    enabled: true
+    config:
+      score_threshold: 20.0
+  markdownlint:
+    enabled: true
+  reek:
+    enabled: true
+  rubocop:
+    enabled: true
+  scss-lint:
+    enabled: true
+  stylelint:
+    enabled: true
+
+ratings:
+  paths:
+  - Gemfile.lock
+  - "**.rb"
+  - "**.rake"
+  - "**.haml"
+  - "**.js"
+  - "**.md"
+  - "**.css"
+  - "**.less"
+  - "**.scss"
+  - "**.sss"
+
+exclude_paths:
+- config/**/*
+- spec/**/*
+- vendor/**/*
+- db/**/*
