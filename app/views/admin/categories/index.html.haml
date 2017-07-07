@@ -10,23 +10,37 @@
           = t('create')
 .row
   .col-xs-12
-    %table.table.table-bordered.sortable
+    %table.table.table-bordered
       %thead
         %tr
-          %th.text-right.col-sm-1
-            Id
-            = sortable_link('id', 'asc')
-            %br
-            = sortable_link('id', 'desc')
-          %th.text-center
-            -#= Category.human_attribute_name(:name)
-          %th.text-center
-            -#= sortable_link('code')
-          %th.text-center.col-sm-2
-            -#= sortable 'weight'
+          %th.col-xs-1
+            .text-center.title_id
+              Id
+            .pull-right.links
+              = sortable_link('id', 'asc')
+              %br
+              = sortable_link('id', 'desc')
+          %th.col-sm-3
+            .text-center.action
+              = Category.human_attribute_name(:name)
+          %th.col-sm-3
+            .pull-left.title
+              = Category.human_attribute_name(:code)
+            .pull-right.links
+              = sortable_link('code', 'asc')
+              %br
+              = sortable_link('code', 'desc')
+          %th.col-sm-2
+            .pull-left.title
+              = Category.human_attribute_name(:weight)
+            .pull-right.links
+              = sortable_link('weight', 'asc')
+              %br
+              = sortable_link('weight', 'desc')
           - if can? [:update, :delete], Category
-            %th.text-center.col-sm-3.col-xs-1
-              = t('actions')
+            %th.col-sm-3.col-xs-1
+              .text-center.action
+                = t('actions')
       %tbody
         - @categories.each do |category|
           %tr

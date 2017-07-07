@@ -13,14 +13,27 @@
     %table.table.table-bordered
       %thead
         %tr
-          %th.text-right.col-sm-1 Id
-          %th.text-center
-            = Type.human_attribute_name(:name)
-          %th.text-center
-            = Type.human_attribute_name(:code)
+          %th.col-xs-1
+            .text-center.title_id
+              Id
+            .pull-right.links
+              = sortable_link('id', 'asc')
+              %br
+              = sortable_link('id', 'desc')
+          %th
+            .text-center.action
+              = Type.human_attribute_name(:name)
+          %th.col-sm-3
+            .pull-left.title
+              = Type.human_attribute_name(:code)
+            .pull-right.links
+              = sortable_link('code', 'asc')
+              %br
+              = sortable_link('code', 'desc')
           - if can? [:update, :delete], Types
-            %th.text-center.col-sm-3.col-xs-1
-              = t('actions')
+            %th.col-sm-3.col-xs-1
+              .text-center.action
+                = t('actions')
       %tbody
         - @types.each do |type|
           %tr

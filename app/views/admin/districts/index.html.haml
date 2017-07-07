@@ -28,16 +28,30 @@
     %table.table.table-bordered
       %thead
         %tr
-          %th.col-xs-1.text-right Id
-          %th.text-center
-            = t('activerecord.models.city.one')
-          %th.text-center
-            = District.human_attribute_name(:code)
-          %th.text-center
-            = District.human_attribute_name(:name)
+          %th.col-xs-1
+            .text-center.title_id
+              Id
+            .pull-right.links
+              = sortable_link('id', 'asc')
+              %br
+              = sortable_link('id', 'desc')
+          %th.col-sm-3
+            .text-center.action
+              = t('activerecord.models.city.one')
+          %th.col-sm-3
+            .pull-left.title
+              = District.human_attribute_name(:code)
+            .pull-right.links
+              = sortable_link('code', 'asc')
+              %br
+              = sortable_link('code', 'desc')
+          %th.col-sm-2
+            .text-center.action
+              = District.human_attribute_name(:name)
           - if can? [:update, :delete], District
-            %th.col-sm-3.col-xs-1.text-center
-              = t('actions')
+            %th.col-sm-3.col-xs-1
+              .text-center.action
+                = t('actions')
       %tbody
         - @districts.each do |district|
           %tr

@@ -12,17 +12,33 @@
     %table.table.table-bordered
       %thead
         %tr
-          %th.text-right.col-sm-1 Id
-          %th.text-center
-            = Option.human_attribute_name(:name)
-          %th.text-center
-            = Option.human_attribute_name(:code)
-          %th.text-center
-            = Option.human_attribute_name(:unit)
-          %th.text-center
-            = t('shared.categories')
-          %th.text-center.col-sm-3.col-xs-1
-            = t('actions')
+          %th.col-xs-1
+            .text-center.title_id
+              Id
+            .pull-right.links
+              = sortable_link('id', 'asc')
+              %br
+              = sortable_link('id', 'desc')
+          %th.col-sm-2
+            .text-center.action
+              = Option.human_attribute_name(:name)
+          %th.col-sm-2
+            .pull-left.title
+              = Option.human_attribute_name(:code)
+            .pull-right.links
+              = sortable_link('code', 'asc')
+              %br
+              = sortable_link('code', 'desc')
+          %th.col-sm-2
+            .text-center.action
+              = Option.human_attribute_name(:unit)
+          %th.col-sm-2
+            .text-center.action
+              = t('shared.categories')
+          - if can? [:update, :delete], Option
+            %th.col-sm-3.col-xs-1
+              .text-center.action
+                = t('actions')
       %tbody
         - @options.each do |option|
           %tr
@@ -33,7 +49,7 @@
             %td
               = option.code
             %td
-              = h option.unit
+              = raw option.unit
             %td
               - option.categories.each do |category|
                 = link_to category.name, admin_categories_path(category)
