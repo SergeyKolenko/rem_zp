@@ -1,11 +1,10 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'colors';
 @import 'css-helper';
-@import 'select2';
-@import 'select2-bootstrap';
 @import 'admin/layout';
 @import 'admin/shared';
 @import 'admin/sorting_table_links';
-
-
+@import 'select2';
+@import 'select2-bootstrap';
 
