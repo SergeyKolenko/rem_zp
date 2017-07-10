@@ -20,6 +20,16 @@ Rails.application.routes.draw do
       get '/', action: :dashboard, as: :dashboard
     end
 
+    resources :users, except: [:show]
+    scope :user do
+      controller 'user/helpers' do
+        get '/:id/sent_confirmation', action: :sent_confirmation_instruction, as: :sent_user_confirmation
+        get '/:id/reset_password', action: :reset_password, as: :reset_user_password
+        get '/:id/block', action: :block_user, as: :block_user
+        get '/:id/unblock', action: :unblock_user, as: :unblock_user
+      end
+    end
+
     resources :categories, except: [:show, :new, :edit]
     resources :types, except: [:show, :new, :edit]
     resources :options, except: [:show, :new, :edit]
@@ -30,7 +40,7 @@ Rails.application.routes.draw do
       collection { post :import }
     end
 
-    resources :cities, only: [:index, :create, :update, :destroy] do
+    resources :cities, except: [:show, :new, :edit] do
       collection { post :import }
     end
 

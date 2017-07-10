@@ -1,11 +1,12 @@
 engines:
   duplication:
     enabled: true
-    languages:
-      ruby:
-        mass_threshold: 50
-      javascript:
-        mass_threshold: 40
+    config:
+      languages:
+        ruby:
+          mass_threshold: 35
+        javascript:
+          mass_threshold: 50
   brakeman:
     enabled: true
   eslint:
@@ -15,16 +16,12 @@ engines:
   flog:
     enabled: true
     config:
-      score_threshold: 20.0
+      score_threshold: 50.0
   markdownlint:
-    enabled: true
-  reek:
     enabled: true
   rubocop:
     enabled: true
   scss-lint:
-    enabled: true
-  stylelint:
     enabled: true
 
 ratings:

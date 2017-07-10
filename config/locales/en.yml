@@ -115,6 +115,19 @@ en:
       city_select: Select city
       import_instruction: 'Available extensions: csv, json, xls, xlsx, xml. Please, select city before import.
                            Full instruction can be founded here:'
+    users:
+      new: New user
+      title: Users
+      full_name: Full name
+      create_notice: User created!
+      update_notice: User updated!
+      destroy_notice: User deleted!
+      confirmation_sent: Confirmation instruction has been sent
+      password_reset: Password reset instruction has been sent
+      submit_block: Block user
+      blocked: User blocked!
+      submit_unblock: Unblock user
+      unblocked: User unblocked!
     helpers:
       upload_instructions:
         title: Upload instruction
@@ -128,6 +141,7 @@ en:
         keys: Keys
         example_code: Example code
         example_value: Example value
+    wrong_rules: 'Halt, freeze, who goes there? Do you have the right, do you have the right documentation?'
 
   views:
       pagination:

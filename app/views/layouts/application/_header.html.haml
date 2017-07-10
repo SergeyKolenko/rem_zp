@@ -1,4 +1,3 @@
--#FIXME: FIX ADDRESS LINKS!
 %header
   %nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse
     .container
@@ -36,7 +35,7 @@
             %li
               = link_to edit_user_registration_path do
                 - if current_user.avatar.present?
-                  = image_tag current_user.avatar, class: 'header_avatar'
+                  = image_tag current_user.avatar, class: 'header-avatar'
                 - else
                   %span.glyphicon.glyphicon-user
                 = current_user.full_name
