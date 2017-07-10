@@ -1,24 +1,26 @@
 .title {
-  margin-top: 10px;
   margin-left: 70px;
+  margin-top: 10px;
 
   @media screen and (max-width: 1100px) and (min-width: 520px) {
-    position: relative;
     margin-left: 0;
+    position: relative;
   }
+  
 }
 
 .title-id {
   float: left;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   margin-left: 20px;
-  margin-right: 0px;
+  margin-right: 0;
   margin-top: 10px;
 
   @media screen and (max-width: 1100px) and (min-width: 520px) {
-    position: absolute;
     left: 0;
+    position: absolute;
   }
+
 }
 
 .links {
