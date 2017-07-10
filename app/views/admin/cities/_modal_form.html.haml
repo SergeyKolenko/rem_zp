@@ -9,18 +9,15 @@
       = form_with scope: City.new, url: admin_cities_path, method: :post, class: 'form-horizontal js-modal-form', local: true do |f|
         .modal-body
           .form-group
-            .col-sm-3.control-label
-              = f.label :region, class: 'control-label'
+            = f.label :region_id, class: 'control-label col-sm-3'
             .col-sm-9
-              = f.select :region, regions_for_select, {}, class: 'form-control'
+              = f.select :region_id, regions_for_select, {}, class: 'form-control'
           .form-group
-            .col-sm-3.control-label
-              = f.label :code, class: 'control-label'
+            = f.label :code, class: 'control-label col-sm-3'
             .col-sm-9
               = f.text_field :code, class: 'form-control', required: true
           .form-group
-            .col-sm-3.control-label
-              = f.label :name
+            = f.label :name, class: 'control-label col-sm-3'
             .col-sm-9
               = f.text_field :name, class: 'form-control', required: true
         .modal-footer

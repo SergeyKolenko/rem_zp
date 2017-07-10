@@ -55,7 +55,8 @@
               = agency_form.label :phone, class: 'control-label'
               = agency_form.telephone_field :phone, autofocus: true, class: 'form-control telephone-field',
                                             required: true, placeholder: '099-999-99-99'
-            .js-related-selects{ data: { path: cities_for_region_path } }
+            .js-related-selects{ data: { path: cities_for_region_path, param: 'region_ids',
+                                         value_field: 'id', text_field: 'name' } }
               .form-group
                 = agency_form.label :region_ids, t('shared.regions'), class: 'control-label'
                 = agency_form.select :region_ids, options_for_select(regions_for_select),

@@ -63,10 +63,12 @@ ru:
         name: Название
         code: Код
         region: Область
+        region_id: Область
       district:
         code: Код
         name: Название
         city: Город
+        city_id: Город
       option_value:
         value: Значение
         proposal: Предложение

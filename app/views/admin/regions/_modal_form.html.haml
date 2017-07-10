@@ -9,13 +9,11 @@
       = form_with scope: Region.new, url: admin_region_path(:id), method: 'patch', class: 'form-horizontal js-modal-form', local: true do |f|
         .modal-body
           .form-group
-            .col-sm-3.control-label
-              = f.label :code, class: 'control-label'
+            = f.label :code, class: 'control-label col-sm-3'
             .col-sm-9
               = f.text_field :code, class: 'form-control', required: true
           .form-group
-            .col-sm-3.control-label
-              = f.label :name
+            = f.label :name, class: 'control-label col-sm-3'
             .col-sm-9
               = f.text_field :name, class: 'form-control', required: true
         .modal-footer
