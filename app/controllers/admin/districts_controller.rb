@@ -8,7 +8,7 @@ class Admin::DistrictsController < Admin::AdminController
   end
 
   def create
-    @district = District.new(districts_params)
+    @district = District.new(district_params)
     if @district.save
       flash[:success] = t('admin.districts.create_notice')
     else
@@ -18,7 +18,7 @@ class Admin::DistrictsController < Admin::AdminController
   end
 
   def update
-    if @district.update(districts_params)
+    if @district.update(district_params)
       @district[:success] = t('admin.districts.update_notice')
     else
       flash[:danger] = @district.errors.full_messages
@@ -48,7 +48,7 @@ class Admin::DistrictsController < Admin::AdminController
     @district = District.find_by(id: params[:id])
   end
 
-  def districts_params
+  def district_params
     params.require(:district).permit(:name, :city_id, :code)
   end
 

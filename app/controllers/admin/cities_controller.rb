@@ -1,6 +1,6 @@
 class Admin::CitiesController < Admin::AdminController
-  # load_and_authorize_resource
   before_action :set_city, only: [:update, :destroy]
+  load_and_authorize_resource
 
   def index
     cities = params[:region_id].present? ? City.where(region_id: params[:region_id]) : City.all
@@ -8,7 +8,7 @@ class Admin::CitiesController < Admin::AdminController
   end
 
   def create
-    @city = City.new(cities_params)
+    @city = City.new(city_params)
     if @city.save
       flash[:success] = t('admin.cities.create_notice')
     else
@@ -18,7 +18,7 @@ class Admin::CitiesController < Admin::AdminController
   end
 
   def update
-    if @city.update(cities_params)
+    if @city.update(city_params)
       flash[:success] = t('admin.cities.update_notice')
     else
       flash[:danger] = @city.errors.full_messages
@@ -55,7 +55,7 @@ class Admin::CitiesController < Admin::AdminController
     @city = City.find_by(id: params[:id])
   end
 
-  def cities_params
+  def city_params
     params.require(:city).permit(:name, :region_id, :code)
   end
 
