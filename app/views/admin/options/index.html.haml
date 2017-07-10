@@ -49,7 +49,7 @@
             %td
               = option.code
             %td
-              = raw option.unit
+              = sanitize option.unit
             %td
               - option.categories.each do |category|
                 = link_to category.name, admin_categories_path(category)
