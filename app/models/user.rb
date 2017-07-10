@@ -10,6 +10,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :owned_agency
 
   delegate :name, to: :role, prefix: true
+  include SortingColumns
 
   mount_uploader :avatar, UsersAvatarUploader
 

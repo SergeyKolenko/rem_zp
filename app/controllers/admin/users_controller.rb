@@ -4,7 +4,7 @@ class Admin::UsersController < Admin::AdminController
   before_action :set_user, except: [:index, :new]
 
   def index
-    @users = User.all.page(params[:page]).per(10)
+    @users = User.all.sorting(params[:sort], params[:direction]).page(params[:page])
   end
 
   def new
