@@ -4,7 +4,7 @@ class Admin::DistrictsController < Admin::AdminController
 
   def index
     districts = params[:city_id].present? ? District.where(city_id: params[:city_id]) : District.all
-    @districts = districts.page(params[:page]).per(10)
+    @districts = districts.sorting(params[:sort], params[:direction]).page(params[:page])
   end
 
   def create
