@@ -19,6 +19,9 @@ uk:
     categories: Категорії
     agencies: Агенції
     proposals: Пропозиції
+    regions: Регіони
+    cities: Міста
+    districts: Райони
     errors:
       wrong_phone: Невірний формат номеру
       wrong_format: Невірний формат

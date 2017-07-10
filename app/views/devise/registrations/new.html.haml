@@ -52,22 +52,23 @@
               = agency_form.label :phisical_address, class: 'control-label'
               = agency_form.text_field :phisical_address, class: 'form-control', required: true
             .form-group
-              = agency_form.label :description, class: 'control-label'
-              = agency_form.text_field :description, class: 'form-control'
-            .form-group
               = agency_form.label :phone, class: 'control-label'
               = agency_form.telephone_field :phone, autofocus: true, class: 'form-control telephone-field',
                                             required: true, placeholder: '099-999-99-99'
+            .js-related-selects{ data: { path: cities_for_region_path } }
+              .form-group
+                = agency_form.label :region_ids, t('shared.regions'), class: 'control-label'
+                = agency_form.select :region_ids, options_for_select(regions_for_select),
+                  { include_blank: t('devise.registrations.select_agency_region_blank') },
+                  { class: 'select2 form-control js-primary-select', multiple: true }
+              .form-group
+                = agency_form.label :city_ids, t('shared.cities'), class: 'control-label'
+                = agency_form.select :city_ids, [],
+                  {include_blank: t('devise.registrations.select_agency_city_blank')},
+                  { class: 'select2 form-control js-dependent-select', multiple: true }
             .form-group
-              = agency_form.label :region_id, class: 'control-label'
-              =# agency_form.select :region_id, options_for_select(regions_for_select, 1), { include_blank: t('devise.registrations.select_agency_region_blank') }, { id: 'region_select' }
-              = agency_form.select :region_id, options_for_select(regions_for_select, 1),
-                { include_blank: t('devise.registrations.select_agency_region_blank') }, { id: 'region_select' }
-            .form-group
-              = agency_form.label :city_ids, class: 'control-label'
-              =# agency_form.collection_select :city_ids, City.all, :id, :name, {include_blank: t('devise.registrations.select_agency_city_blank')}, {multiple: false, class: 'select2'}
-              = agency_form.select :city_ids, options_for_select(cities_for_select, 0),
-                {include_blank: t('devise.registrations.select_agency_city_blank')}, { id: 'cities_select' }
+              = agency_form.label :description, class: 'control-label'
+              = agency_form.text_area :description, class: 'form-control', rows: 8
     .form-group
       .col-sm-12.text-center.mart-5
         = f.submit t('devise.registrations.registrate'), class: 'btn btn-success'

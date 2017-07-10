@@ -19,6 +19,9 @@ ru:
     categories: Категории
     agencies: Агенции
     proposals: Предложения
+    regions: Регионы
+    cities: Города
+    districts: Районы
     errors:
       wrong_phone: Неверный формат номера
       wrong_format: Неверный формат

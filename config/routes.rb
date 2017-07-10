@@ -9,6 +9,13 @@ Rails.application.routes.draw do
     get '/users/sign_up_with_role/:id', to: 'user/registrations#new_with_role', as: :users_sign_up_with_role
   end
 
+  controller :helper do
+    get :cities_for_region, format: :json
+    get :districts_for_city, format: :json
+  end
+
+
+
   # ADMIN PANEL
   namespace :admin do
 
@@ -43,7 +50,6 @@ Rails.application.routes.draw do
     resources :cities, except: [:show, :new, :edit] do
       collection { post :import }
     end
-    get '/cities_for_region/:id', action: :cities_for_region, as: 'cities_for_region'
 
     resources :districts, only: [:index, :create, :update, :destroy] do
       collection { post :import }

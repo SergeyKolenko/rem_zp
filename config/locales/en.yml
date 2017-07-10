@@ -19,6 +19,9 @@ en:
     categories: Categories
     agencies: Agencies
     proposals: Proposals
+    cities: Cities
+    districts: Districts
+    categories: Categories
     errors:
       wrong_phone: Invalid number format
       wrong_format: Invalid format
