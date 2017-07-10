@@ -13,26 +13,37 @@
     %table.table.table-bordered
       %thead
         %tr
-          %th.col-xs-1.text-right Id
-          %th.text-center
-            = t('admin.users.full_name')
-          %th.text-center
-            = t('activerecord.attributes.user.role')
-          %th.text-center
-            = t('activerecord.attributes.user.email')
-          %th.col-sm-3.col-xs-1.text-center
-            = t('actions')
+          %th.col-xs-1
+            .text-center.user-id
+              Id
+            .pull-right.link-up
+              = sortable_link('id', 'asc')
+            .pull-right.link-down
+              = sortable_link('id', 'desc')
+          %th.col-sm-3
+            .text-center.action
+              = t('admin.users.full_name')
+          %th.col-sm-3
+            .text-center.action
+              = t('activerecord.attributes.user.role')
+          %th.col-sm-3
+            .text-center.action
+              = t('activerecord.attributes.user.email')
+          %th.col-sm-3
+            .text-center.action
+              = t('actions')
       %tbody
         - @users.each do |user|
           %tr
             %th.text-right
-              #{user.id}
+              = user.id
             %td
-              #{user.first_name} #{user.last_name}
+              = user.first_name
+              = user.last_name
             %td
-              #{user.role.name}
+              = user.role.name
             %td
-              #{user.email}
+              = user.email
             %td.text-center.actions
               - if can? :update, User
                 = link_to edit_admin_user_path(user), class: 'btn btn-warning btn-xs' do

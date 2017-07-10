@@ -63,7 +63,7 @@ en:
       districts: Districts
       categories: Categories
       types: "Proposal's types"
-      options: options
+      options: Options
     actions: Actions
     categories:
       change: Change category

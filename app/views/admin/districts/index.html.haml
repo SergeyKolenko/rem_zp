@@ -31,9 +31,9 @@
           %th.col-xs-1
             .text-center.title-id
               Id
-            .pull-right.links
+            .pull-right.link-up
               = sortable_link('id', 'asc')
-              %br
+            .pull-right.link-down
               = sortable_link('id', 'desc')
           %th.col-sm-3
             .text-center.action
@@ -41,9 +41,9 @@
           %th.col-sm-3
             .pull-left.title
               = District.human_attribute_name(:code)
-            .pull-right.links
+            .pull-right.link-up
               = sortable_link('code', 'asc')
-              %br
+            .pull-right.link-down
               = sortable_link('code', 'desc')
           %th.col-sm-2
             .text-center.action

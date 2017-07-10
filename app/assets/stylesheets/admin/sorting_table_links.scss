@@ -1,6 +1,6 @@
 .title {
   margin-left: 70px;
-  margin-top: 10px;
+  margin-top: 5px;
 
   @media screen and (max-width: 1100px) and (min-width: 520px) {
     margin-left: 0;
@@ -13,7 +13,7 @@
   margin-bottom: 0;
   margin-left: 20px;
   margin-right: 0;
-  margin-top: 10px;
+  margin-top: 5px;
 
   @media screen and (max-width: 1100px) and (min-width: 520px) {
     left: 0;
@@ -21,14 +21,34 @@
   }
 }
 
-.links {
-  margin-bottom: 0;
-  margin-left: 0;
+.user-id {
+  float: left;
+  margin-left: 20px;
   margin-right: 0;
-  margin-top: 0;
+  margin-top: 5px;
+
+  @media screen and (max-width: 1100px) and (min-width: 520px) {
+    left: 0;
+    position: absolute;
+  }
+}
+
+.link-down {
+  float: right;
+  margin-bottom: 10px;
+  position: relative;
+  top: 15px;
+  margin-right: -14px;
+}
+
+.link-up {
+  float: right;
+  position: relative;
+  margin-right: 0;
 }
 
 .action {
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
+
 
