@@ -10,17 +10,14 @@
 
 .title-id {
   float: left;
-  margin-left: 20px;
-  margin-right: 0;
-  margin-top: 5px;
-
+  margin: 5px 0 0 20px;
   @media screen and (max-width: 1100px) and (min-width: 520px) {
     left: 0;
     position: absolute;
   }
 }
 
-.link-down {
+.down {
   float: right;
   margin-bottom: 10px;
   margin-right: -14px;
@@ -28,7 +25,7 @@
   top: 15px;
 }
 
-.link-up {
+.up {
   float: right;
   margin-right: 0;
   position: relative;
