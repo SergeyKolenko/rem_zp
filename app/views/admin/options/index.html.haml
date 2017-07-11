@@ -32,11 +32,14 @@
           %th.col-sm-2
             .text-center.action
               = Option.human_attribute_name(:unit)
-          %th.col-sm-2
+          %th.col-sm-1
             .text-center.action
               = t('shared.categories')
+          %th.col-sm-2
+            .text-center.action
+              = t('localization')
           - if can? [:update, :delete], Option
-            %th.col-sm-3.col-xs-1
+            %th.col-sm-2.col-xs-1
               .text-center.action
                 = t('actions')
       %tbody
@@ -54,6 +57,8 @@
               - option.categories.each do |category|
                 = link_to category.name, admin_categories_path(category)
                 %br
+            %td.text-center
+              = render "admin/localization/localization_links"
             %td.text-center.actions
               %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data:{ object: option.attributes.merge(category_ids: option.category_ids),
                                                                 url: admin_option_path(option.id), action: 'edit'} }

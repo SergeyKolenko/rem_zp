@@ -13,6 +13,7 @@ en:
   back: Back
   actions: Actions
   cancel: cancel
+  localization: Localization
   shared:
     options: Options
     types: Types

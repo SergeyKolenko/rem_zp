@@ -33,6 +33,9 @@
           %th.col-sm-3
             .text-center.action
               = t('activerecord.attributes.region.name')
+          %th.col-sm-2
+            .text-center.action
+              = t('localization')
           - if can? [:update, :delete], Region
             %th.col-sm-3.col-xs-1
               .text-center.action
@@ -41,11 +44,13 @@
         - @regions.each do |region|
           %tr
             %th.text-right
-              #{region.id}
+              = region.id
             %td.text-center
-              #{region.code}
+              = region.code
             %td
-              #{region.name}
+              = region.name
+            %td.text-center
+              = render "admin/localization/localization_links"
             - if can? [:update, :delete], Region
               %td.text-center.actions
                 %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data: { object: region.attributes, url: admin_region_path(region.id),
