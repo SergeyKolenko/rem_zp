@@ -8,18 +8,15 @@
       = form_with scope: Category.new, url: admin_categories_path, method: :post, class: 'form-horizontal js-modal-form', local: true do |c|
         .modal-body
           .form-group
-            .col-sm-3.control-label
-              = c.label :name
+            = c.label :name, class: 'col-sm-3 control-label'
             .col-sm-9
               = c.text_field :name, class: 'form-control', required: true
           .form-group
-            .col-sm-3.control-label
-              = c.label :weight
+            = c.label :weight, class: 'col-sm-3 control-label'
             .col-sm-9
               = c.number_field :weight, class: 'form-control', required: true
           .form-group
-            .col-sm-3.control-label
-              = c.label :code
+            = c.label :code, class: 'col-sm-3 control-label'
             .col-sm-9
               = c.text_field :code, class: 'form-control', required: true
         .modal-footer

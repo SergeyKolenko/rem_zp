@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  include SortingColumns
   devise :database_authenticatable, :async, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :role

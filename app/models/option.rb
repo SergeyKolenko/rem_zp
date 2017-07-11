@@ -1,5 +1,6 @@
 class Option < ApplicationRecord
   include CodeValidations
+  include SortingColumns
 
   has_and_belongs_to_many :categories
   has_many :option_values

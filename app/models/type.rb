@@ -1,5 +1,6 @@
 class Type < ApplicationRecord
   include CodeValidations
+  include SortingColumns
 
   has_and_belongs_to_many :proposals
 

@@ -107,6 +107,8 @@ ru:
     users:
       new: Новый пользователь
       title: Пользователи
+      first_name: Имя
+      last_name: Фамилия
       full_name: Полное имя
       create_notice: Пользователь создан!
       update_notice: Пользователь обновлен!

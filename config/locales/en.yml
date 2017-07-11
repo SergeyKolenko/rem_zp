@@ -63,7 +63,7 @@ en:
       districts: Districts
       categories: Categories
       types: "Proposal's types"
-      options: options
+      options: Options
     actions: Actions
     categories:
       change: Change category
@@ -119,6 +119,8 @@ en:
       new: New user
       title: Users
       full_name: Full name
+      first_name: First name
+      last_name: Last name
       create_notice: User created!
       update_notice: User updated!
       destroy_notice: User deleted!

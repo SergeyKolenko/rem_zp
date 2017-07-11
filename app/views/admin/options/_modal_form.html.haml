@@ -9,23 +9,19 @@
       = form_with scope: Option.new, url: admin_options_path, method: :post, class: 'form-horizontal js-modal-form', local: true do |f|
         .modal-body
           .form-group
-            .col-sm-3.control-label
-              = f.label :name
+            = f.label :name, class: 'col-sm-3 control-label'
             .col-sm-9
               = f.text_field :name, class: 'form-control', required: true
           .form-group
-            .col-sm-3.control-label
-              = f.label :code
+            = f.label :code, class: 'col-sm-3 control-label'
             .col-sm-9
               = f.text_field :code, class: 'form-control', required: true
           .form-group
-            .col-sm-3.control-label
-              = f.label :unit
+            = f.label :unit, class: 'col-sm-3 control-label'
             .col-sm-9
               = f.text_field :unit, class: 'form-control'
           .form-group
-            .col-sm-3.control-label
-              = f.label :category_ids, t('shared.categories')
+            = f.label :category_ids, t('shared.categories'), class: 'col-sm-3 control-label'
             .col-sm-9
               = f.collection_select :category_ids, all_categories, :id, :name,
                 {}, {multiple: true, class: 'select2' }

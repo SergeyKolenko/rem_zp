@@ -2,7 +2,7 @@ class Admin::OptionsController < Admin::AdminController
   before_action :set_option, only: [:update, :destroy]
 
   def index
-    @options = Option.all.page(params[:page]).per(10)
+    @options = Option.all.sorting(params[:sort], params[:direction]).page(params[:page])
   end
 
   def create
