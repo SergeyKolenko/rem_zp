@@ -56,12 +56,7 @@
             %td
               = category.weight
             %td.text-center
-              = link_to available_languages[0][1], '#' , class: 'locale_switch', data: {locale: 'ru'}
-              |
-              = link_to available_languages[1][1], '#' , class: 'locale_switch', data: {locale: 'uk'}
-              |
-              = link_to available_languages[2][1], '#' , class: 'locale_switch', data: {locale: 'en'}
-            - if can? [:update, :delete], Category
+              = render "admin/localization/localization_links"
               %td.text-center.actions
                 %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data:{ object: category.attributes, url: admin_category_path(category.id),
                                                                   action: 'edit', title: t('admin.categories.change') }}

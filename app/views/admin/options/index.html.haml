@@ -58,11 +58,7 @@
                 = link_to category.name, admin_categories_path(category)
                 %br
             %td.text-center
-              = link_to available_languages[0][1], '#' , class: 'locale_switch', data: {locale: 'ru'}
-              |
-              = link_to available_languages[1][1], '#' , class: 'locale_switch', data: {locale: 'uk'}
-              |
-              = link_to available_languages[2][1], '#' , class: 'locale_switch', data: {locale: 'en'}
+              = render "admin/localization/localization_links"
             %td.text-center.actions
               %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data:{ object: option.attributes.merge(category_ids: option.category_ids),
                                                                 url: admin_option_path(option.id), action: 'edit'} }

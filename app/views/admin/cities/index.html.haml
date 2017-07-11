@@ -67,11 +67,7 @@
             %td
               = city.name
             %td.text-center
-              = link_to available_languages[0][1], '#' , class: 'locale_switch', data: {locale: 'ru'}
-              |
-              = link_to available_languages[1][1], '#' , class: 'locale_switch', data: {locale: 'uk'}
-              |
-              = link_to available_languages[2][1], '#' , class: 'locale_switch', data: {locale: 'en'}
+              = render "admin/localization/localization_links"
             - if can? [:update, :delete], City
               %td.text-center.actions
                 %button.btn.btn-warning.btn-xs.js-modal-form-btn{type: 'button', data:{ object: city.attributes,
