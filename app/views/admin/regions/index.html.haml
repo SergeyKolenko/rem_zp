@@ -46,6 +46,8 @@
               #{region.code}
             %td
               #{region.name}
+            %td
+              = render "admin/localization/localization_links"
             - if can? [:update, :delete], Region
               %td.text-center.actions
                 %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data: { object: region.attributes, url: admin_region_path(region.id),

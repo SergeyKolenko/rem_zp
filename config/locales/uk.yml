@@ -13,6 +13,7 @@ uk:
   back: Назад
   actions: Дії
   cancel: Скасувати
+  localization: Локалізація
   shared:
     options: Опції
     types: Типи

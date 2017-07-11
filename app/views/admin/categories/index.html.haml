@@ -20,7 +20,7 @@
               = sortable_link('id', 'asc')
             .pull-right.down
               = sortable_link('id', 'desc')
-          %th.col-sm-3
+          %th.col-sm-2
             .text-center.action
               = Category.human_attribute_name(:name)
           %th.col-sm-3
@@ -37,8 +37,11 @@
               = sortable_link('weight', 'asc')
             .pull-right.down
               = sortable_link('weight', 'desc')
+          %th.col-sm-2
+            .text-center.action
+              = t('localization')
           - if can? [:update, :delete], Category
-            %th.col-sm-3.col-xs-1
+            %th.col-sm-2.col-xs-1
               .text-center.action
                 = t('actions')
       %tbody
@@ -52,6 +55,12 @@
               = category.code
             %td
               = category.weight
+            %td.text-center
+              = link_to available_languages[0][1], '#' , class: 'locale_switch', data: {locale: 'ru'}
+              |
+              = link_to available_languages[1][1], '#' , class: 'locale_switch', data: {locale: 'uk'}
+              |
+              = link_to available_languages[2][1], '#' , class: 'locale_switch', data: {locale: 'en'}
             - if can? [:update, :delete], Category
               %td.text-center.actions
                 %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data:{ object: category.attributes, url: admin_category_path(category.id),

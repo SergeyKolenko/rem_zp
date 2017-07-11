@@ -35,11 +35,11 @@
               = sortable_link('id', 'asc')
             .pull-right.down
               = sortable_link('id', 'desc')
-          %th.col-sm-3
+          %th.col-sm-2
             .text-center.action
               = t('activerecord.models.region.one')
           %th
-            .pull-left.title.col-sm-3
+            .pull-left.col-sm-2.title
               = City.human_attribute_name(:code)
             .pull-right.up
               = sortable_link('code', 'asc')
@@ -48,8 +48,11 @@
           %th.col-sm-3
             .text-center.action
               = City.human_attribute_name(:name)
+          %th.col-sm-2
+            .text-center.action
+              = t('localization')
           - if can? [:update, :delete], City
-            %th.col-sm-3.col-xs-1
+            %th.col-sm-2.col-xs-1
               .text-center.action
                 = t('actions')
       %tbody
@@ -63,6 +66,12 @@
               = city.code
             %td
               = city.name
+            %td.text-center
+              = link_to available_languages[0][1], '#' , class: 'locale_switch', data: {locale: 'ru'}
+              |
+              = link_to available_languages[1][1], '#' , class: 'locale_switch', data: {locale: 'uk'}
+              |
+              = link_to available_languages[2][1], '#' , class: 'locale_switch', data: {locale: 'en'}
             - if can? [:update, :delete], City
               %td.text-center.actions
                 %button.btn.btn-warning.btn-xs.js-modal-form-btn{type: 'button', data:{ object: city.attributes,

@@ -13,6 +13,7 @@ ru:
   back: Назад
   actions: Действия
   cancel: Отмена
+  localization: Локализация
   shared:
     options: Опции
     types: Типы
