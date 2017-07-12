@@ -41,11 +41,11 @@
         - @regions.each do |region|
           %tr
             %th.text-right
-              #{region.id}
+              = region.id
             %td.text-center
-              #{region.code}
+              = region.code
             %td
-              #{region.name}
+              = region.name
             - if can? [:update, :delete], Region
               %td.text-center.actions
                 %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data: { object: region.attributes, url: admin_region_path(region.id),

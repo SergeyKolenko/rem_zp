@@ -20,9 +20,12 @@
               = sortable_link('id', 'asc')
             .pull-right.down
               = sortable_link('id', 'desc')
-          %th
+          %th.col-sm-3
             .text-center.action
               = Type.human_attribute_name(:name)
+          %th.col-sm-3
+            .text-center.action
+              Translations
           %th.col-sm-3
             .pull-left.title
               = Type.human_attribute_name(:code)
@@ -39,8 +42,24 @@
           %tr
             %th.text-right
               = type.id
-            %td
+            %td.text-left
               = type.name
+            %td.text-center
+              - type.translations.each do |item|
+                = link_to item.locale, '#', class: 'locale_switch label label-success', data: { locale: item,
+                                            toggle: 'tooltip', placement: 'bottom', title: 'Tooltip on top' }
+
+              -#-if type.translations.present?
+              -#  = link_to available_languages[0][1], '#' , class: 'locale_switch label label-success', data: {locale: 'ru'}
+              -#  |
+              -#  = link_to available_languages[1][1], '#' , class: 'locale_switch label label-success', data: {locale: 'uk'}
+              -#  |
+              -#  = link_to available_languages[2][1], '#' , class: 'locale_switch label label-success', data: {locale: 'en'}
+
+            -#- available_languages.each do |locale|
+            -#  = link_to locale[0], '#', data: { locale: locale[1] }, class: "locale_switch #{type.translations.locale.include? locale[1] ? 'label label-primary' : red}"
+            -#  |
+
             %td
               = type.code
             - if can? [:update, :delete], Types
