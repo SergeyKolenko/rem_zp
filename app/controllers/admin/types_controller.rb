@@ -3,7 +3,7 @@ class Admin::TypesController < Admin::AdminController
   before_action :set_type, only: [:update, :destroy]
 
   def index
-    @types = Type.all.page(params[:page]).per(10)
+    @types = Type.all.sorting(params[:sort], params[:direction]).page(params[:page])
   end
 
   def create

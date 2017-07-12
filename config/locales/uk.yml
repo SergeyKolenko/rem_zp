@@ -110,6 +110,8 @@ uk:
       new: Новий користувач
       title: Користувачі
       full_name: Повне ім`я
+      first_name: ім`я
+      last_name: Призвищє
       create_notice: Користувача створено!
       update_notice: Користувача оновлено!
       destroy_notice: Користувача видалено!

@@ -28,16 +28,30 @@
     %table.table.table-bordered
       %thead
         %tr
-          %th.col-xs-1.text-right Id
-          %th.text-center
-            = t('activerecord.models.region.one')
-          %th.text-center
-            = City.human_attribute_name(:code)
-          %th.text-center
-            = City.human_attribute_name(:name)
+          %th.col-xs-1
+            .text-center.title-id
+              Id
+            .pull-right.up
+              = sortable_link('id', 'asc')
+            .pull-right.down
+              = sortable_link('id', 'desc')
+          %th.col-sm-3
+            .text-center.action
+              = t('activerecord.models.region.one')
+          %th
+            .pull-left.title.col-sm-3
+              = City.human_attribute_name(:code)
+            .pull-right.up
+              = sortable_link('code', 'asc')
+            .pull-right.down
+              = sortable_link('code', 'desc')
+          %th.col-sm-3
+            .text-center.action
+              = City.human_attribute_name(:name)
           - if can? [:update, :delete], City
-            %th.col-sm-3.col-xs-1.text-center
-              = t('actions')
+            %th.col-sm-3.col-xs-1
+              .text-center.action
+                = t('actions')
       %tbody
         - @cities.each do |city|
           %tr

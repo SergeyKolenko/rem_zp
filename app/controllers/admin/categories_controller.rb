@@ -3,7 +3,7 @@ class Admin::CategoriesController < Admin::AdminController
   before_action :set_category, only: [:update, :destroy]
 
   def index
-    @categories = Category.all.page(params[:page]).per(10)
+    @categories = Category.sorting(params[:sort], params[:direction]).page(params[:page])
   end
 
   def create

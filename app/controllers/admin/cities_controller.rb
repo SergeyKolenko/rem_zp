@@ -4,7 +4,7 @@ class Admin::CitiesController < Admin::AdminController
 
   def index
     cities = params[:region_id].present? ? City.where(region_id: params[:region_id]) : City.all
-    @cities = cities.page(params[:page]).per(10)
+    @cities = cities.sorting(params[:sort], params[:direction]).page(params[:page])
   end
 
   def create
