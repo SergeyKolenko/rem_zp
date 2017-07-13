@@ -23,6 +23,7 @@ class RelatedSelects {
       return { id: x[this.service_data.valueField], text: x[this.service_data.textField] }
     });
     if (this.is_select2) {
+      this.dependent_select.html("");
       this.dependent_select.select2({
         data: filtered_data,
         val: selected_values,

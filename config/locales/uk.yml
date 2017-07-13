@@ -25,6 +25,8 @@ uk:
     errors:
       wrong_phone: Невірний формат номеру
       wrong_format: Невірний формат
+      city_not_from_region: Заборонено додавати міста з не вибранних регіонів
+      invalid_user_role: Невірна роль користувача
     import_notice: Дані імпортовані
     import_title: Імпортувати з файлу
     file_tooltipe: 'Доступні формати: csv, json, xls, xlsx, xml'
