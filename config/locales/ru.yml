@@ -147,7 +147,8 @@ ru:
         example_code: Код пример
         example_value: Значение пример
     wrong_rules: У вас нет прав.
-
+    has_transaltion: доступны переводы
+    has_not_transaltion: нет перевода
   views:
     pagination:
       first: "&laquo;"
@@ -161,3 +162,4 @@ ru:
       user: У вас нет прав редактировать данные пользователя.
     update:
       project: У вас нет прав редактировать эти данные.
+
