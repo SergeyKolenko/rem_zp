@@ -38,7 +38,7 @@
           %th.col-sm-3
             .text-center.action
               = t('activerecord.models.city.one')
-          %th.col-sm-3
+          %th.col-sm-2
             .pull-left.title
               = District.human_attribute_name(:code)
             .pull-right.up
@@ -48,21 +48,32 @@
           %th.col-sm-2
             .text-center.action
               = District.human_attribute_name(:name)
+          %th.col-sm-2
+            .text-center.action
+              = t('translations')
           - if can? [:update, :delete], District
-            %th.col-sm-3.col-xs-1
+            %th.col-sm-2.col-xs-1
               .text-center.action
                 = t('actions')
       %tbody
         - @districts.each do |district|
           %tr
             %th.text-right
-              #{district.id}
+              = district.id
             %td
-              #{district.city.name}
+              = district.city.name
             %td
-              #{district.code}
+              = district.code
             %td
-              #{district.name}
+              = district.name
+            %td.text-center
+              - I18n.available_locales.each do |locale|
+                - if district.has_translate?(locale)
+                  = link_to locale, '#', class: 'label label-success', data: { locale: locale,
+                                         toggle: 'tooltip', placement: 'bottom', title: locale }
+                - else
+                  = link_to locale, '#', class: 'label label-danger', data: { locale: locale,
+                                         placement: 'bottom', title: locale }
             - if can? [:update, :delete], District
               %td.text-center.actions
                 %button.btn.btn-warning.btn-xs.js-modal-form-btn{type: 'button', data:{ object: district.attributes,

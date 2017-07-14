@@ -33,6 +33,9 @@
           %th.col-sm-3
             .text-center.action
               = t('activerecord.attributes.region.name')
+          %th.col-sm-2
+            .text-center.action
+              = t('translations')
           - if can? [:update, :delete], Region
             %th.col-sm-3.col-xs-1
               .text-center.action
@@ -46,6 +49,14 @@
               = region.code
             %td
               = region.name
+            %td.text-center
+              - I18n.available_locales.each do |locale|
+                - if region.has_translate?(locale)
+                  = link_to locale, '#', class: 'label label-success', data: { locale: locale,
+                                       toggle: 'tooltip', placement: 'bottom', title: locale }
+                - else
+                  = link_to locale, '#', class: 'label label-danger', data: { locale: locale,
+                                       placement: 'bottom', title: locale }
             - if can? [:update, :delete], Region
               %td.text-center.actions
                 %button.btn.btn-warning.btn-xs.js-modal-form-btn{ data: { object: region.attributes, url: admin_region_path(region.id),

@@ -39,17 +39,20 @@
             .text-center.action
               = t('activerecord.models.region.one')
           %th
-            .pull-left.title.col-sm-3
+            .pull-left.title.col-sm-2
               = City.human_attribute_name(:code)
             .pull-right.up
               = sortable_link('code', 'asc')
             .pull-right.down
               = sortable_link('code', 'desc')
-          %th.col-sm-3
+          %th.col-sm-2
             .text-center.action
               = City.human_attribute_name(:name)
+          %th.col-sm-2
+            .text-center.action
+              = t('translations')
           - if can? [:update, :delete], City
-            %th.col-sm-3.col-xs-1
+            %th.col-xs-1.col-sm-2
               .text-center.action
                 = t('actions')
       %tbody
@@ -63,6 +66,14 @@
               = city.code
             %td
               = city.name
+            %td.text-center
+              - I18n.available_locales.each do |locale|
+                - if city.has_translate?(locale)
+                  = link_to locale, '#', class: 'label label-success', data: { locale: locale,
+                                       toggle: 'tooltip', placement: 'bottom', title: locale }
+                - else
+                  = link_to locale, '#', class: 'label label-danger', data: { locale: locale,
+                                       placement: 'bottom', title: locale }
             - if can? [:update, :delete], City
               %td.text-center.actions
                 %button.btn.btn-warning.btn-xs.js-modal-form-btn{type: 'button', data:{ object: city.attributes,
