@@ -147,8 +147,8 @@ ru:
         example_code: Код пример
         example_value: Значение пример
     wrong_rules: У вас нет прав.
-    has_transaltion: доступны переводы
-    has_not_transaltion: нет перевода
+    has_translation: перевод есть
+    has_not_translation: нет перевода
   views:
     pagination:
       first: "&laquo;"

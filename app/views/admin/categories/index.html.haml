@@ -52,13 +52,7 @@
             %td
               = category.name
             %td.text-center
-              - I18n.available_locales.each do |locale|
-                - if category.has_translate?(locale)
-                  = link_to locale, '#', class: 'label label-success', data: { locale: locale,
-                                         toggle: 'tooltip', placement: 'bottom', title: t('admin.has_transaltion') }
-                - else
-                  = link_to locale, '#', class: 'label label-danger', data: { locale: locale,
-                                         toggle: 'tooltip', placement: 'bottom', title: t('admin.has_not_transaltion') }
+              = render 'admin/partials/link_to_locales', object: category
             %td
               = category.code
             %td

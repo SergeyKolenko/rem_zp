@@ -145,8 +145,8 @@ en:
         example_code: Example code
         example_value: Example value
     wrong_rules: 'Halt, freeze, who goes there? Do you have the right, do you have the right documentation?'
-    has_transaltion: avaliable transaltion
-    has_not_transaltion: not avaliable transaltion
+    has_translation: avaliable transaltion
+    has_not_translation: has not translation
 
   views:
       pagination:

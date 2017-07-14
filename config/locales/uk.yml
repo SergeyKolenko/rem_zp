@@ -146,8 +146,8 @@ uk:
         example_code: Код приклад
         example_value: Значення приклад
     wrong_rules: У вас немає прав.
-    has_transaltion: доступні переклади
-    has_not_transaltion: не перекладено
+    has_translation: доступен переклад
+    has_not_translation: переклад видсутній
 
   views:
     pagination:

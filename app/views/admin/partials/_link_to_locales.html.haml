@@ -1,0 +1,7 @@
+- I18n.available_locales.each do |locale|
+  - if object.has_translate?(locale)
+    = link_to locale, '#', class: 'locale_switch label label-success', data: { locale: locale,
+                                         toggle: 'tooltip', placement: 'bottom', title: t('admin.has_translation') }
+  - else
+    = link_to locale, '#', class: 'locale_switch label label-danger', data: { locale: locale,
+                                         toggle: 'tooltip', placement: 'bottom', title: t('admin.has_not_translation') }
