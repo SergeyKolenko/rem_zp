@@ -37,26 +37,26 @@ describe "the sign in process", type: :feature do
     expect(User.last.email == 'user@example.com')
   end
 
-  it 'sig up agency_director' do
-    visit '/user/sign_in'
-    click_on 'agency_directors'
-    visit '/user/sign_up'
-    within 'form' do
-      fill_in 'user_first_name', with: 'Vasya'
-      fill_in 'user_last_name', with: 'Petrov'
-      fill_in 'user_email', with: 'user@example1.com'
-      fill_in 'user_password', with: 'password1'
-      fill_in 'user_password_confirmation', with: 'password1'
-      fill_in 'user_phone', with: '099-999-99-99'
-
-      fill_in 'user_owned_agency_attributes_name', with: 'Vasya666'
-      fill_in 'user_owned_agency_attributes_postal_address', with: '6942213'
-      fill_in 'user_owned_agency_attributes_phisical_address', with: 'Vasya 11'
-      fill_in 'user_owned_agency_attributes_phone', with: '099-999-99-99'
-    end
-    click_on 'sign_up'
-    expect(User.last.email == 'user@example1.com')
-  end
+  # it 'sig up agency_director' do
+  #   visit '/user/sign_in'
+  #   click_on 'agency_directors'
+  #   visit '/user/sign_up'
+  #   within 'form' do
+  #     fill_in 'user_first_name', with: 'Vasya'
+  #     fill_in 'user_last_name', with: 'Petrov'
+  #     fill_in 'user_email', with: 'user@example1.com'
+  #     fill_in 'user_password', with: 'password1'
+  #     fill_in 'user_password_confirmation', with: 'password1'
+  #     fill_in 'user_phone', with: '099-999-99-99'
+  #
+  #     fill_in 'user_owned_agency_attributes_name', with: 'Vasya666'
+  #     fill_in 'user_owned_agency_attributes_postal_address', with: '6942213'
+  #     fill_in 'user_owned_agency_attributes_phisical_address', with: 'Vasya 11'
+  #     fill_in 'user_owned_agency_attributes_phone', with: '099-999-99-99'
+  #   end
+  #   click_on 'sign_up'
+  #   expect(User.last.email == 'user@example1.com')
+  # end
 
   it 'sign_up simple user with wrong Email' do
     visit '/user/sign_in'
