@@ -66,6 +66,5 @@
               = agency_form.label :city_ids, class: 'control-label'
               = agency_form.collection_select :city_ids, City.all, :id, :name,
                   {include_blank: t('devise.registrations.select_agency_city_blank')}, {multiple: false, class: 'select2'}
-    .form-group
-      .col-sm-12.text-center.mart-5
-        = f.submit t('devise.registrations.registrate'), class: 'btn btn-success'
+    .col-sm-12.text-center.mart-5
+      = f.submit t('devise.registrations.registrate'), class: 'btn btn-success', id: 'sign_up'
