@@ -32,8 +32,11 @@ RSpec.describe Agency, type: :model do
   describe 'validation' do
     let!(:agency_director) { FactoryGirl.create(:user_agency_director) }
     let(:other_user) { FactoryGirl.create(:user_moderator) }
-    let(:agency) { FactoryGirl.build(:agency, director: agency_director) }
-    let(:agency_invalid) { FactoryGirl.build(:agency, name: nil, postal_address: nil, phisical_address: nil, phone: nil) }
+    let(:region) { FactoryGirl.create(:region) }
+    let(:city) { FactoryGirl.build(:city, region: region) }
+    let(:agency) { FactoryGirl.build(:agency, director: agency_director, regions: [region], cities: [city]) }
+    let(:agency_invalid_user_role) { FactoryGirl.build(:agency, director: other_user, regions: [region], cities: [city]) }
+    let(:agency_invalid) { FactoryGirl.build(:agency, director: agency_director, name: nil, postal_address: nil, phisical_address: nil, phone: nil) }
 
 
     it 'is valid with valid attributes' do
@@ -50,9 +53,7 @@ RSpec.describe Agency, type: :model do
     end
 
     it 'is invalid with wrong user role' do
-      agency.director = other_user
-      expect(agency).not_to be_valid
+      expect(agency_invalid_user_role).not_to be_valid
     end
-
   end
 end

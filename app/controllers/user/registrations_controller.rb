@@ -2,7 +2,6 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   def new
     build_resource({})
-    resource.build_owned_agency({}) if session[:role_id] == Role.agency_director.id
     yield resource if block_given?
     respond_with resource
   end

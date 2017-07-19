@@ -53,10 +53,12 @@ en:
         name: Name
         code: Code
         region: Region
+        region_id: Region
       district:
         name: Name
         code: Code
         city: City
+        city_id: City
       option_value:
         value: Value
         proposal: Proposal

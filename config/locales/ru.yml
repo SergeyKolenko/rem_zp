@@ -20,9 +20,14 @@ ru:
     categories: Категории
     agencies: Агенции
     proposals: Предложения
+    regions: Регионы
+    cities: Города
+    districts: Районы
     errors:
       wrong_phone: Неверный формат номера
       wrong_format: Неверный формат
+      city_not_from_region: Нельзя добавлять города из не выбранных регионов
+      invalid_user_role: Неверная роль пользователя
     import_notice: Данные импортированы
     import_title: Импортировать из файла
     file_tooltipe: 'Доступные разрешения: csv, json, xls, xlsx, xml'
