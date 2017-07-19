@@ -1,6 +1,7 @@
 class Option < ApplicationRecord
   include CodeValidations
   include SortingColumns
+  include LocaleValidations
 
   has_and_belongs_to_many :categories
   has_many :option_values

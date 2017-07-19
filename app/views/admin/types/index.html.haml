@@ -20,9 +20,12 @@
               = sortable_link('id', 'asc')
             .pull-right.down
               = sortable_link('id', 'desc')
-          %th
+          %th.col-sm-3
             .text-center.action
               = Type.human_attribute_name(:name)
+          %th.col-sm-2
+            .text-center.action
+              = t('translations')
           %th.col-sm-3
             .pull-left.title
               = Type.human_attribute_name(:code)
@@ -39,8 +42,10 @@
           %tr
             %th.text-right
               = type.id
-            %td
+            %td.text-left
               = type.name
+            %td.text-center
+              = render 'admin/partials/link_to_locales', object: type
             %td
               = type.code
             - if can? [:update, :delete], Types

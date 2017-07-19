@@ -2,6 +2,7 @@ class City < ApplicationRecord
   include FilesImport
   include CodeValidations
   include SortingColumns
+  include LocaleValidations
 
   belongs_to :region
   has_and_belongs_to_many :agencies

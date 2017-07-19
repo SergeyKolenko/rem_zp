@@ -13,6 +13,7 @@ ru:
   back: Назад
   actions: Действия
   cancel: Отмена
+  translations: Переводы
   shared:
     options: Опции
     types: Типы
@@ -151,7 +152,8 @@ ru:
         example_code: Код пример
         example_value: Значение пример
     wrong_rules: У вас нет прав.
-
+    has_translation: перевод есть
+    has_not_translation: нет перевода
   views:
     pagination:
       first: "&laquo;"
@@ -165,3 +167,4 @@ ru:
       user: У вас нет прав редактировать данные пользователя.
     update:
       project: У вас нет прав редактировать эти данные.
+
