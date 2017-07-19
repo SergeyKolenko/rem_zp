@@ -2,6 +2,7 @@ class District < ApplicationRecord
   include FilesImport
   include CodeValidations
   include SortingColumns
+  include LocaleValidations
 
   belongs_to :city
   has_many :proposals

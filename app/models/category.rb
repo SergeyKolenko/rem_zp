@@ -1,6 +1,7 @@
 class Category < ApplicationRecord
   include CodeValidations
   include SortingColumns
+  include LocaleValidations
 
   has_many :proposals
   paginates_per 10

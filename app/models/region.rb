@@ -2,6 +2,7 @@ class Region < ApplicationRecord
   include FilesImport
   include CodeValidations
   include SortingColumns
+  include LocaleValidations
 
   has_many :cities
   has_many :proposals

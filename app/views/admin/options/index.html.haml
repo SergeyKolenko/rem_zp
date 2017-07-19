@@ -22,6 +22,9 @@
           %th.col-sm-2
             .text-center.action
               = Option.human_attribute_name(:name)
+          %th.col-sm-1
+            .text-center.action
+              = t('translations')
           %th.col-sm-2
             .pull-left.title
               = Option.human_attribute_name(:code)
@@ -36,7 +39,7 @@
             .text-center.action
               = t('shared.categories')
           - if can? [:update, :delete], Option
-            %th.col-sm-3.col-xs-1
+            %th.col-sm-2.col-xs-1
               .text-center.action
                 = t('actions')
       %tbody
@@ -46,6 +49,8 @@
               = option.id
             %td
               = option.name
+            %td.text-center
+              = render 'admin/partials/link_to_locales', object: option
             %td
               = option.code
             %td
