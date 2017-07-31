@@ -64,10 +64,12 @@ uk:
         name: Назва
         code: Код
         region: Область
+        region_id: Область
       district:
         name: Назва
         code: Код
         city: Місто
+        city_id: Місто
       option_value:
         value: Значення
         proposal: Пропозиція

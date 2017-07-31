@@ -20,9 +20,14 @@ en:
     categories: Categories
     agencies: Agencies
     proposals: Proposals
+    cities: Cities
+    districts: Districts
+    categories: Categories
     errors:
       wrong_phone: Invalid number format
       wrong_format: Invalid format
+      city_not_from_region: "Can't add cities not from the selected regions"
+      invalid_user_role: Invalid user role
     import_notice: Data imported
     import_title: 'Import from the file:'
     file_tooltipe: 'Available extensions: csv, json, xls, xlsx, xml'

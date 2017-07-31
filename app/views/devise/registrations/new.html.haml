@@ -5,7 +5,7 @@
   = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form' }) do |f|
     .text-center
       = devise_error_messages!
-    %div{ class: session[:role_id] == role_ids[:agency_director] ? 'col-xs-6' : 'col-xs-8' }
+    %div{ class: session[:role_id] == role_ids[:agency_director] ? 'col-xs-6' : 'col-xs-10' }
       .col-sm-8.col-sm-offset-3
         %h3
           = t('devise.registrations.main_info')
@@ -52,19 +52,23 @@
               = agency_form.label :phisical_address, class: 'control-label'
               = agency_form.text_field :phisical_address, class: 'form-control', required: true
             .form-group
-              = agency_form.label :description, class: 'control-label'
-              = agency_form.text_field :description, class: 'form-control'
-            .form-group
               = agency_form.label :phone, class: 'control-label'
               = agency_form.telephone_field :phone, autofocus: true, class: 'form-control telephone-field',
                                             required: true, placeholder: '099-999-99-99'
+            .js-related-selects{ data: { path: cities_for_region_path, param: 'region_ids',
+                                         value_field: 'id', text_field: 'name' } }
+              .form-group
+                = agency_form.label :region_ids, t('shared.regions'), class: 'control-label'
+                = agency_form.select :region_ids, options_for_select(regions_for_select), {},
+                  { class: 'select2 form-control js-primary-select', multiple: true }
+              .form-group
+                = agency_form.label :city_ids, t('shared.cities'), class: 'control-label'
+                = agency_form.select :city_ids, [], {},
+                  { class: 'select2 form-control js-dependent-select', multiple: true }
             .form-group
-              = agency_form.label :region_ids, class: 'control-label'
-              = agency_form.collection_select :region_ids, Region.all, :id, :name,
-                  {include_blank: t('devise.registrations.select_agency_region_blank')}, {multiple: false, class: 'select2 region_select'}
-            .form-group
-              = agency_form.label :city_ids, class: 'control-label'
-              = agency_form.collection_select :city_ids, City.all, :id, :name,
-                  {include_blank: t('devise.registrations.select_agency_city_blank')}, {multiple: false, class: 'select2'}
-    .col-sm-12.text-center.mart-5
-      = f.submit t('devise.registrations.registrate'), class: 'btn btn-success', id: 'sign_up'
+              = agency_form.label :description, class: 'control-label'
+              = agency_form.text_area :description, class: 'form-control', rows: 8
+    .form-group
+      .col-sm-12.text-center.mart-5
+        = f.submit t('devise.registrations.registrate'), class: 'btn btn-success'
+
