@@ -1,4 +1,6 @@
 require 'rails_helper'
+# require 'support/capybara/select2_helper'
+require 'support/capybara_helper'
 
 describe "the sign in process", type: :feature do
   let!(:role_simple_user) { FactoryGirl.create(:simple_user) }
@@ -60,8 +62,17 @@ describe "the sign in process", type: :feature do
       fill_in 'user_owned_agency_attributes_postal_address', with: '6942213'
       fill_in 'user_owned_agency_attributes_phisical_address', with: 'Street 11'
       fill_in 'user_owned_agency_attributes_phone', with: '099-999-99-90'
+      select2_select('Zaporizhzhia', from: 'js-related-selects')
+      # find('.js-related-selects').click
+      # find('li', text: 'Zaporizhzhia').click
+      # find('option', text: 'Zaporizhzhia').click
+
+      # find('.js-related-selects').find('li', text: 'Zaporizhzhia').click
 
       # select('Zaporizhzhia', from: 'select2')
+      # select('Zaporizhzhia', from: 'select2 form-control js-primary-select select2-hidden-accessible')
+      # select('Zaporizhzhia', from: 'user_owned_agency_attributes_region_ids')
+
       # select('Zaporizhzhia', from: 'Cities')
 
       # find('#user_owned_agency_attributes_region_ids').click
@@ -69,7 +80,9 @@ describe "the sign in process", type: :feature do
 
       # find(:select, from, options).find(:option, value, options).select_option
       # find('#user_owned_agency_attributes_region_ids').find('options', 'Zaporizhzhia', 'options[7]').select_option
-      find('#user_owned_agency_attributes_region_ids').find('option', 'options[7]').select_option
+
+      # find('#user_owned_agency_attributes_region_ids').find('option', 'options[7]').select_option
+      # find("option[value='7']").click
 
       p '='*50
       end
