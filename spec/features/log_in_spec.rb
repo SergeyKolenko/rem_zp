@@ -13,8 +13,7 @@ describe "the sign in process", type: :feature do
       fill_in 'user_password', with: user_valid.password
     end
     click_on 'Login'
-    click_on 'Выйти'
-    expect(page).to have_content 'You need to sign in or sign up before continuing.'
+    expect(page).to have_content 'Вошли успешно.'
   end
 
   it 'log in simple user with wrong email' , js: true do
