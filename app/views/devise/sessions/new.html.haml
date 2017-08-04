@@ -7,11 +7,11 @@
       %ul.list-unstyled.pull-right
         - role_ids = roles_ids_for_sign_up
         %li.mart-20
-          = link_to t('devise.sessions.sign_up_site'), users_sign_up_with_role_path(id: role_ids[:simple_user]), class: 'btn btn-success'
+          = link_to t('devise.sessions.sign_up_site'), users_sign_up_with_role_path(id: role_ids[:simple_user]), class: 'btn btn-success', id: 'simple_users'
         %li.mart-5
-          = link_to t('devise.sessions.sign_up_realtor'), users_sign_up_with_role_path(id: role_ids[:realtor]), class: 'btn btn-default'
+          = link_to t('devise.sessions.sign_up_realtor'), users_sign_up_with_role_path(id: role_ids[:realtor]), class: 'btn btn-default', id: 'realtors'
         %li.mart-5
-          = link_to t('devise.sessions.sign_up_agency'), users_sign_up_with_role_path(id: role_ids[:agency_director]), class: 'btn btn-primary'
+          = link_to t('devise.sessions.sign_up_agency'), users_sign_up_with_role_path(id: role_ids[:agency_director]), class: 'btn btn-primary', id: 'agency_director'
     .col-xs-6
       .col-sm-8
         .form-group
